@@ -4,11 +4,14 @@
 \usepackage{babel}
 \usepackage{float}
 \usepackage{textcomp}
-\usepackage{amsmath}
+\usepackage{amsmath,amsfonts,amssymb}
 \usepackage{amsthm}
 \usepackage{graphicx}
+\usepackage[ruled,vlined]{algorithm2e}
 \PassOptionsToPackage{normalem}{ulem}
 \usepackage{ulem}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 \title{Class Notes\\CIS 502 Analysis of Algorihtm}
 \author{Da Kuang}
@@ -489,7 +492,6 @@ therefore disconnected if there exist two vertices in G such that
 no path in G has these vertices as endpoints. The below graph becomes
 disconnected when the dashed edge is removed.
 
-% \includegraphics{Sample-graph}
 \centerline{\includegraphics[width=0.5\textwidth]{Sample-graph}}
 
 \paragraph*{Adversary Lower Bounds in the Edge Probe Model}
@@ -617,29 +619,31 @@ large class of properties are evasive.
 \begin{itemize}
 \item Pick an element $x$as the pivot element
 \item By comparing each of the elements with the pivot, place it in one
-of the two sets $S={y:y<x},$ $L={y:y>x}$.
+of the two sets:
+\begin{align*}
+ S=\{y:y<x\}\\
+ L=\{y:y>x\}
+\end{align*}
 \item Recursively sort $S$ and $L$.
 \item Output $S\times L$.
 \end{itemize}
 
 \subsection{Performance:}
+\subsubsection{Worst Case}
+Each partition routine produces one sub-problem with n-1 elements and one with 
+0 elements.
+\begin{align*}
+ T(n)&\ge\Theta(n)+T(n-1)
+ &\intertext{Based on substitution method,}
+ T(n)&=\Theta(n^{2})
+\end{align*}
+\subsubsection{Expected Running Time}
+Calculate the expected number of comparison made by QuickSort in the worst 
+case when the pivot is selected randomly.
 \begin{itemize}
-\item Worst case: 
-\begin{itemize}
-\item Each partition routine produces one sub-problem with n-1 elements
-and one with 0 elements.
-\begin{itemize}
-\item $T(n)\ge\Theta(n)+T(n-1)$
-\end{itemize}
-\item Based on substitution method
-\begin{itemize}
-\item $T(n)=\Theta(n^{2})$
-\end{itemize}
-\end{itemize}
-\item Expected worst case behavior of an algorithm: algorithm which is randomized.
-\item Expected number of comparison made by QuickSort in the worst case.
 \item Algorithm: pick pivot uniformly of random from the elements to be
 sorted.
+\item Analysis:
 \begin{itemize}
 \item Let $x$ be the total amount of comparison are formed by QuickSort. 
 \item Let $x_{ij}$ be a random variable that is : 
@@ -657,7 +661,16 @@ $=\sum_{i<j}Pr[x_{ij}=1]$
 to be chosen as a pivot from $x_{ij}$ is either $x_{i}$ or $x_{j}$.
 \item Pr\{$z_{i}$ is compared to $z_{j}$\} = $\frac{2}{j-i+1}$
 \end{itemize}
-\item $E[x]=\sum_{i<j}Pr[x_{ij}=1]=\sum_{i<j}\frac{2}{j-1+1}=\sum_{i<j}\frac{2}{k+1}<\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}\frac{2}{k}=\sum_{i=1}^{n-1}O(\log n)=O(n\log n)$
+\item 
+Expectated 
+Running time
+\begin{align*}
+ E[x]&=\sum_{i<j}Pr[x_{ij}=1]
+ =\sum_{i<j}\frac{2}{j-1+1}\\
+ &=\sum_{i<j} \frac { 2 } { k+1 }\\
+ &<\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}\frac{2}{k}\\
+ &=\sum_{i=1}^{n-1}O(\log n)=O(n\log n)
+\end{align*}
 \end{itemize}
 
 \section{Selection/ order}
@@ -668,9 +681,89 @@ elements of $A$.
 \end{itemize}
 We can solve the selection problem in $O(n\log n)$ time since we
 can sort the number using heapsort or mergesort and then simply index
-the $i$-th element in the output array.
+the $i$-th element in the output array. But we can do better than this.
 
-\subsection{Randomized-select}
+\subsection{Randomized-Select}
+\begin{algorithm}[H]
+    \SetKwProg{Fn}{Function}{:}{}
+    \SetKwFunction{FRandSelect}{RANDOMIZED-SELECT}
+    \SetKwFunction{FRandPartition}{RANDOMIZED-PARTITION}
+
+    \Fn{\FRandSelect ($A, p, r, i$)}{
+%         \KwData{Array $A[p, \cdots, r]$, rank $i$}
+        \uIf{p == r}{
+            return A[p]
+        }
+        q = \FRandPartition(A, p, r){}
+        
+        k = q - p + 1 
+        
+        \uIf {i == k}{\tcc{The pivot is the answer}
+            return A[q]
+        }
+        \uElseIf {i < k}{
+            return \FRandSelect ($A, p, q-1, i$)
+        }
+        \Else{
+            return \FRandSelect ($A, q+1, r, i-k$)
+        }
+
+    }
+ \caption{Randomized-Select}
+\end{algorithm}
+The worst-case running time for RANDOMIZED-SELECT is $\Theta(n^2)$, because we 
+could be extremly unlucky and always parition around the largst remaining 
+element, and the parition takes $\Theta(n)$ times.
+
+But the algorithm has a linear expected running time $O(n)$, and because it is 
+randomized, no particular input elicits the worst-case behavior.
+\subsection{Deterministic Linear Time Selection}
+After quick selection, algorists looked for an angorithm which is able to solve 
+the problem in linear deterministicly.
+
+\centerline{\includegraphics[width=0.5\textwidth]{deterministic-select.png}}
+
+SELECT Algorihtm:
+\begin{itemize}
+\item Find the medium of each group by insertion-sorting. $T(n) = \frac{6n}{5} 
+= 1.2n$.
+\item Use SELECT to recursively find the medium of the mediums $m^*$.
+\item $m^*$ has a rank somewhere in the middle.
+    \begin{itemize}
+        \item The number of elements larger than $m^*$: $O(\frac{3n}{10}) 
+    =3(\ceil*{\frac{1}{2}\ceil*{\frac{n}{5}} - 2})$
+        \item Therefore, the number of element smaller than $m^*$: 
+    $O(\frac{7n}{10})$.
+    \end{itemize}
+\item Pivot using $m^*$:
+    \begin{itemize}
+     \item If $i = k$, then return $k$.
+     \item If $i < k$, use SELECT recursively to find the $i$-th smallest 
+element on the low side.
+     \item If $i > k$, use SELECT recursively to find the $(i-k)$-th smallest 
+element on the high side.
+    \end{itemize}
+\end{itemize}
+Therefore, the recursion of the algorithm is
+\[T(n) \le T(\frac{n}{5}) + T(\frac{7n}{10}) + 2.2n\]
+We guess $T(n) \le cn$ and it can be proved by induction.
+\begin{itemize}
+\item Base case:
+    \begin{align*}
+    T(\frac{n}{5}) &\le \frac{cn}{5}\\
+    T(\frac{7n}{10}) &\le \frac{c7n}{10}
+    \end{align*}
+\item hypothesis: $T(n) \le \frac{cn}{5} + \frac{c7n}{10} + 2.2n$
+\item Inductive step:
+    \begin{align*}
+    cn &\ge \frac{cn}{5} + \frac{c7n}{10} + 2.2n\\
+    10 cn &\ge 2cn + 7cn + 22n\\
+    c &\ge 22
+    \end{align*}
+
+\end{itemize}
+
+
 
 
 \part{Graph Algorithms}
