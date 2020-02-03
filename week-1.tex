@@ -252,23 +252,22 @@ time no matter what the input. In other words, we often wish to make
 \textbf{a blanket statement that covers all inputs, not just the worst
 case}. We shall see asymptotic notations that are well suited to characterizing
 running times no matter what the input.
-\begin{center}
-\includegraphics{asymptotic-notion}
-\par\end{center}
 
+\centerline{\includegraphics[width=0.7\textwidth]{asymptotic-notion}}
 
 \subsubsection*{$\Theta$-notation}
-
+There exist positive constant $c_{1},c_{2}$ and $n_{0}$ such that,
 \[
-\Theta(g(n))={f(n):\text{there exist positive constant}c_{1},c_{2}\text{and}n_{0}\text{such that}0\le c_{1}g(n)\le f(n)\le c_{2}g(n)\text{ for all }n\ge n_{0}}
+\Theta(g(n))=\{f(n): 0\le c_{1}g(n)\le f(n)\le c_{2}g(n)\text{ for all 
+}n\ge n_{0}\}
 \]
 
 $g(n)$ is an asymptotically \textbf{tight bound} for $f(n)$.
 
 \subsubsection*{$O$-notation}
-
+There exist positive constant $c$ and $n_{0}$ such that,
 \[
-\Theta(g(n))={f(n):\text{there exist positive constant}c\text{and}n_{0}\text{such that}0\le f(n)\le cg(n)\text{ for all }n\ge n_{0}}
+\Theta(g(n))=\{f(n):0\le f(n)\le cg(n)\text{ for all }n\ge n_{0}\}
 \]
 
 $g(n)$ is an asymptotic \textbf{upper bound} for $f(n)$.
@@ -729,6 +728,8 @@ SELECT Algorihtm:
 = 1.2n$.
 \item Use SELECT to recursively find the medium of the mediums $m^*$.
 \item $m^*$ has a rank somewhere in the middle.
+We treat the median of the medians $m^*$ as a pivot element and compare all 
+elements, which takes $n$ steps.
     \begin{itemize}
         \item The number of elements larger than $m^*$: $O(\frac{3n}{10}) 
     =3(\ceil*{\frac{1}{2}\ceil*{\frac{n}{5}} - 2})$

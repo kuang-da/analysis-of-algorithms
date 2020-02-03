@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.25)  2 FEB 2020 20:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.25)  3 FEB 2020 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1320,93 +1320,391 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks58
 \@floatcapt=\box65
 )
-(/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box66
-\UL@hyphenbox=\box67
-\UL@skip=\skip73
-\UL@hook=\toks59
-\UL@height=\dimen297
-\UL@pe=\count344
-\UL@pixel=\dimen298
-\ULC@box=\box68
-Package: ulem 2012/05/18
-\ULdepth=\dimen299
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup10
+\symAMSb=\mathgroup11
+LaTeX Font Info:    Redeclaring math delimiter \ulcorner on input line 74.
+LaTeX Font Info:    Redeclaring math delimiter \urcorner on input line 75.
+LaTeX Font Info:    Redeclaring math delimiter \llcorner on input line 76.
+LaTeX Font Info:    Redeclaring math delimiter \lrcorner on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 141.
+LaTeX Font Info:    Redeclaring math symbol \lozenge on input line 142.
 )
-LaTeX Font Info:    Try loading font information for T1+ntxtlf on input line 19
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 44.
+LaTeX Font Info:    Redeclaring math symbol \boxplus on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \boxtimes on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \blacksquare on input line 48.
+LaTeX Font Info:    Redeclaring math symbol \centerdot on input line 49.
+LaTeX Font Info:    Redeclaring math symbol \blacklozenge on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 52.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 53.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 56
+.
+LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Vdash on input line 58.
+LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 59.
+LaTeX Font Info:    Redeclaring math symbol \vDash on input line 60.
+LaTeX Font Info:    Redeclaring math symbol \twoheadrightarrow on input line 61
+.
+LaTeX Font Info:    Redeclaring math symbol \twoheadleftarrow on input line 62.
+
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 64.
+
+LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 65.
+LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 66.
+LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 67.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 69.
+
+LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 70.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \rightarrowtail on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \leftarrowtail on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 74.
+LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 75.
+LaTeX Font Info:    Redeclaring math symbol \Lsh on input line 76.
+LaTeX Font Info:    Redeclaring math symbol \Rsh on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 
+79.
+LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 80.
+LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \circeq on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \succsim on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \gtrsim on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \gtrapprox on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \multimap on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \therefore on input line 87.
+LaTeX Font Info:    Redeclaring math symbol \because on input line 88.
+LaTeX Font Info:    Redeclaring math symbol \doteqdot on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \triangleq on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \precsim on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \lesssim on input line 93.
+LaTeX Font Info:    Redeclaring math symbol \lessapprox on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \eqslantless on input line 95.
+LaTeX Font Info:    Redeclaring math symbol \eqslantgtr on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqprec on input line 97.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqsucc on input line 98.
+LaTeX Font Info:    Redeclaring math symbol \preccurlyeq on input line 99.
+LaTeX Font Info:    Redeclaring math symbol \leqq on input line 100.
+LaTeX Font Info:    Redeclaring math symbol \leqslant on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \lessgtr on input line 102.
+LaTeX Font Info:    Redeclaring math symbol \backprime on input line 103.
+LaTeX Font Info:    Redeclaring math symbol \risingdotseq on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \fallingdotseq on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \succcurlyeq on input line 106.
+LaTeX Font Info:    Redeclaring math symbol \geqq on input line 107.
+LaTeX Font Info:    Redeclaring math symbol \geqslant on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \gtrless on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \bigstar on input line 117.
+LaTeX Font Info:    Redeclaring math symbol \between on input line 118.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 11
+9.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 1
+20.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 12
+1.
+LaTeX Font Info:    Redeclaring math symbol \vartriangle on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangle on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \triangledown on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \eqcirc on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \lesseqgtr on input line 126.
+LaTeX Font Info:    Redeclaring math symbol \gtreqless on input line 127.
+LaTeX Font Info:    Redeclaring math symbol \lesseqqgtr on input line 128.
+LaTeX Font Info:    Redeclaring math symbol \gtreqqless on input line 129.
+LaTeX Font Info:    Redeclaring math symbol \Rrightarrow on input line 130.
+LaTeX Font Info:    Redeclaring math symbol \Lleftarrow on input line 131.
+LaTeX Font Info:    Redeclaring math symbol \veebar on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \barwedge on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \doublebarwedge on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \measuredangle on input line 137.
+LaTeX Font Info:    Redeclaring math symbol \sphericalangle on input line 138.
+LaTeX Font Info:    Redeclaring math symbol \varpropto on input line 139.
+LaTeX Font Info:    Redeclaring math symbol \smallsmile on input line 140.
+LaTeX Font Info:    Redeclaring math symbol \smallfrown on input line 141.
+LaTeX Font Info:    Redeclaring math symbol \Subset on input line 142.
+LaTeX Font Info:    Redeclaring math symbol \Supset on input line 143.
+LaTeX Font Info:    Redeclaring math symbol \Cup on input line 144.
+LaTeX Font Info:    Redeclaring math symbol \Cap on input line 146.
+LaTeX Font Info:    Redeclaring math symbol \curlywedge on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \curlyvee on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 150.
+LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 151.
+
+LaTeX Font Info:    Redeclaring math symbol \subseteqq on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \supseteqq on input line 153.
+LaTeX Font Info:    Redeclaring math symbol \bumpeq on input line 154.
+LaTeX Font Info:    Redeclaring math symbol \Bumpeq on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \lll on input line 156.
+LaTeX Font Info:    Redeclaring math symbol \ggg on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \circledS on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \pitchfork on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \dotplus on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \backsim on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \backsimeq on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \complement on input line 165.
+LaTeX Font Info:    Redeclaring math symbol \intercal on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \circledcirc on input line 167.
+LaTeX Font Info:    Redeclaring math symbol \circledast on input line 168.
+LaTeX Font Info:    Redeclaring math symbol \circleddash on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \lvertneqq on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \gvertneqq on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \nleq on input line 173.
+LaTeX Font Info:    Redeclaring math symbol \ngeq on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \nless on input line 175.
+LaTeX Font Info:    Redeclaring math symbol \ngtr on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \nprec on input line 177.
+LaTeX Font Info:    Redeclaring math symbol \nsucc on input line 178.
+LaTeX Font Info:    Redeclaring math symbol \lneqq on input line 179.
+LaTeX Font Info:    Redeclaring math symbol \gneqq on input line 180.
+LaTeX Font Info:    Redeclaring math symbol \nleqslant on input line 181.
+LaTeX Font Info:    Redeclaring math symbol \ngeqslant on input line 182.
+LaTeX Font Info:    Redeclaring math symbol \lneq on input line 183.
+LaTeX Font Info:    Redeclaring math symbol \gneq on input line 184.
+LaTeX Font Info:    Redeclaring math symbol \npreceq on input line 185.
+LaTeX Font Info:    Redeclaring math symbol \nsucceq on input line 186.
+LaTeX Font Info:    Redeclaring math symbol \precnsim on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \succnsim on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \lnsim on input line 189.
+LaTeX Font Info:    Redeclaring math symbol \gnsim on input line 190.
+LaTeX Font Info:    Redeclaring math symbol \nleqq on input line 191.
+LaTeX Font Info:    Redeclaring math symbol \ngeqq on input line 192.
+LaTeX Font Info:    Redeclaring math symbol \precneqq on input line 193.
+LaTeX Font Info:    Redeclaring math symbol \succneqq on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \precnapprox on input line 195.
+LaTeX Font Info:    Redeclaring math symbol \succnapprox on input line 196.
+LaTeX Font Info:    Redeclaring math symbol \lnapprox on input line 197.
+LaTeX Font Info:    Redeclaring math symbol \gnapprox on input line 198.
+LaTeX Font Info:    Redeclaring math symbol \nsim on input line 199.
+LaTeX Font Info:    Redeclaring math symbol \ncong on input line 200.
+LaTeX Font Info:    Redeclaring math symbol \diagup on input line 201.
+LaTeX Font Info:    Redeclaring math symbol \diagdown on input line 202.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneq on input line 203.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneq on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteqq on input line 205.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteqq on input line 206.
+LaTeX Font Info:    Redeclaring math symbol \subsetneqq on input line 207.
+LaTeX Font Info:    Redeclaring math symbol \supsetneqq on input line 208.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneqq on input line 209.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneqq on input line 210.
+LaTeX Font Info:    Redeclaring math symbol \subsetneq on input line 211.
+LaTeX Font Info:    Redeclaring math symbol \supsetneq on input line 212.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteq on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteq on input line 214.
+LaTeX Font Info:    Redeclaring math symbol \nparallel on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \nmid on input line 216.
+LaTeX Font Info:    Redeclaring math symbol \nshortmid on input line 217.
+LaTeX Font Info:    Redeclaring math symbol \nshortparallel on input line 218.
+LaTeX Font Info:    Redeclaring math symbol \nvdash on input line 219.
+LaTeX Font Info:    Redeclaring math symbol \nVdash on input line 220.
+LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 221.
+LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 222.
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 223
+.
+LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 224.
+
+LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 226.
+LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 227.
+LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 228.
+LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 229.
+LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 230.
+LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 231.
+
+LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 232.
+
+LaTeX Font Info:    Redeclaring math symbol \divideontimes on input line 233.
+LaTeX Font Info:    Redeclaring math symbol \varnothing on input line 234.
+LaTeX Font Info:    Redeclaring math symbol \nexists on input line 235.
+LaTeX Font Info:    Redeclaring math symbol \Finv on input line 236.
+LaTeX Font Info:    Redeclaring math symbol \Game on input line 237.
+LaTeX Font Info:    Redeclaring math symbol \eth on input line 240.
+LaTeX Font Info:    Redeclaring math symbol \eqsim on input line 241.
+LaTeX Font Info:    Redeclaring math symbol \beth on input line 242.
+LaTeX Font Info:    Redeclaring math symbol \gimel on input line 243.
+LaTeX Font Info:    Redeclaring math symbol \daleth on input line 244.
+LaTeX Font Info:    Redeclaring math symbol \lessdot on input line 245.
+LaTeX Font Info:    Redeclaring math symbol \gtrdot on input line 246.
+LaTeX Font Info:    Redeclaring math symbol \ltimes on input line 247.
+LaTeX Font Info:    Redeclaring math symbol \rtimes on input line 248.
+LaTeX Font Info:    Redeclaring math symbol \shortmid on input line 249.
+LaTeX Font Info:    Redeclaring math symbol \shortparallel on input line 250.
+LaTeX Font Info:    Redeclaring math symbol \smallsetminus on input line 251.
+LaTeX Font Info:    Redeclaring math symbol \thicksim on input line 252.
+LaTeX Font Info:    Redeclaring math symbol \thickapprox on input line 253.
+LaTeX Font Info:    Redeclaring math symbol \approxeq on input line 254.
+LaTeX Font Info:    Redeclaring math symbol \succapprox on input line 255.
+LaTeX Font Info:    Redeclaring math symbol \precapprox on input line 256.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 257.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 258.
+
+LaTeX Font Info:    Redeclaring math symbol \digamma on input line 259.
+LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 260.
+LaTeX Font Info:    Redeclaring math symbol \Bbbk on input line 261.
+LaTeX Font Info:    Redeclaring math symbol \hslash on input line 262.
+LaTeX Font Info:    Redeclaring math symbol \backepsilon on input line 265.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count344
+\algocf@hangindent=\skip73
+
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count345
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip74
+\skiplinenumber=\skip75
+\skiprule=\skip76
+\skiphlne=\skip77
+\skiptext=\skip78
+\skiplength=\skip79
+\algomargin=\skip80
+\skipalgocfslide=\skip81
+\algowidth=\dimen297
+\inoutsize=\dimen298
+\inoutindent=\dimen299
+\interspacetitleruled=\dimen300
+\interspacealgoruled=\dimen301
+\interspacetitleboxruled=\dimen302
+\algocf@ruledwidth=\skip82
+\algocf@inoutbox=\box66
+\algocf@inputbox=\box67
+\AlCapSkip=\skip83
+\AlCapHSkip=\skip84
+\algoskipindent=\skip85
+\algocf@nlbox=\box68
+\algocf@hangingbox=\box69
+\algocf@untilbox=\box70
+\algocf@skipuntil=\skip86
+\algocf@capbox=\box71
+\algocf@lcaptionbox=\skip87
+\algoheightruledefault=\skip88
+\algoheightrule=\skip89
+\algotitleheightruledefault=\skip90
+\algotitleheightrule=\skip91
+\c@algocfline=\count346
+\c@algocfproc=\count347
+\c@algocf=\count348
+\algocf@algoframe=\box72
+\algocf@algobox=\box73
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box74
+\UL@hyphenbox=\box75
+\UL@skip=\skip92
+\UL@hook=\toks59
+\UL@height=\dimen303
+\UL@pe=\count349
+\UL@pixel=\dimen304
+\ULC@box=\box76
+Package: ulem 2012/05/18
+\ULdepth=\dimen305
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count350
+\l_MT_multwidth_dim=\dimen306
+\origjot=\skip93
+\l_MT_shortvdotswithinadjustabove_dim=\dimen307
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen308
+\l_MT_above_intertext_sep=\dimen309
+\l_MT_below_intertext_sep=\dimen310
+\l_MT_above_shortintertext_sep=\dimen311
+\l_MT_below_shortintertext_sep=\dimen312
+)
+LaTeX Font Info:    Try loading font information for T1+ntxtlf on input line 22
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2015/01/17 v1.0 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 19.
-
-No file week-1.aux.
+(Font)              scaled to size 14.4pt on input line 22.
+ (./week-1.aux)
 \openout1 = `week-1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 19.
-LaTeX Font Info:    Try loading font information for OML+ntxmi on input line 19
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 22.
+LaTeX Font Info:    Try loading font information for OML+ntxmi on input line 22
 .
+
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 19.
-LaTeX Font Info:    Try loading font information for U+ntxexa on input line 19.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for U+ntxexa on input line 22.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 19.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 19.
-LaTeX Font Info:    Try loading font information for LMS+ntxsy on input line 19
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for LMS+ntxsy on input line 22
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 19.
-LaTeX Font Info:    Try loading font information for LMX+ntxexx on input line 1
-9.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for LMX+ntxexx on input line 2
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-\c@mv@tabular=\count345
-\c@mv@boldtabular=\count346
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+\c@mv@tabular=\count351
+\c@mv@boldtabular=\count352
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count347
-\scratchdimen=\dimen300
-\scratchbox=\box69
-\nofMPsegments=\count348
-\nofMParguments=\count349
+\scratchcounter=\count353
+\scratchdimen=\dimen313
+\scratchbox=\box77
+\nofMPsegments=\count354
+\nofMParguments=\count355
 \everyMPshowfont=\toks60
-\MPscratchCnt=\count350
-\MPscratchDim=\dimen301
-\MPnumerator=\count351
-\makeMPintoPDFobject=\count352
+\MPscratchCnt=\count356
+\MPscratchDim=\dimen314
+\MPnumerator=\count357
+\makeMPintoPDFobject=\count358
 \everyMPtoPDFconversion=\toks61
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1425,8 +1723,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box70
-Package hyperref Info: Link coloring ON on input line 19.
+\AtBeginShipoutBox=\box78
+Package hyperref Info: Link coloring ON on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1434,11 +1732,13 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count353
+\c@section@level=\count359
 )
-LaTeX Info: Redefining \ref on input line 19.
-LaTeX Info: Redefining \pageref on input line 19.
-LaTeX Info: Redefining \nameref on input line 19.
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
+
+(./week-1.out) (./week-1.out)
 \@outlinefile=\write4
 \openout4 = `week-1.out'.
 
@@ -1482,182 +1782,202 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count354
+\c@lstlisting=\count360
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 21.
+(Font)              scaled to size 24.88pt on input line 24.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 21.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 24.88pt on input line 21.
+(Font)              scaled to size 24.88pt on input line 24.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 21.
+(Font)              scaled to size 17.28pt on input line 24.
 LaTeX Font Info:    Try loading font information for OT1+ntxtlf on input line 2
-1.
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2015/01/17 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 21.
+(Font)              scaled to size 17.28pt on input line 24.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.5pt on input line 21.
+(Font)              scaled to size 12.5pt on input line 24.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.4pt on input line 21.
-LaTeX Font Info:    Try loading font information for U+ntxmia on input line 21.
+(Font)              scaled to size 9.4pt on input line 24.
+LaTeX Font Info:    Try loading font information for U+ntxmia on input line 24.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsym on input line 21.
+LaTeX Font Info:    Try loading font information for U+ntxsym on input line 24.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 21.
+LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 24.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-LaTeX Font Info:    Try loading font information for U+esint on input line 21.
+LaTeX Font Info:    Try loading font information for U+esint on input line 24.
 
 (/usr/share/texlive/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 24.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 20.74pt on input line 23.
+(Font)              scaled to size 20.74pt on input line 26.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 23.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 26.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 20.74pt on input line 23.
+(Font)              scaled to size 20.74pt on input line 26.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <29.86> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 23.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 26.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 29.86pt on input line 23.
+(Font)              scaled to size 29.86pt on input line 26.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 49.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 52.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 49.
+(Font)              scaled to size 17.28pt on input line 52.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 60.
+(Font)              scaled to size 10.0pt on input line 63.
  [2] [3]
-<bounds.png, id=50, 603.75563pt x 392.96812pt>
+<bounds.png, id=158, 603.75563pt x 392.96812pt>
 File: bounds.png Graphic file (type png)
 <use bounds.png>
-Package pdftex.def Info: bounds.png  used on input line 89.
+Package pdftex.def Info: bounds.png  used on input line 92.
 (pdftex.def)             Requested size: 378.99423pt x 246.67778pt.
  [4 <./bounds.png (PNG copy)>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 100.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 103.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 100.
+(Font)              scaled to size 14.4pt on input line 103.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 115.
+(Font)              scaled to size 14.4pt on input line 118.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.5pt on input line 115.
+(Font)              scaled to size 10.5pt on input line 118.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.9pt on input line 115.
+(Font)              scaled to size 7.9pt on input line 118.
 
 [5] [6] [7]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 14.4pt on input line 218.
+(Font)              scaled to size 14.4pt on input line 221.
  [8] [9]
-<asymptotic-notion.png, id=89, 434.8245pt x 164.71538pt>
+<asymptotic-notion.png, id=193, 434.8245pt x 164.71538pt>
 File: asymptotic-notion.png Graphic file (type png)
 <use asymptotic-notion.png>
-Package pdftex.def Info: asymptotic-notion.png  used on input line 253.
-(pdftex.def)             Requested size: 434.82341pt x 164.71497pt.
+Package pdftex.def Info: asymptotic-notion.png  used on input line 256.
+(pdftex.def)             Requested size: 442.15352pt x 167.49472pt.
  [10]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.5pt on input line 260.
+(Font)              scaled to size 10.5pt on input line 262.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.9pt on input line 260.
+(Font)              scaled to size 7.9pt on input line 262.
  [11 <./asymptotic-notion.png (PNG copy)>] [12]
 [13] [14] [15]
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/ntxtlf/b/it' tried instead on input line 408
+(Font)              Font shape `T1/ntxtlf/b/it' tried instead on input line 410
 .
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 14.4pt on input line 408.
+(Font)              scaled to size 14.4pt on input line 410.
  [16]
-<merging-two-sorted-lists.png, id=137, 530.28113pt x 129.48375pt>
+<merging-two-sorted-lists.png, id=237, 530.28113pt x 129.48375pt>
 File: merging-two-sorted-lists.png Graphic file (type png)
 <use merging-two-sorted-lists.png>
-Package pdftex.def Info: merging-two-sorted-lists.png  used on input line 445.
-(pdftex.def)             Requested size: 530.27983pt x 129.48341pt.
-LaTeX Font Info:    Try loading font information for TS1+ntxtlf on input line 4
-47.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+Package pdftex.def Info: merging-two-sorted-lists.png  used on input line 448.
+(pdftex.def)             Requested size: 378.99423pt x 92.54657pt.
+ [17 <./merging-two-sorted-lists.png (PNG copy)>]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 14.4pt on input line 465.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.5pt on input line 465.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 7.9pt on input line 465.
+ [18]
+<Sample-graph.jpg, id=252, 441.65pt x 302.12875pt>
+File: Sample-graph.jpg Graphic file (type jpg)
+<use Sample-graph.jpg>
+Package pdftex.def Info: Sample-graph.jpg  used on input line 494.
+(pdftex.def)             Requested size: 315.82532pt x 216.0619pt.
+
+[19 <./Sample-graph.jpg>]
+LaTeX Font Info:    Try loading font information for TS1+ntxtlf on input line 5
+23.
+
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 447.
- [17 <./merging-two-sorted-lists.png (PNG copy)>]
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 463.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.5pt on input line 463.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 7.9pt on input line 463.
- [18]
-<Sample-graph.jpg, id=153, 441.65pt x 302.12875pt>
-File: Sample-graph.jpg Graphic file (type jpg)
-<use Sample-graph.jpg>
-Package pdftex.def Info: Sample-graph.jpg  used on input line 492.
-(pdftex.def)             Requested size: 441.64891pt x 302.128pt.
- [19 <./Sample-graph.jpg>] [20] [21] [22] [23] [24] [25]
-Overfull \vbox (109.54352pt too high) has occurred while \output is active []
+(Font)              scaled to size 14.4pt on input line 523.
+ [20] [21] [22]
+[23] [24] [25]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 711.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+<deterministic-select.png, id=300, 261.67763pt x 204.16275pt>
+File: deterministic-select.png Graphic file (type png)
+<use deterministic-select.png>
+Package pdftex.def Info: deterministic-select.png  used on input line 723.
+(pdftex.def)             Requested size: 315.82532pt x 246.4271pt.
+
+[26] [27 <./deterministic-select.png (PNG copy)>] [28] [29]
+Overfull \vbox (30.39049pt too high) has occurred while \output is active []
 
 
-[26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 683.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 683.
+[30]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 778.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 778.
  (./week-1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 683.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 683.
-
-
-Package rerunfilecheck Warning: File `week-1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `week-1.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  71CA424C4D19E6B5DF52B63516B498FF;1612.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 778.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 778.
+Package rerunfilecheck Info: File `week-1.out' has not changed.
+(rerunfilecheck)             Checksum: B5ED463AAC246468E43C3BE798DC75A5;1848.
  ) 
 Here is how much of TeX's memory you used:
- 34619 strings out of 494477
- 630722 string characters out of 6175715
+ 36169 strings out of 494477
+ 657448 string characters out of 6175715
  883716 words of memory out of 5000000
- 37651 multiletter control sequences out of 15000+600000
- 629102 words of font info for 169 fonts, out of 8000000 for 9000
+ 39144 multiletter control sequences out of 15000+600000
+ 631870 words of font info for 182 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 66i,12n,124p,817b,744s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texm
-f-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texlive/texmf-dist/font
-s/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvip
-s/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cme
-x10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/las
-y6.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf
-/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/share/texmf/fonts/type1/public/tex
--gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/newtx/rntxbmi.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/newtx/rntxmi.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/newtx/rtxbmi-rev.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txmia.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on week-1.pdf (26 pages, 2165542 bytes).
+ 66i,13n,124p,817b,742s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/derek/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1440.600
+pk>{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/tex
+mf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texlive/texmf-dist/fon
+ts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvi
+ps/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/la
+sy6.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texm
+f/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/share/texmf/fonts/type1/public/te
+x-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/newtx/rntxbmi.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/newtx/rntxmi.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/newtx/rtxbmi-rev.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txmia.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on week-1.pdf (30 pages, 2235416 bytes).
 PDF statistics:
- 289 PDF objects out of 1000 (max. 8388607)
- 208 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
- 219 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 438 PDF objects out of 1000 (max. 8388607)
+ 319 compressed objects within 4 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 466 words of extra memory for PDF output out of 10000 (max. 10000000)
 

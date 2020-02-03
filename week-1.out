@@ -17,9 +17,12 @@
 \BOOKMARK [1][-]{section.4}{Quick Sort}{part.2}% 17
 \BOOKMARK [2][-]{subsection.4.1}{Algorithm:}{section.4}% 18
 \BOOKMARK [2][-]{subsection.4.2}{Performance:}{section.4}% 19
-\BOOKMARK [1][-]{section.5}{Selection/ order}{part.2}% 20
-\BOOKMARK [2][-]{subsection.5.1}{Randomized-select}{section.5}% 21
-\BOOKMARK [0][-]{part.3}{III Graph Algorithms}{}% 22
-\BOOKMARK [0][-]{part.4}{IV NP-completeness}{}% 23
-\BOOKMARK [0][-]{part.5}{V Approximation Algorithms}{}% 24
-\BOOKMARK [0][-]{part.6}{VI Randomized Algorithms}{}% 25
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Worst Case}{subsection.4.2}% 20
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Expected Running Time}{subsection.4.2}% 21
+\BOOKMARK [1][-]{section.5}{Selection/ order}{part.2}% 22
+\BOOKMARK [2][-]{subsection.5.1}{Randomized-Select}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.2}{Deterministic Linear Time Selection}{section.5}% 24
+\BOOKMARK [0][-]{part.3}{III Graph Algorithms}{}% 25
+\BOOKMARK [0][-]{part.4}{IV NP-completeness}{}% 26
+\BOOKMARK [0][-]{part.5}{V Approximation Algorithms}{}% 27
+\BOOKMARK [0][-]{part.6}{VI Randomized Algorithms}{}% 28
