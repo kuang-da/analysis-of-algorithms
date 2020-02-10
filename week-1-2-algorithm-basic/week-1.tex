@@ -13,7 +13,7 @@
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
-\title{Class Notes\\CIS 502 Analysis of Algorihtm}
+\title{Class Notes\\CIS 502 Analysis of Algorithm}
 \author{Da Kuang}
 \institute{University of Pennsylvania}
 % \version{1.00}
@@ -74,7 +74,7 @@ case and a worst case.
 When we want to analyze an algorithm, us algorists think about every
 possible case we could throw at the algorithm. Usually, the two most
 interesting cases are the best case and the worst case. If you think
-of the algorithms runtime as a function of its input, the best case
+of the algorithms run time as a function of its input, the best case
 is the input that minimizes the function and the worst case is the
 input that maximizes the function. I'm using \textquotedbl function\textquotedbl{}
 in the Algebra math sense here: a series of x/y pairs (input/output
@@ -127,22 +127,22 @@ upper bound.
 \subsection{Best/Worst Case + Lower/Upper Bound }
 
 We have best/worst cases that represent the upper and lower functions
-of an algorithms' runtime function. We have upper and lower bounds
+of an algorithms' run time function. We have upper and lower bounds
 that represent other functions that could be on top or below (respectively)
 any other function. They can be combined to articulate key ideas about
 algorithms.
 \begin{itemize}
 \item \textbf{Worst Case Lower Bound}: A function that is a boundary below
-the algorithms' runtime function, when that algorithm is given the
+the algorithms' run time function, when that algorithm is given the
 inputs that maximize the algorithm's run time.
 \item \textbf{Worst Case Upper Bound}: A function that is a boundary above
-the algorithms' runtime function, when that algorithm is given the
+the algorithms' run time function, when that algorithm is given the
 inputs that maximize the algorithm's run time.
 \item \textbf{Best Case Lower Bound}: A function that is a boundary below
-the algorithms' runtime function, when that algorithm is given the
+the algorithms' run time function, when that algorithm is given the
 inputs that minimize the algorithm's run time.
 \item \textbf{Best Case Upper Bound}: A function that is a boundary above
-the algorithms' runtime function, when that algorithm is given the
+the algorithms' run time function, when that algorithm is given the
 inputs that minimize the algorithm's run time.
 \end{itemize}
 
@@ -661,7 +661,7 @@ to be chosen as a pivot from $x_{ij}$ is either $x_{i}$ or $x_{j}$.
 \item Pr\{$z_{i}$ is compared to $z_{j}$\} = $\frac{2}{j-i+1}$
 \end{itemize}
 \item 
-Expectated 
+Expected 
 Running time
 \begin{align*}
  E[x]&=\sum_{i<j}Pr[x_{ij}=1]
@@ -711,18 +711,18 @@ the $i$-th element in the output array. But we can do better than this.
  \caption{Randomized-Select}
 \end{algorithm}
 The worst-case running time for RANDOMIZED-SELECT is $\Theta(n^2)$, because we 
-could be extremly unlucky and always parition around the largst remaining 
-element, and the parition takes $\Theta(n)$ times.
+could be extremely unlucky and always partition around the largest remaining 
+element, and the partition takes $\Theta(n)$ times.
 
 But the algorithm has a linear expected running time $O(n)$, and because it is 
 randomized, no particular input elicits the worst-case behavior.
 \subsection{Deterministic Linear Time Selection}
-After quick selection, algorists looked for an angorithm which is able to solve 
-the problem in linear deterministicly.
+After quick selection, algorists looked for an algorithm which is able to solve 
+the problem in linear deterministic.
 
 \centerline{\includegraphics[width=0.5\textwidth]{deterministic-select.png}}
 
-SELECT Algorihtm:
+SELECT Algorithm:
 \begin{itemize}
 \item Find the medium of each group by insertion-sorting. $T(n) = \frac{6n}{5} 
 = 1.2n$.
@@ -747,7 +747,7 @@ element on the high side.
 \end{itemize}
 Therefore, the recursion of the algorithm is
 \[T(n) \le T(\frac{n}{5}) + T(\frac{7n}{10}) + 2.2n\]
-The expression does not fit into the master theorm frame work because of the 
+The expression does not fit into the master theorem frame work because of the 
 two different size of the sub-problems. Then we guess $T(n) \le 22n$ and it can 
 be proved by induction.
 \begin{itemize}
@@ -775,16 +775,5 @@ Therefore,
     \end{align*}
 
 \end{itemize}
-
-
-
-
-\part{Graph Algorithms}
-
-\part{NP-completeness}
-
-\part{Approximation Algorithms}
-
-\part{Randomized Algorithms}.
 
 \end{document}

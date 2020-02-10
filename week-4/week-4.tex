@@ -13,7 +13,8 @@
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
-\title{Class Notes\\CIS 502 Analysis of Algorihtm\\Week 4 - }
+\title{Class Notes\\CIS 502 Analysis of Algorithm\\Week 4 - Divide and Conquer 
+II}
 \author{Da Kuang}
 \institute{University of Pennsylvania}
 % \version{1.00}
@@ -23,7 +24,7 @@
 
 \maketitle
 \newpage
-This week we talked about two more example about devide and conquer:
+This week we talked about two more example about divide and conquer:
 \begin{itemize}
  \item Polynomial Multiplication
  \item Convex Hulls on the Plane
@@ -77,12 +78,12 @@ Goal: Calculate the product of the inputs.
 Simply calculate each parameter based on the definition of polynomial product. 
 Each parameter in $A(x)$ should multiply all the parameters in $B(x)$ 
 which takes $O(n^2)$ steps.
-\subsubsection{Devide and Conquer}
+\subsubsection{Divide and Conquer}
 \textbf{Assumption}: To make sure the parameters could be nicely divided by 
 two, we assume the degree $d$ of both polynomials is always $2^k - 1$, where $k 
 \in \mathbb{N}$.
 
-Devide the $(d+1)$ entries of polynomials as follows to reduce the problem size:
+Divide the $(d+1)$ entries of polynomials as follows to reduce the problem size:
 
 \centerline{\includegraphics[width=0.5\textwidth]{poly-devide.png}}
 
@@ -98,21 +99,21 @@ B_l
 \end{align*}
 Therefore, we reduce the problem into four sub-problems with half of the size. 
 Suppose the number of parameters is $n$, i.e. the degree of polynomials is $d = 
-n - 1$. The reursion equation as follows:
+n - 1$. The recursion equation as follows:
 \[T(n) \le 4T(\frac{n}{2}) + cn\]
 Based on master theorem, $T(n) = O(n^2)$. Unfortunately, we have not get any 
 improvement from those nicely splits comparing with the baseline. If you think 
-about it, the result is actually not supring because even though the problem 
-size is reudced, we could not skip any of the necessary multiplication. In 
-other words, there are still $n^2$ necessary muliplications to get the 
+about it, the result is actually not surprising because even though the problem 
+size is reduced, we could not skip any of the necessary multiplication. In 
+other words, there are still $n^2$ necessary multiplications to get the 
 production.
 
 \textbf{Motivation}: When you have a recursive algorithm, saving  one operation 
-could have a cascde effect and reduce the run time quickly. Adding polynomials 
-only costs $O(n)$ steps. If we could reduce mutilication by addting addition. 
-Then we are able to achieve better performance. 
+could have a cascade effect and reduce the run time quickly. Adding polynomials 
+only costs $O(n)$ steps. If we could reduce multiplications by introducing 
+addition. Then we are able to achieve better performance. 
 
-To reduce the muliplications by adding additions, we have
+To reduce the multiplications by adding additions, we have
 \begin{align*}
  A \times B &= x^{d+1}A_h B_h + x^{\frac{d+1}{2}}A_h B_l + x^{\frac{d+1}{2}}A_l 
 B_h + A_lB_l\\
@@ -125,8 +126,8 @@ Therefore, there are three items to calculate
  \item $A_l B_l$
  \item $A_h B_l + A_l B_h$
 \end{enumerate}
-(1) and (2) are two muliplications. Moreover, (3) can be calculate by one more 
-multiplication as follwing:
+(1) and (2) are two multiplications. Moreover, (3) can be calculate by one more 
+multiplication as following:
 \begin{align*}
  &  (A_h + A_l) (B_h + B_l) - A_h B_h - A_l B_l\\
  =& A_hB_h + A_hB_l + A_lB_h + A_lB_l - A_h B_h - A_l B_l\\
@@ -152,6 +153,27 @@ combination of $x$ and $y$ is defined by
 (1 - \lambda)y_2, \text{ for } \lambda \in [0,1]\]
 Changing the value of $\lambda$, we walk thought the segment. In general, 
  is the area confined by the edges formed by points.
+ 
+ \paragraph{Example} Consider a practical example, suppose there are four wells 
+$(w_1, w_2, w_3, w_4)$ to generate petroleum and the composition $(A, B, C)$ of 
+petroleum from each well are different as follows:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+            &       & A   & B   & C   \\ \hline
+$\lambda_1$ & $w_1$ & 0.4 & 0.4 & 0.2 \\ \hline
+$\lambda_2$ & $w_2$ & 0.6 & 0.3 & 0.1 \\ \hline
+$\lambda_3$ & $w_3$ & 0.3 & 0.4 & 0.3 \\ \hline
+$\lambda_4$ & $w_4$ & 0.2 & 0.7 & 0.1 \\ \hline
+\end{tabular}
+\end{table}
+Therefore, all the possible compositions from the mixture of the four kinds of 
+petroleum is actually a convex combination of the four petroleum. The four 
+wells are like four points in a 3-D space and the convex set is the object 
+whose vertices are those four points.
+
 \subsubsection{Convex Hull}
 \textbf{Definition 1}: Convex hull of a finite set of points $S$ is the set of 
 all points that can be expressed as convex combinations of points in $S$. 
@@ -159,7 +181,7 @@ all points that can be expressed as convex combinations of points in $S$.
 \textbf{Definition 2}: Convex hull of a set of points is the smallest convex 
 set that contains these points.
  
-More intuitively, convex hull is like a rubber band streched from infinite and 
+More intuitively, convex hull is like a rubber band stretched from infinite and 
 struck on the nails on points.
 \centerline{\includegraphics[width=0.5\textwidth]{ConvexHull.png}}
 \subsubsection{Convex polygon}
@@ -168,7 +190,7 @@ angle which larger than 180 degree.
 \subsection{Algorithm}
 \begin{itemize}
  \item Input: $n$ points, $(x_1, y_1), (x_2, y_2), \cdots, (x_n, y_n)$.
- \item Output: The sequence of points on the boundary in counterclock order.
+ \item Output: The sequence of points on the boundary in counter clock order.
 \end{itemize}
 
 \subsubsection{Relative Location of Line and Points}
@@ -184,7 +206,7 @@ if
 \subsubsection{Convex Hull Successive Points Lemma}
 \begin{itemize}
  \item If there is a segment joining two points such that all the other 
-points lie on the same side of the segment, the segemnt represents two points 
+points lie on the same side of the segment, the segment represents two points 
 on the convex hull.
  \item Conversely, if you have a segment on the convex hull and extending it, 
 then every point from the convex hull will lie on the same side of the line.
@@ -192,7 +214,7 @@ then every point from the convex hull will lie on the same side of the line.
 
 \subsubsection{Baseline}
 \begin{enumerate}
-\item Use the extrem point as a start $x$.
+\item Use the extreme point as a start $x$.
 \item Take every pair of points with $x$. write the equation for the line 
 joining them and find the line where all other the points lie on the same side.
 \item The line is a segment of convex hull.
@@ -201,20 +223,91 @@ joining them and find the line where all other the points lie on the same side.
 
 \paragraph{Runing Time Analysis}
 \begin{itemize}
-\item Determine all the points are on the same side of segemnt takes $O(n)$ 
+\item Determine all the points are on the same side of segment takes $O(n)$ 
 steps.
 \item To find one convex hull segment, we should check $O(n)$ segments.
-\item There are at most $O(n)$ convex hull segemnt.
+\item There are at most $O(n)$ convex hull segment.
 \item Therefore, the total run time is $O(n^3)$.
 \end{itemize}
 
-\subsubsection{Devide and Conquer}
-Tips: To be efficient, we could like the sizes of sub-problems in devide and 
+\subsubsection{Merge Hull}
+Tips: To be efficient, we could like the sizes of sub-problems in divide and 
 conquer to be same.
+\begin{enumerate}
+ \item Divide points into those with $x$-coordinates $\le x_{median}$ and those 
+with $x$-coordinates $> x_{mdian}$.
+\item Recursively find the convex hull for the points on the left and right.
+\item Find the upper tangent and lower tangent of the two convex hull. 
+\item Start from the left of upper tangent and walk through the left convex 
+hull counterclockwise until meet the lower tangent. Then move to the right 
+convex hull and keep walking until back to the upper tangent.
+\end{enumerate}
 
-Devide points into those with $x$-corrdinates $\le x_{median}$ and those with 
-$x$-corrdinates $> x_{mdian}$.
+\paragraph{Remarks:}
+\begin{itemize}
+\item Points on one hull can ``\textbf{see}'' a point on the other hull if the 
+segment joining the two points does not intersect either hull.
+\item Upper tangent, lower tangent are pairs of points that see each other.
+\item \textbf{Upper tangent}  is the highest line segment joining two vertices, 
+one from each hull, that see each other.
+\item Similar with the lower tangent. Therefore the total running time is 
+$O(n)$.
+\end{itemize}
 
+\paragraph{Stab}
+A line $pq$ stabs to $C_2$ if the continuation of the line goes to 
+the interior of $C_2$.
 
+\paragraph{How to check stabbing}
+\begin{itemize}
+\item If the segment $pq$ stabs $C_2$, then the clockwise predecessor of $q$ 
+is on the one side of the segment and the clockwise successor of $q$ is one the 
+other side.
+\item If $pq$ stabs $C_2$ then $p$ must be able to see the clockwise 
+predecessor and successor of $q$.
+\end{itemize}
+
+\paragraph{How to find the upper tangent:}
+The upper tangent can be found by a ``swirling'' algorithm.
+\begin{itemize}
+\item Choose $p$ to be the right most point in the left hull ($C_1$) and 
+$q$ to be the left most point in the right hull ($C_2$). Then $p$ and $q$ see 
+each other. 
+\item If $pq$ stabs to $C_1$, move $p$ to its counterclockwise successor.
+\item If $pq$ stabs to $C_2$, move $q$ to its clockwise successor.
+\item repeat until $pq$ does not stab to any hull. Then $pq$ is the upper 
+tangent.
+\end{itemize}
+
+Lower tangent can be find with the similar strategy.
+
+\paragraph{Running Time Analysis}
+We never repeat the same pair of vertices since once you decide to abandoned a 
+vertex in searching of upper tangent, you never come back to it. It means at 
+most $n$ vertices to find the upper tangent.
+
+Similarly for the lower tanget.
+
+\subsubsection{Quick Hull}
+Like QuickSort, Quick Hull does not have worst case analysis.
+\begin{itemize}
+\item Pick the left most point $p$ and right most point $q$ on the convex hull 
+and draw a segment joining them.
+\item Recursively find the convex hull for each side of the points. Each hull 
+must contains the segment $pq$.
+\item Merge the two hull by glue them on segmeng $pq$.
+\end{itemize}
+
+We did not spend too much time on how to find the next two pair of points at 
+each iteration. But here are some remarks.
+
+\paragraph{Remarks}
+\begin{itemize}
+ \item Always pick points on $x$ direction my casue the worst case, which is 
+all the points are aggregated to one side of line.
+\item Like quicksort, introducing randomness helps achieve the optimal average 
+running time. We randomly choose a direction and project all the points on it. 
+Pick the two extremes as the points for the next iteration.
+\end{itemize}
 
 \end{document}
