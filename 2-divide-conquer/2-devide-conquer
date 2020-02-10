@@ -13,8 +13,7 @@
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
-\title{Class Notes\\CIS 502 Analysis of Algorithm\\Week 4 - Divide and Conquer 
-II}
+\title{Class Notes\\CIS 502 Analysis of Algorithm\\2-Divide and Conquer}
 \author{Da Kuang}
 \institute{University of Pennsylvania}
 % \version{1.00}
@@ -242,6 +241,7 @@ with $x$-coordinates $> x_{mdian}$.
 hull counterclockwise until meet the lower tangent. Then move to the right 
 convex hull and keep walking until back to the upper tangent.
 \end{enumerate}
+\centerline{\includegraphics[width=0.5\textwidth]{tangent.png}}
 
 \paragraph{Remarks:}
 \begin{itemize}
