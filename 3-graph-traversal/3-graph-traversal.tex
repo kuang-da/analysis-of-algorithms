@@ -1,7 +1,7 @@
 \documentclass[en,hazy,blue,screen,14pt]{elegantnote}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
-\usepackage{babel}
+\usepackage[USenglish]{babel}
 \usepackage{float}
 \usepackage{textcomp}
 \usepackage{amsmath,amsfonts,amssymb}
@@ -13,10 +13,13 @@
 \usepackage{mathtools}
 \usepackage{url}
 \usepackage{hyperref}
+
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
 \newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
-\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill 
-$\blacksquare$}
+
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
+
 \title{Class Notes\\CIS 502 Analysis of Algorihtm\\3-Graph Traversal}
 \author{Da Kuang}
 \institute{University of Pennsylvania}
@@ -32,8 +35,7 @@ $\blacksquare$}
 \item A graph G is an ordered pair of two sets $(V, E)$.
 \item $V$ is a set of vertices/points/nodes, which is always a finite set.
 \item $E$ is a set of unordered pair of vertices.
-\item An edge is represented as $(u ,v)$. Here we abuse the notion of ordered 
-pair to represent unordered pair.
+\item An edge is represented as $(u ,v)$. Here we abuse the notion of ordered pair to represent unordered pair.
 \end{itemize}
 % \centerline{\includegraphics[width=0.2\textwidth]{graph.png}}
 
@@ -200,8 +202,7 @@ Associate levels with vertices in BFS:
 \end{theorem}
 
 \begin{proof}
- Let $\delta(s, v)$ be the smallest number of hops from $x$ to $v$. Prove that 
-for any $v$, $\delta(s, v) = \text{level}(v)$.
+ Let $\delta(s, v)$ be the smallest number of hops from $x$ to $v$. Prove that for any $v$, $\delta(s, v) = \text{level}(v)$.
 \end{proof}
 
 \begin{claim}
@@ -483,17 +484,71 @@ vertex set $v_i$ consist of the every point of $E_i$.
 
 A vertex belongs to more than one components iff it is not clean.
 
-\subsection{DFS }
-Assume G is connected, start DFS at node $s$, when $s$ is an articulation point.
+\subsection{Find Articulation Points}
+Assume $G$ is connected, start DFS at node $s$, so $s$ is the root of DFS tree.
 
+\subsubsection{Check root of DFS Tree}
 \paragraph{Case 1:} Suppose $s$ has one child in DFS tree. In this case, $s$ is 
 not an articulation point since the removal of $s$ won't disconnect the graph. 
 See example in (a).
 
 \paragraph{Case 2:} Suppose $s$ has more than 1 child in DFS tree. $s$ is 
-articulation point because non-tree edges only go between ancestor and 
+an articulation point because back edges only go between ancestor and 
 descendant. The nodes in subtree $T(v_1)$ and $T(v_2)$ are not ancestor nor 
-descendant between each other. Therefore all the paths connecting $T(v_1)$ and 
-$T(v_2)$ must go through $s$. Hence $s$ is an articulation point. See example in 
-(b).
+descendant between each other. Therefore all the paths connecting $T(v_1)$ and $T(v_2)$ must go through $s$. Hence $s$ is an articulation point. See example in (b).
+
+\subsubsection{Check Interior Nodes}
+
+Note that no leaf can be articulation point because moving a leaf the DFS tree is still connected.
+
+Assume $v$ is an internal node and has $k$ leaves. What are the conditions for $v$ to be an articulation point? 
+\begin{claim}
+ An internal node $v$ is an articulation point \textbf{iff} it has a child $u_i$ such that here is no back edge from the subtree rooted at $u_i$ to a proper ancestor of $v$. See example in (c).
+\end{claim}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{find-articulation.png}
+\end{figure}
+
+\subsection{DFS: Find Bi-connected Components.}
+\paragraph{Main idea:} Store visited edges in a stack while DFS on a graph and keep looking for Articulation Points. 
+\begin{itemize}
+ \item As soon as an Articulation Point $u$ is found, all edges visited while DFS from node $u$ onwards will form one biconnected component. 
+ \item When DFS completes for one connected component, all edges present in stack will form a biconnected component.
+ \item If there is no Articulation Point in graph, then graph is biconnected and so there will be one biconnected component which is the graph itself.
+\end{itemize}
+
+\subsubsection{How to check articulation point?}
+\begin{claim}
+ If $u$ is an ancestor of $v$ in the DFS tree, then $s(u) < s(v)$.
+\end{claim}
+\paragraph{Note:} smaller number of start time $s$ means higher up of the tree. 
+
+How the algorithm works? What does DFS keep track of? 
+
+We want to know which vertices as we go back out of the subtree could be articulation points. The higher a back edge goes, the more vertices are ruled out to be articulation points. So \textbf{keep track of the highest back edge going out from every subtree}. Hence we are able to find the highest ancestor that an edge going through from the subtree. Then we know every vertex along the way can not be articulation point because of this substree. (But still, other subtrees may cause them to be an articulation point.)
+
+This is where the postorder comes in. In the example, suppose $x_1$ goes to vertex $p_1$ which is the highest back edge to reach from any where of $T(x_1)$. So the smallest number of start time reached from $T(x_1)$ is $s(p_1)$. From $x_2$ we have some edge goes up to vertex $p_2$, which is the highest back edge to reach from any where of $T(x_2)$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{dfs-claim.png}
+\end{figure}
+
+\begin{definition}
+ \textbf{low(x)} is the smallest \textbf{start time} of vertices reachable by a back edge from subtree rooted at $x$. 
+\end{definition}
+
+Suppose $v$ has just two child $x_1$ and $x_2$,
+\[\text{low}(v) = \min (\text{low}(x_1), ~\text{low}(x_2), ~\text{s}(u): (v, u) \text{ is a back edge})\]
+
+What make $v$ an articulation point?
+\begin{claim}
+ For any node $v$ that is not the root, $v$ is an articulation poin \textbf{if and only if }
+ 
+ there exist a child $u_i$ of $v$ such that $\text{low}(u_i) \ge s(v)$.
+\end{claim}
+
+\paragraph{Notes:} The claim means the child of $v$ will not send any back edge to any where above $v$. Sending back edges only to $v$ and below means removing $v$ the whole subtree will fall apart.
 \end{document}
