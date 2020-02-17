@@ -185,7 +185,7 @@ struck on the nails on points.
 \centerline{\includegraphics[width=0.5\textwidth]{ConvexHull.png}}
 \subsubsection{Convex polygon}
 Convex polygon is a polygon which is a convex set. It always contains interior 
-angle which larger than 180 degree.
+angle which smaller than 180 degree.
 \subsection{Algorithm}
 \begin{itemize}
  \item Input: $n$ points, $(x_1, y_1), (x_2, y_2), \cdots, (x_n, y_n)$.
