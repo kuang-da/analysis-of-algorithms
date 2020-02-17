@@ -11,6 +11,8 @@
 \PassOptionsToPackage{normalem}{ulem}
 \usepackage{ulem}
 \usepackage{mathtools}
+\usepackage{url}
+\usepackage{hyperref}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
 \newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill 
@@ -374,10 +376,44 @@ within one component. In this way, DFS is able to cover all the vertices and
 all the components. Therefore, often you only need to give DFS a graph without 
 any source explicitly.
 
+\section{Equivalence Relation}
+\begin{itemize}
+\item A relation $R$ on a set $A$ is an equivalence relation if it is 
+reflexive, symmetric, and transitive.
+\item When the elements of some set $A$ have a notion of equivalence defined on 
+them, then one may naturally split the set $A$ into equivalence classes.
+\item If $R$ is an equivalence relation on the set $A$, its equivalence classes 
+form a partition of $A$.
+\item In each equivalence class, all the elements are related and every element 
+in $A$ belongs to one and only one equivalence class.
+\item The relation $R$ determines the membership in each equivalence class, and 
+every element in the equivalence class can be used to represent that equivalence 
+class.
+\item In a sense, if you know one member within an equivalence class, you also 
+know all the other elements in the equivalence class because they are all 
+related according to $R$.
+\item Conversely, given a partition of $A$, we can use it to define 
+an equivalence relation by declaring two elements to be related if they belong 
+to the same component in the partition.
+\end{itemize}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{equ-class.png}
+\end{figure}
+Ref: 
+\begin{itemize}
+\item \href{
+https://math.libretexts.org/Courses/Monroe_Community_College/MTH_220_Discrete_Ma
+th/6\%3A_Relations/6.3\%3A_Equivalence_Relations_and_Partitions}{equivalence}
+\item \href{https://en.wikipedia.org/wiki/Equivalence_class}{Equivalence Class}
+\end{itemize}
+
+
+
 \section{Undirected Application: Bi-connectivity}
 Connectivity is important but sometimes it is not enough and we want some 
 robust connectivity. So we introduce \textbf{Bi-connectivity}.
-\subsection{Definition}
+\subsection{Definitions}
 \subsubsection{Bi-connectivity}
 \begin{itemize}
 \item A graph is called biconnected if the removal of any one vertex leaves it 
@@ -398,4 +434,66 @@ graph.
 Articulation points represent vulnerabilities in a connected 
 network-single points whose failure would split the network into 2 or more 
 disconnected components.
+
+\subsubsection{Bi-connected Components}
+Bi-connected Components are maximal pieces of the graph that are bi-connected.
+
+\subsubsection{Vertex-disjoint Path}
+Two paths are vertex-independent (alternatively, internally 
+\textbf{vertex-disjoint}) if they do not have any internal vertex in common. 
+
+Similarly, two paths are edge-independent (or edge-disjoint) if they do not 
+have any internal edge in common. Two internally vertex-disjoint paths 
+are edge-disjoint, but the converse is not necessarily true.
+
+\subsubsection{Relations on edges}
+How to define the relation between two vertices?
+
+\paragraph{Proposal:} If there are two vertex-disjoint paths between $u$ and 
+$v$, then $(u, v) \in R$. See example (a) in the following graph.
+
+The proposal does not work because the relation is not Transitive. In other 
+words, if $(u, v) \in R$ and $(v, w) \in R$ it is not always the case that 
+$(u, w) \in R$.
+See example (b) in the following graph. $(1, 6) \in R$ is a false statement.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{relation.png}
+\end{figure}
+
+\paragraph{The relation $R$ on edges defined as follows:}
+\begin{itemize}
+\item For any edge $e$, $(e,e) \in R$.
+\item If $e_1, e_2$ are two distinct edges, then $(e_1, e_2) \in R$ iff there 
+is a simple cycle that passes through $e_1, e_2$.
+\end{itemize}
+
+Assume $R$ is an equivalent relation on edges. The property of equivalent 
+relation is it divides the set on which it is defined into partitions of 
+equivalent class.
+
+Assume $R$ is an equivalence relation on edges. R partitions edges into 
+equivalence class $E_1, E_2, \cdots, E_k$. 
+
+For a sanity check, if $k = 1$ then the graph is a bi-connected graph. 
+% TODO: ? why
+Define component $G_i$ as the graph consist of edges $E_i$ together with a 
+vertex set $v_i$ consist of the every point of $E_i$.
+
+A vertex belongs to more than one components iff it is not clean.
+
+\subsection{DFS }
+Assume G is connected, start DFS at node $s$, when $s$ is an articulation point.
+
+\paragraph{Case 1:} Suppose $s$ has one child in DFS tree. In this case, $s$ is 
+not an articulation point since the removal of $s$ won't disconnect the graph. 
+See example in (a).
+
+\paragraph{Case 2:} Suppose $s$ has more than 1 child in DFS tree. $s$ is 
+articulation point because non-tree edges only go between ancestor and 
+descendant. The nodes in subtree $T(v_1)$ and $T(v_2)$ are not ancestor nor 
+descendant between each other. Therefore all the paths connecting $T(v_1)$ and 
+$T(v_2)$ must go through $s$. Hence $s$ is an articulation point. See example in 
+(b).
 \end{document}
