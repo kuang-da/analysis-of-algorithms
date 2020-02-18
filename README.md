@@ -6,4 +6,4 @@ List of lectures and contents
 - [x]0128 L4-Devide and Conquer II
 - [x]0130 L5-Devide and Conquer III
 - [x]0204 L6-Graph Traversal: Unordered Graph
-- [ ]0206 L7-Graph Traversal: Ordered Graph
+- [x]0206 L7-Graph Traversal: Ordered Graph

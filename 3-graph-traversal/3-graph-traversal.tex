@@ -1,7 +1,9 @@
 \documentclass[en,hazy,blue,screen,14pt]{elegantnote}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
-\usepackage[USenglish]{babel}
+% \usepackage[USenglish]{babel}
+\usepackage{babel}
+% TODO: interesting bug about the font of proof env
 \usepackage{float}
 \usepackage{textcomp}
 \usepackage{amsmath,amsfonts,amssymb}
@@ -15,9 +17,8 @@
 \usepackage{hyperref}
 
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
-
+\newcommand\tab[1][1cm]{\hspace*{#1}}
 \newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
-
 \newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
 
 \title{Class Notes\\CIS 502 Analysis of Algorihtm\\3-Graph Traversal}
@@ -567,6 +568,123 @@ What make $v$ an articulation point?
  there exist a child $u_i$ of $v$ such that $\text{low}(u_i) \ge s(v)$.
 \end{claim}
 
-\paragraph{Notes:} The claim means the child of $v$ will not send any back edge to any where above $v$. Sending back edges only to $v$ and below means removing $v$ the whole subtree will fall apart.
+\paragraph{Notes:} The claim means the child of $v$ will not send any back edge 
+to any where above $v$. Sending back edges only to $v$ and below means removing 
+$v$ the whole subtree will fall apart.
+\subsection{Wrapper of DFS}
+DFS is used to search the entire graph. Usually DFS is wrapped by another 
+function to traverse all the vertices in the graph.
+
+DepthFirstSearch($G$):\\
+\tab \tab While there is an unexplored vertex $x$,\\
+\tab \tab \tab dfs($G$, $x$)
+
+\subsubsection{Time}
+In this case, we still have start time and finish time continue all the way 
+though the outside layer. We start from inner layer of one $s$ and you might 
+advance to certain point of time then find out that you have no more vertex to 
+visit. So we go back to the outer loop start DFS at some other point and keep 
+the time going. So the start time and finish will still between $1$ and $2n$.
 \section{Directed Graph}
+In directed graph, a edge is an ordered pair. 
+\subsection{Edges}
+\begin{itemize}
+ \item Tree edges: edges where new vertices are discovered.
+ \item Back edges: $(3 \rightarrow 1)$
+ \item Forward edge $(1 \rightarrow 3)$ could be forward edge if DFS went $(1 
+\rightarrow 2 \rightarrow 3)$.
+ \item Cross edge
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{edges.png}
+\includegraphics[width=0.3\textwidth]{edges-2.png}
+\end{figure}
+\begin{claim}
+textbf{Restriction of cross edge:} If $(u, v)$ is a cross edge, then 
+$s(u)$ > $s(v)$. In other words, $v$ is discovered before $u$.
+\end{claim}
+\begin{claimproof}
+By contradiction, if $(u, v)$ is a cross edge and $u$ is discovered before $v$, 
+we cannot let DFS left $u$ and discover $v$ without go though $(u, v)$. 
+Therefore, $v$ will be a child of $u$ instead of a node in other DFS tree.
+\end{claimproof}
+\subsection{Directed Acyclic Graph (DAG)}
+\subsubsection{Maximum Number of edges}
+\begin{itemize}
+\item How many edges a undirected \textbf{acyclic} graph could have at most? 
+$N-1$
+\item How many edges a directed \textbf{acyclic} graph could have at most? 
+$\frac{N(N-1)}{2}$
+\end{itemize}
+\subsubsection{Algorithm}
+\begin{itemize}
+ \item Input: Directed acyclic graph $G$.
+ \item Goal: Solve topological sort problem by finding the topological order. 
+In other words, find an order of the vertices such that for each edge $(u, v)$, 
+$u$ precedes $v$ in order.
+\end{itemize}
+\begin{theorem}
+ Any directed acyclic graph has a topological order.
+\end{theorem}
+
+\begin{proof}
+Show every DAG has some node with no incoming edges. Then remove the node from 
+the graph and get a smaller DAG. Then use induction to prove the theorem is 
+true.
+
+\begin{claim}
+Every DAG has some node with no incoming edge.
+\end{claim}
+\begin{claimproof}
+Given a graph DAG and reverse the directions of all the edges. Then we want to 
+argue that there is no outgoing edge in the graph.
+
+For contradiction, suppose the argument is not true and every node has some 
+outgoing edge. Then start walking from some vertex $v$ and this walking will 
+keep on continuing since every vertex has some outgoing edge. But the graph is 
+finite. Continuing walking on a finite graph means there must be cycles in the 
+graph. We meet a contradiction since the graph is DAG.
+\end{claimproof}
+\end{proof}
+
+The first principle algorithm for topological sorting is to track the in-degree 
+of every vertex, which is the number of edges come in to the vertex. First 
+output the vertex $v$ with in-degree. Then go to the ajacency list of $v$ and 
+decrease the in-degree of every neighbor by 1. Remove $v$ from the graph and 
+repate.
+
+Solution based DFS.
+\begin{theorem}
+ If $G$ is a DAG and $(u, v)$ is an edge, then on any DepthFirstSearch($G$), 
+$f(u) \ge f(v)$.
+\end{theorem}
+
+\begin{proof}
+Prove by cases analysis.
+ \begin{itemize}
+  \item Case 1: $s(u) < s(v)$. $u$ is discovered before $v$. Then $v$ will 
+become a descendant of $u$ (may not be child).
+  \item Case 2: $s(u) > s(v)$. $v$ is discovered before $u$. 
+  \begin{itemize}
+   \item If we discovered $u$ in the course of DFS($v$), then there must be 
+a path from $v$ to $u$, which means $G$ has a cycle. 
+$\Rightarrow\mskip-\thinmuskip\Leftarrow$
+    \item If $u$ is not in the substree of $v$ as the following example, 
+then obviously $f(v) < f(u)$.
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{dfs-s-f.png}
+        \end{figure}
+  \end{itemize}
+ \end{itemize}
+\end{proof}
+
+So, \[s(v) < f(v) < s(u) < f(u)\]
+Therefore the algorithm should be:
+
+TopologicalSort($G$):\\
+\tab\tab DepthFirstSearch($G$):\\
+\tab\tab\tab\tab Output vertices in reverse order of finish time.
 \end{document}
