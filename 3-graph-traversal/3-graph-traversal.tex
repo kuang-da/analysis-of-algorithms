@@ -21,7 +21,7 @@
 \newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
 \newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
 
-\title{Class Notes\\CIS 502 Analysis of Algorihtm\\3-Graph Traversal}
+\title{Class Notes\\CIS 502 Analysis of Algorithm\\3-Graph Traversal}
 \author{Da Kuang}
 \institute{University of Pennsylvania}
 % \version{1.00}
@@ -53,7 +53,7 @@ to vertex $u$ and $v$.
 \end{itemize}
 
 \subsubsection{Adjacency Matrix}
-Adjacency Matrix is an sysmetric matrix for undirected graph where
+Adjacency Matrix is an symmetric matrix for undirected graph where
 \[
 V_{ij} = 
 \begin{cases*}
@@ -63,7 +63,7 @@ V_{ij} =
 \]
 \subsubsection{Adjacency List}
 Adjacency List is an array of size n of linked list, where $i$-th entry is 
-a linked list consisting of the neighbos of vertex-$i$. It is default 
+a linked list consisting of the neighbors of vertex-$i$. It is default 
 representation of graph.
 
 Space = $O(n + m)$
@@ -98,13 +98,13 @@ Connection relation in a graph is an equivalence relation.
  \item Transitive Relation: If a Graph has a $uv$ path and also $vw$ path then 
 it will also contain $uw$ path.
 \end{itemize}
-Because connnection is the equivalence relation, pairwise connected vertices 
+Because connection is the equivalence relation, pairwise connected vertices 
 form a connected component.
 \section{Tree}
 Tree is a connected acyclic graph.
 \subsection{Rooted tree}
-\subsubsection{Inductive Defintion}
-A nice thing about Inductive defintion is it is useful for the proofs by 
+\subsubsection{Inductive Definition}
+A nice thing about Inductive definition is it is useful for the proofs by 
 induction.
 \begin{itemize}
  \item \textbf{Rule 1:} A graph consist of a single vertex v is a rooted tree 
@@ -162,7 +162,7 @@ Traversal: Visiting all parts of the graph. Unlike linear data structures (Array
 \item Visit the root.
 \end{itemize}
 \subsection{Bread-first Search (BFS)}
-Most of the cases, BFS is used to find out the shortest path from an unweight 
+Most of the cases, BFS is used to find out the shortest path from an unweighted 
 and undirected graph.
 \subsubsection{Basics}
 \begin{itemize}
@@ -386,7 +386,7 @@ contradiction.
 BFS is used to find the shortest path from the source in the graph therefore we 
 start BFS from the source until we exhaust the component where the source lies.
 
-DFS is also used to get a global picture of the entier graph and we often want 
+DFS is also used to get a global picture of the entire graph and we often want 
 DFS to be deterministic enough. We start from the source and do DFS. We only 
 discover the vertices in the connected component of that source. But we want to 
 discover other vertices. So we have a outer layer to restart the DFS from some 
@@ -545,7 +545,13 @@ Assume $v$ is an internal node and has $k$ leaves. What are the conditions for $
 
 How the algorithm works? What does DFS keep track of? 
 
-We want to know which vertices as we go back out of the subtree could be articulation points. The higher a back edge goes, the more vertices are ruled out to be articulation points. So \textbf{keep track of the highest back edge going out from every subtree}. Hence we are able to find the highest ancestor that an edge going through from the subtree. Then we know every vertex along the way can not be articulation point because of this substree. (But still, other subtrees may cause them to be an articulation point.)
+We want to know which vertices as we go back out of the subtree could be 
+articulation points. The higher a back edge goes, the more vertices are ruled 
+out to be articulation points. So \textbf{keep track of the highest back edge 
+going out from every subtree}. Hence we are able to find the highest ancestor 
+that an edge going through from the subtree. Then we know every vertex along the 
+way can not be articulation point because of this subtree. (But still, other 
+subtrees may cause them to be an articulation point.)
 
 This is where the postorder comes in. In the example, suppose $x_1$ goes to vertex $p_1$ which is the highest back edge to reach from any where of $T(x_1)$. So the smallest number of start time reached from $T(x_1)$ is $s(p_1)$. From $x_2$ we have some edge goes up to vertex $p_2$, which is the highest back edge to reach from any where of $T(x_2)$.
 
@@ -563,7 +569,8 @@ Suppose $v$ has just two child $x_1$ and $x_2$,
 
 What make $v$ an articulation point?
 \begin{claim}
- For any node $v$ that is not the root, $v$ is an articulation poin \textbf{if and only if }
+ For any node $v$ that is not the root, $v$ is an articulation point \textbf{if 
+and only if }
  
  there exist a child $u_i$ of $v$ such that $\text{low}(u_i) \ge s(v)$.
 \end{claim}
@@ -651,9 +658,9 @@ graph. We meet a contradiction since the graph is DAG.
 
 The first principle algorithm for topological sorting is to track the in-degree 
 of every vertex, which is the number of edges come in to the vertex. First 
-output the vertex $v$ with in-degree. Then go to the ajacency list of $v$ and 
+output the vertex $v$ with in-degree. Then go to the adjacency list of $v$ and 
 decrease the in-degree of every neighbor by 1. Remove $v$ from the graph and 
-repate.
+repeat.
 
 Solution based DFS.
 \begin{theorem}
@@ -671,7 +678,7 @@ become a descendant of $u$ (may not be child).
    \item If we discovered $u$ in the course of DFS($v$), then there must be 
 a path from $v$ to $u$, which means $G$ has a cycle. 
 $\Rightarrow\mskip-\thinmuskip\Leftarrow$
-    \item If $u$ is not in the substree of $v$ as the following example, 
+    \item If $u$ is not in the subtree of $v$ as the following example, 
 then obviously $f(v) < f(u)$.
         \begin{figure}[H]
         \centering
@@ -687,4 +694,167 @@ Therefore the algorithm should be:
 TopologicalSort($G$):\\
 \tab\tab DepthFirstSearch($G$):\\
 \tab\tab\tab\tab Output vertices in reverse order of finish time.
+
+\subsection{Strongly Connected Graph}
+
+\subsubsection{Basics}
+Give a directed graph $G = (V, E)$, what is the correct connectivity relation?
+
+We want the relation to be equivalent. The edge between two node is not 
+symmetric relation in directed graph. Therefore we create a equivalent relation 
+by setting symmetric in the definition.
+
+\begin{definition}
+ $R = \{(u, v): \text{There are paths from $u$ to $v$ and from $v$ to $u$}\}$
+\end{definition}
+
+$R$ is reflective, symmetric and transitive. So $R$ is an equivalent relation 
+on the vertices.
+
+\begin{definition}
+$R$ partitions $V$ onto $V_1,~V_2,~\cdots, V_k$. (Equivalence Classes)
+
+If $V_1 \subset V$, which is the vertex set of $G = (V, E)$, it induces the 
+sub-graphs
+\[G_{V_i} = (V_i, ~E \cap (V_i \times V_i) )\]
+For simplicity, call $G_{V_i}$ as $G_i$. $G_i$'s are \textbf{the 
+strongly connected components} of $G$.
+\end{definition}
+
+
+It is possible to have edges connecting different strongly connected 
+components. See example as follows.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.2\textwidth]{edge-strongly-connected-components.png}
+\end{figure}
+
+\begin{definition}
+ The \textbf{strongly connected graph} of directed graph $G(V, E)$ is 
+$G_{SCG}(V_{SCG}, E_{SCG})$, where
+\begin{itemize}
+ \item $V_{SCC} = \{c_i: G_i \text{ is a strongly connected components}\}$.
+ \item $E_{SCC} = \{(c_i, c_j): \exists v_i \in G_i \text{ and }v_j \in G_j, 
+~(v_i, v_j) \in E \}$
+\end{itemize}
+\end{definition}
+Here $G_{SCC}$ is actually a quotient graph.
+
+Example, $(a)$ in the following plot is the Graph $G$ and $(b)$ is the strongly 
+connected graph of $G$. The equivalence class of $G$ is $\{\{1, 2, 3, 4\}, 
+\{3, 6, 7\}\}$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{scg.png}
+\end{figure}
+
+\begin{theorem}
+ $G_{SCC}$ is acyclic.
+\end{theorem}
+
+\begin{proof}
+ The components we have found are the maximal with respect to the relation on 
+both side to reach other. Prove the theorem by contradiction. Suppose we have a 
+cycle as the following plot. Because there must be a path from $u$ to $v$ and 
+vice versa. Then , we are able to merging $G_1$, $G_3$. In fact, all three 
+components can be merged together.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{scg-contradiction.png}
+\end{figure}
+\end{proof}
+
+Many algorithm on directed graph works on first decomposing the graph into 
+strongly connected components.
+
+DFS decomposes a directed graph into SCC's.
+
+\subsubsection{Finish Time}
+Now we first gave a \textbf{false theorem} and make it right.
+\begin{theorem}\textbf{[False Theorem]}
+
+Suppose $G$ is an arbitrary graph and $G_{SCC}$ is a DAG. If $c_i, ~c_2$ are 
+nodes corresponding to two SCC in $G_{SCC}$ and $(c_i, ~c_2) \in E_{SCC}$, then 
+in DFS($G$), every vertex in $G_1$ finish after every vertex in $G_2$. 
+\end{theorem}
+
+\begin{proof}
+ Prove the theorem is false by a counter example as follows:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{scc-finish-time.png}
+\end{figure}
+\end{proof}
+
+\begin{theorem}\textbf{[Updated Theorem]}
+
+Suppose $G$ is an arbitrary graph and $G_{SCC}$ is a DAG. If $c_i, ~c_2$ are 
+nodes corresponding to two SCC in $G_{SCC}$ and $(c_i, ~c_2) \in E_{SCC}$, then 
+in DFS($G$), \textbf{there exist a vertex} in $G_1$ finish after every vertex 
+in $G_2$. 
+\end{theorem}
+
+\begin{proof}
+ TODO: Read the proof in the book.
+\end{proof}
+
+\subsubsection{Kosaraju's Algorithm}
+\begin{definition}
+$G_{SCC}$ is a DAG. So, $G_{SCC}$ has one or more vertices with no in-coming 
+edges. These vertices are called \textbf{sources}.
+\end{definition}
+
+\begin{claim}{}
+If $v$ is the vertex with largest $f(v)$ in a DFS($G$). Then $v$ must lies in 
+the source component. 
+\end{claim}
+
+\begin{claimproof}{}
+Prove by contradiction.
+
+If $v$ does not lie in the source component but in some other component $C$. So 
+$v$ must have some in-coming edge to make it not a source. That means that 
+some vertex $u$ must finish later than everything in the component $C$ because 
+of the theorem of finishing time. Therefore $v$ could not be the latest 
+finishing vertex.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{source-finish-time.png}
+\end{figure}
+\end{claimproof}
+
+
+\paragraph{Kosaraju Algorithm}
+\begin{itemize}
+ \item One DFS(G) to record the nodes of finish times. Let $f_1(v)$ be the 
+finish time of $v$ in this DFS.
+\item Reverse all the edges in $G$ to create the graph $G^R$.
+\item Do DFS($G^R$) with one constrain:
+    \begin{itemize}
+    \item In the outer procedure, always choose the undiscovered vertex $v$ 
+with the greatest $f(v)$.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Notes}
+\begin{itemize}
+ \item The vertex $v$ with greatest $f_1(v)$ lies in a sink component of $G^R$.
+\item $G$ and $G^R$ have the same strongest connected component DFS($G^R$) start 
+at $v$ will only discover the SCC containing $v$.
+\item When the inner call to DFS($G^R, ~v$) finishes, output all the discovered 
+vertices as one SCC of $G$.
+\item When we return to the outer loop and pick the undiscovered vertex with 
+the greatest finish time, we know inductively that we will find all SCC's.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{scc-source-sink.png}
+\end{figure}
+
+\paragraph{Running Time}
+Two DFS's and reverse the edges in the graph. All the steps are linear. So 
+this is a $O(m + n)$ algorithm. $m, n$ are the numbers of vertices and edges.
 \end{document}

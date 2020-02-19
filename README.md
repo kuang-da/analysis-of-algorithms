@@ -7,6 +7,6 @@ List of lectures and contents
 - [x]0130 L5-Devide and Conquer III
 - [x]0204 L6-Graph Traversal: Undirected Graph
 - [x]0206 L7-Graph Traversal: Directed Graph
-- [ ]0211 L8-Graph Traversal: Directed Graph
+- [x]0211 L8-Graph Traversal: Strongly Connected Graph
 - [ ]0213 L9-Greedy Algorithms
 - [ ]0218 L10-Greedy Algorithms
