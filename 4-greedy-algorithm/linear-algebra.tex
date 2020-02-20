@@ -1,0 +1,68 @@
+\begin{definition}
+	$V$ is a \textbf{vector space over $\mathbb{R}$} if
+	\begin{itemize}
+		\item For $v_1, ~v_2 \in V$, $v_1 + v_2 \in V$.
+		\item For any $\alpha \in \mathbb{R}, ~v \in V$, $\alpha v \in V$.
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+    Given a finite set of vectors, $v_1, v_2, \cdots, v_k$, then \textbf{span} 
+$S$ is as 
+    follows
+    \[S(v_1, v_2, \cdots, v_k) = \{v: v = \alpha_1 v_1 + \alpha_2 v_2 + \cdots 
+    +\alpha_k v_k, ~\alpha_i \in \mathbb{R}\}\]
+\end{definition}
+$S(v_1, v_2, \cdots, v_k)$ is a vector space.
+
+\begin{definition}
+	$\alpha_1 v_1 + \alpha_2 v_2 + \cdots +\alpha_k v_k$ is a \textbf{linear 
+combination} of vectors. 
+\end{definition}
+
+\begin{definition}
+    The set of vector $v_1, \cdots, v_k$ is called \textbf{linear dependent} if 
+there exist some coefficient $\alpha_1, \cdots, \alpha_k$ not all $0$, so that 
+$\sum \alpha_i v_i = 0$
+\end{definition}
+
+\begin{definition}
+	A set of vector is said to be \textbf{linearly independent} if it is not 
+linearly dependent.
+\end{definition}
+
+\begin{definition}
+	If $v_1, \cdots, v_k$ are linearly independent and their span in $V$, then 
+$v_1, \cdots, v_k$ form a \textbf{basis} of $V$.
+\end{definition}
+
+\begin{definition}
+	If $v_1, \cdots, v_k$ is a basis for $v$ and $u_1, \cdots, u_m$ is another 
+basis. Then $m = k$.
+\end{definition}
+
+\begin{proof}
+	Suppose for contradiction that $m > k$. Since $v_i$'s from a basis,
+	\begin{align*}
+		u_1 &= \alpha_{11} v_1 + \cdots + \alpha_{1k}v_k\\
+		u_2 &= \alpha_{21} v_1 + \cdots + \alpha_{2k}v_k\\
+            &\vdots\\
+        u_m &= \alpha_{m1} v_1 + \cdots + \alpha_{mk}v_k\\
+	\end{align*}
+Will prove $(u_1, \cdots, u_m)$ is linearly dependent. Need to show
+$\sum x_i u_i = 0$ for some $(x_1, \cdots, x_m)$ not all zero.
+\begin{align*}
+	&x_1 u_1 + x_2 u_2 + \cdots + x_m u_m = 0\\
+	\intertext{substitue $u_i$ with $v_i$'s,}
+	&(x_1 \alpha_{11} + x_2 \alpha_{21} + \cdots + x_m \alpha_{m1}) v_1\\
+	+~& \cdots\\
+	+~&(x_1 \alpha_{1k} + x_2 \alpha_{2k} + \cdots + x_m \alpha_{mk}) v_k = 0
+\end{align*}
+All the coefficients above should be 0. There are $k$ coeficientes, $m$ 
+equations and we assume $m > k$. Therefore, there are infinite possible 
+combinations of $x_i$'s. Therefore, there must be a solution which is not 
+all zeros. Because if there is not such solution, then there should be only one 
+solution which is all zeros.
+\end{proof}
+
+

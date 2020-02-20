@@ -8,5 +8,6 @@ List of lectures and contents
 - [x]0204 L6-Graph Traversal: Undirected Graph
 - [x]0206 L7-Graph Traversal: Directed Graph
 - [x]0211 L8-Graph Traversal: Strongly Connected Graph
-- [ ]0213 L9-Greedy Algorithms
-- [ ]0218 L10-Greedy Algorithms
+- [x]0213 L9-Greedy Algorithms: Activities Selection
+- [ ]0218 L10-Greedy Algorithms: Maximum Total Weight
+- [ ]0220 L11

@@ -1,0 +1,24 @@
+\paragraph{Input:} Connected, undirected graph $G \in (V,~E)$ together with a 
+weight function $w: E \rightarrow \mathbb{R}^+$.
+
+\begin{definition}
+ The \textbf{feasible solution} is a set of edges forming an acyclic connected 
+graph on all vertices.
+\end{definition}
+
+\begin{definition}
+ The \textbf{cost} of a solution is the sum of the weights of the edges in the 
+solution.
+\end{definition}
+
+The are problems for which the optimal solution can be pick by choosing one 
+element at a time.
+
+\begin{definition}
+The \textbf{greedy algorithm} builds up solution as by taking the next element 
+to be one of the optimal cost value that can be added feasibly.
+\end{definition}
+
+Most of the time Greedy algorithm itself is simple but it is difficult to prove 
+correctness.
+

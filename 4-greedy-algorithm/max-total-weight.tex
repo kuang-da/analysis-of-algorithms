@@ -1,0 +1,36 @@
+\begin{itemize}
+	\item \textbf{Inputs:} vectors $(v_1, v_2, \cdots, v_n)$ with weights 
+$(w_1, w_2, \cdots, w_n)$.
+    \item \textbf{Goal:} a basis for the space spanned by $(v_1, v_2, \cdots, 
+v_n)$ of maximum total weights.
+\end{itemize}
+\paragraph{Note.} A single vector is linear independent to any other vector if 
+it is a zero vector.
+
+\subsection{Greedy Algorithm}
+\begin{itemize}
+	\item Sort vectors by descending order of weights.
+	\item $S$ is an empty set of vectors initially.
+	\item For each vectors $v_i$ in this order, if $S \cup \{v_i\}$ is linearly 
+independent and $v_i$ is an non-zero vector, then $S = S \cup \{v_i\}$.
+\end{itemize}
+
+\subsection{Correctness}
+\begin{itemize}
+	\item Suppose greedy returns vector $(v_1, v_2, \cdots, v_k)$.
+	\item Suppose there is an optimal solution that return OPT = $(v_{j1}, 
+v_{j2}, \cdots, v_{jk})$.
+\end{itemize}
+
+Since the $v_j$'s form a basis,
+\[v_{i1} = \alpha_1 v_{j1} + \alpha_2 v_{j2} + \cdots + \alpha_k v_{jk}\]
+
+$v_{i1}$ is chosen by greedy algorithm so it is not a zero vector. Therefore, 
+there must be some $\alpha_l$ is non-zero.
+
+We can add $v_{i1}$ to the set $(v_{j1}, v_{j2}, \cdots, v_{jk})$ and kick out 
+$v_{jl}$.
+
+\begin{claim}{}
+	This is also a basis whose weight is at least as good as OPT.
+\end{claim}

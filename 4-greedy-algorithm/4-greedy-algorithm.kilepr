@@ -1,0 +1,43 @@
+[General]
+bib_extensions=.bib
+bibliographyBackendAutoDetected=
+bibliographyBackendUserOverride=
+def_graphic_ext=png
+img_extIsRegExp=false
+img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif
+kileprversion=3
+kileversion=2.9.92
+masterDocument=
+name=4-greedy-algorithm
+pkg_extIsRegExp=false
+pkg_extensions=.cls .sty .bbx .cbx .lbx
+src_extIsRegExp=false
+src_extensions=.tex .ltx .latex .dtx .ins
+
+[Tools]
+MakeIndex=
+QuickBuild=PDFLaTeX+ViewPDF
+
+[item:4-greedy-algorithm.kilepr]
+archive=true
+encoding=
+highlight=
+mode=
+
+[item:mst.tex]
+archive=true
+encoding=UTF-8
+highlight=LaTeX
+mode=LaTeX
+
+[item:optimization.tex]
+archive=true
+encoding=UTF-8
+highlight=LaTeX
+mode=LaTeX
+
+[item:root.tex]
+archive=true
+encoding=UTF-8
+highlight=LaTeX
+mode=LaTeX

@@ -1,0 +1,50 @@
+\documentclass[en,hazy,blue,screen,14pt]{elegantnote}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+% \usepackage[USenglish]{babel}
+\usepackage{babel}
+% TODO: interesting bug about the font of proof env
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[ruled,vlined]{algorithm2e}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{hyperref}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
+
+\title{Class Notes\\CIS 502 Analysis of Algorithm\\4-Greedy Algorithm}
+\author{Da Kuang}
+\institute{University of Pennsylvania}
+% \version{1.00}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage
+% % 
+\section{Optimization Problem}
+\input{optimization.tex}
+
+\subsection{Minimum Spanning Tree Problem}
+Minimum spanning tree problem is an example of optimization problem.
+\input{mst.tex}
+
+\section{Activity Selection Problem}
+\input{activity-selection.tex}
+
+\section{Linear Algebra}
+\input{linear-algebra.tex}
+
+\section{Maximum Total Weight Problem}
+\input{max-total-weight.tex}
+\end{document}
