@@ -24,6 +24,24 @@ encoding=
 highlight=
 mode=
 
+[item:activity-selection.tex]
+archive=true
+encoding=UTF-8
+highlight=LaTeX
+mode=LaTeX
+
+[item:linear-algebra.tex]
+archive=true
+encoding=UTF-8
+highlight=LaTeX
+mode=LaTeX
+
+[item:max-total-weight.tex]
+archive=true
+encoding=UTF-8
+highlight=LaTeX
+mode=LaTeX
+
 [item:mst.tex]
 archive=true
 encoding=UTF-8
