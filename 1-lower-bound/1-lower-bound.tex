@@ -1,7 +1,8 @@
 \documentclass[en,hazy,blue,screen,14pt]{elegantnote}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
-\usepackage{babel}
+%\usepackage{babel}
+\usepackage[USenglish]{babel}
 \usepackage{float}
 \usepackage{textcomp}
 \usepackage{amsmath,amsfonts,amssymb}
@@ -728,8 +729,7 @@ SELECT Algorithm:
 = 1.2n$.
 \item Use SELECT to recursively find the medium of the mediums $m^*$.
 \item $m^*$ has a rank somewhere in the middle.
-We treat the median of the medians $m^*$ as a pivot element and compare all 
-elements, which takes $n$ steps.
+We treat the median of the medians $m^*$ as a pivot element and compare it with all elements to get its rank $k$, which takes $n$ steps.
     \begin{itemize}
         \item The number of elements larger than $m^*$: $O(\frac{3n}{10}) 
     =3(\ceil*{\frac{1}{2}\ceil*{\frac{n}{5}} - 2})$
