@@ -2,7 +2,16 @@
 kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=true
 kile_livePreviewTool=LivePreview-PDFLaTeX
-lastDocument=activity-selection.tex
+lastDocument=optimization.tex
+
+[document-settings,item:3-shortest-path.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
 
 [document-settings,item:activity-selection.tex]
 Bookmarks=
@@ -23,6 +32,15 @@ Mode=LaTeX
 Mode Set By User=false
 
 [document-settings,item:linear-algebra.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[document-settings,item:max-spanning-tree.tex]
 Bookmarks=
 Encoding=UTF-8
 Highlighting=LaTeX
@@ -59,7 +77,7 @@ Mode=LaTeX
 Mode Set By User=false
 
 [document-settings,item:root.tex]
-Bookmarks=39
+Bookmarks=
 Encoding=UTF-8
 Highlighting=LaTeX
 Highlighting Set By User=false
@@ -67,33 +85,48 @@ Indentation Mode=normal
 Mode=LaTeX
 Mode Set By User=false
 
+[item:3-shortest-path.tex]
+open=true
+order=3
+
 [item:4-greedy-algorithm.kilepr]
 open=false
 order=-1
 
 [item:activity-selection.tex]
-open=true
+open=false
 order=3
 
 [item:linear-algebra.tex]
-open=true
+open=false
 order=4
+
+[item:max-spanning-tree.tex]
+open=true
+order=2
 
 [item:max-total-weight.tex]
 open=true
-order=5
+order=1
 
 [item:mst.tex]
-open=true
+open=false
 order=2
 
 [item:optimization.tex]
 open=true
-order=1
+order=4
 
 [item:root.tex]
 open=true
 order=0
+
+[view-settings,view=0,item:3-shortest-path.tex]
+CursorColumn=231
+CursorLine=2
+JumpList=
+TextFolding=[]
+ViMarks=.,6,3,[,6,0,],6,3
 
 [view-settings,view=0,item:activity-selection.tex]
 CursorColumn=0
@@ -119,13 +152,20 @@ JumpList=
 TextFolding=[]
 ViMarks=.,0,0,[,0,0,],0,0
 
+[view-settings,view=0,item:max-spanning-tree.tex]
+CursorColumn=32
+CursorLine=0
+JumpList=
+TextFolding=[]
+ViMarks=.,0,30,[,0,24,],0,30
+
 [view-settings,view=0,item:max-total-weight.tex]
-CursorColumn=58
-CursorLine=13
+CursorColumn=22
+CursorLine=17
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
-ViMarks=.,21,24,[,21,22,],21,27
+ViMarks=.,3,29,[,3,25,],3,29
 
 [view-settings,view=0,item:mst.tex]
 CursorColumn=0
@@ -136,17 +176,17 @@ TextFolding=[]
 ViMarks=.,0,5,[,0,0,],0,5
 
 [view-settings,view=0,item:optimization.tex]
-CursorColumn=44
-CursorLine=10
+CursorColumn=3
+CursorLine=14
 Dynamic Word Wrap=false
 JumpList=
 TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:root.tex]
-CursorColumn=28
-CursorLine=48
+CursorColumn=0
+CursorLine=51
 Dynamic Word Wrap=true
 JumpList=
 TextFolding=[]
-ViMarks=.,48,26,[,48,24,],48,26,a,39,0
+ViMarks=.,50,21,[,50,7,],50,21

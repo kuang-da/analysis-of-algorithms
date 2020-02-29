@@ -1,0 +1,14 @@
+Given a text, which is a string over a large alphabet (say as English Text), we need to encode the text in binary for storage and communication.
+
+Goal: Minimize the length of the binary code of the text.
+
+Related problem: Code has to be a mapping from symbols in the original alphabet, $\Sigma$, to binary string.
+
+\subsection{Prefix-ambiguity}
+If one coded word is a prefix of another, then that could lead to ambiguity. Therefore, code must be ``prefix free'', which are called \textbf{prefix code}.
+
+Ideally, we could like to assign shorter code to the words with higher frequency.
+\subsection{Algorithm}
+Input: $\Sigma = \{\sigma_1, \sigma_2, \cdots, \sigma_n\}$. $f_i$ is the frequency of $\sigma_i$. Assume that $\sum f_i = 1$, $f_i \ge 0 \forall i$.
+
+Goal: Find a prefix code that makes $\sigma_i$ to $c(\sigma_i)$ to minimize $\sum f_i(\sigma_i)$, which is the average code length.
