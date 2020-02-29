@@ -47,4 +47,12 @@ Minimum spanning tree problem is an example of optimization problem.
 
 \section{Maximum Total Weight Problem}
 \input{max-total-weight.tex}
+
+\input{tmp.tex}
+
+Dynamic programming is on the halfway of the continuum between brute-force algorithms and greedy algorithms. Brute-force is a strategy to use when you have no idea what to do. So you look at the problem and try every possible solution. Then see the best among the results. On the other extreme, greedy algorithm is used when you have a perfect sense what to do. So that you only need to do whatever looks cheapest to do now. By comparison, brute-force tries everything while greedy goes in a very directed way.
+
+Interestingly, dynamic programming is a bit directed but is not that sure. Therefore, it breaks down the optimization problem into a series of decisions. For each decision, unlike greedy knowing the right thing to do, dynamic programming tries out every possible way within this decision. It is brute force locally but in a controlled so the algorithm not inefficient.
+
+The performance of algorithm goes from greedy to dynamic programming then to brute force getting worse and worse. But the proofs is getting easier and easier. In brute force, you do not have to prove anything since it just simply tries everything and get the best answer. There is nothing clever that needs justification. Greedy algorithm, on the extreme, make a commitment to make a decision and we need to prove the decision is correct and we do not miss anything while only solving the local optimal. 
 \end{document}
