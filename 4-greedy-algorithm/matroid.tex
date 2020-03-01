@@ -1,0 +1,37 @@
+\begin{definition}
+A matroid is a pair $(S, \mathfrak{I})$ where $S$ is a finite set and $\mathfrak{I}$ is some set of subsets of S, designated ``independent sets'', such that
+\begin{itemize}
+	\item $\mathfrak{I}$ satisfies the hereditary property. More formally, if $A \subset B$ and $ B \in \mathfrak{I} $ , then $ A \in \mathfrak{I} $.
+	\item $\mathfrak{I}$ satisfies the exchange property. More formally, if $A, B \in \mathfrak{I}$ and $|A| < |B|$, then there exists some $x \in B - A$ such that $A \cup \{x\}\in \mathfrak{I}$.
+\end{itemize}
+\end{definition}
+All \textbf{maximal independent sets} in a matroid have the same size. 
+
+Note that it can be proved by contradiction with exchange property. If there are two maximal independent sets with different size, then the smaller one is able to use exchange property to take an element from the larger maximal independent set. But the smaller set should not be able to increase its size any more, So we get a contradiction.
+
+A greedy algorithm is optimal for finding a maximum weight maximum independent set in a matroid. 
+
+Why there are maximum twice? Because we allow weights to be negative. Therefore, we have the second the maximum. If the weights are all positive, the the second maximum becomes redundant.
+\subsection{Graphic Matroid}
+There are many kinds of matroid but graphic matroid is one of the most famous matroid.
+\begin{definition}
+	Let $ M = (S, \mathfrak{I}) $ be a matroid. Given a weighted, connected, undirected graph $ G = (V , E) $ where $ S = E $,
+	\begin{itemize}
+		\item If $ A \subset E $ then $A \in \mathfrak{I}$ if and only if $ A $ is acyclic. That is, a set of edges $A$ is \textbf{independent} if and only if the subgraph $G_A = (V, A)$ forms a forest.
+		\item If $ B \in \mathfrak{I} $ and $ A \subset B $, then $ A \in \mathfrak{I} $. So $ M $ is \textbf{hereditary}.
+	\end{itemize}
+\end{definition}
+
+Now let's proof the \textbf{exchange} property. 
+
+\begin{lemma}
+	If $ A, B \in \mathfrak{I} $ and $ |A| < |B| $, then there exist $ e \in B - A $ such that $ A \cup \{e\} \in \mathfrak{I}$.
+\end{lemma}
+
+\begin{proof}
+	$B$ is a collection of edges with no circle in it. The graph has $n$ vertices. Suppose there is no edge at the beginning. Then every time after adding an edge to connect to vertices, the number of components reduce by 1 because to the new connection. So the graph on $B$ has $ n - |B| $ components, and the graph on $A$ has $ n - |A| $ components. 
+	
+	Therefore, $ n - |A| > n - |B| $. $B$ must contain at least one edge $ (u, v) $, where $u$ and $v$ lie in different connected components of the graph formed by $A$. This edge $ (u, v) $ can be added to $A$ to get a larger independent set.
+\end{proof}
+
+The graphic matroid is closely related to the minimum-spanning-tree problem which will be covered in the next section.

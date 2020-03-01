@@ -1,1 +1,39 @@
-\subsection{Kraskel's Algorithm}
+\subsection{Maximum Weight Minimum Spanning Tree}
+\textbf{Input}: a connected, weighted, undirected graph $ G = (V , E) $ with weight function $ w : E \to R $. 
+
+\textbf{Goal}: Find a maximum weight spanning tree in $G$. 
+
+Because this is the problem of finding a maximum weight of maximum independent set in a graphic matroid, the greedy algorithm is optimal.
+
+\subsection{Kruskal's Algorithm}
+\textbf{Main Idea}: Sort the elements in the ground set (edges) in decreasing order of weight and then repeatedly add edge as long as adding new edge keeping the graph acyclic.
+
+\textbf{Consider}: Suppose Kruskal's algorithm has found the following edges, what makes the algorithm to decide to pick an edge?
+
+Think in a shallow way. The new edge shall not create a cycle in the graph. To be more specific, if the vertices from the new edge belongs to the same component then it will introduce a cycle since vertices with in the component are already connected. Conversely, if the vertices come from different components then it cannot be a cycle.
+
+So Kruskal's algorithm maintain the connected components it has discovered so far then includes edge $ (u, v) $ lie in different component before the inclusion.
+
+\textbf{Remark}: So far we have focused on finding maximum spanning tree but it turns out that the greedy algorithm works for finding minimum spanning tree as well. The only difference is to sort the weights by descending order for minimum spanning tree. For minimum spanning tree, we can use the same greedy algorithms.
+
+\subsubsection{Algorithm}
+
+
+
+\subsection{Prim's Algorithm}
+Prim's algorithm is another greedy algorithm for finding a maximum weight spanning tree. In the canonical greedy algorithm, we keep adding edge one at a time but how to select the right edge in the graph? Here we introduce a concept \textbf{cut.}
+
+\begin{definition}
+	A \textbf{cut} in a graph $G = (V, E)$ is defined by non-trivial partition $ V_1 \cup V_2 $ of $V$. The cut $ (V_1, V_2) $ is a set of edges that have exactly one end point in $ V_1 $.
+\end{definition}
+
+\begin{claim}
+	For $e \in \text{cut}(S, V-S)$, if $e$ is the heaviest edge in the set. Then it will not cause a cycle with other edges have been connected by greedy algorithm. Therefore $e$ will be included in the maximum weighted independent set.
+\end{claim}
+\begin{claimproof}
+	By the canonical algorithm of greedy algorithm, we consider edges in decreasing order of weights. By the time we consider the edge $e$, we have not consider any other edge cross the two sets of the cut yet since $e$ has the largest weight. Therefore, $e$ will not cause any cycle with the edges that the greedy algorithm has chosen. Because you need two edges cross the two components to get a cycle.
+\end{claimproof}
+
+Prim's algorithm is one specialization of this idea that if you can find the heaviest edge in each cut then you can build a minimum spanning tree. Prim's algorithm consider a particular set of cuts.
+
+\textbf{Main Idea}: Split the graph into two sets $S$ and $V-S$. Some vertex $s$ is arbitrarily chosen as the initialization of $S$. First consider the cuts consisting $s$. Find the heaviest edge $(s, v)$. Bring $v$ into set $S$. Repeat the steps for the next heaviest cutting edge.

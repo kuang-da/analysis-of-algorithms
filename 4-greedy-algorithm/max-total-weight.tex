@@ -1,3 +1,6 @@
+Suppose you are Google and you assign a vector to each possible document. When
+a user searches for a term, you want to collect some vectors that are indicative of that search term. You also want to be diverse, e.g., if a user searches for "jaguar" you want to return some documents with cars and others with the animal. We could model this by returning vectors that are linearly independent.
+
 \begin{itemize}
 	\item \textbf{Inputs:} vectors $(v_1, v_2, \cdots, v_n)$ with weights 
 $(w_1, w_2, \cdots, w_n)$.
@@ -9,28 +12,58 @@ it is a zero vector.
 
 \subsection{Greedy Algorithm}
 \begin{itemize}
-	\item Sort vectors by descending order of weights.
+	\item Sort vectors and renaming them by descending order of weights.
 	\item $S$ is an empty set of vectors initially.
 	\item For each vectors $v_i$ in this order, if $S \cup \{v_i\}$ is linearly 
 independent and $v_i$ is an non-zero vector, then $S = S \cup \{v_i\}$.
 \end{itemize}
 
 \subsection{Correctness}
+\begin{theorem}
+	\textbf{(Exchange Property)} Suppose A and B are finite subset of linearly independent vectors in $ \mathbb{R}^d $, and suppose $ |A| < |B| $. $\exists b \in B$, such that $ A \cup \{b\} $ in linearly independent.
+\end{theorem}
+
+\begin{proof}
+	Indeed, there must be a vector in $ B $ that lies outside the space spanned by $ A $ because of the dimensions of space $ <B> $ and $ <A> $.
+\end{proof}
+
+\begin{theorem}
+	\textbf{(Hereditary property)}. If $ R \subset S $ and $S$ is a linearly independent set of vectors, then $R$ is also linearly independent.
+\end{theorem}
+
+Greedy algorithm for finding a maximum of basis works because of vector has the exchange and hereditary properties.
+
 \begin{itemize}
-	\item Suppose greedy returns vector $(v_1, v_2, \cdots, v_k)$.
-	\item Suppose there is an optimal solution that return OPT = $(v_{j1}, 
-v_{j2}, \cdots, v_{jk})     $.
+	\item Suppose greedy returns vectors $G = \{v_{i1}, v_{i2}, \cdots, v_{ik}\}$.
+	\item Suppose, for contradiction, there is an optimal solution that return $O = \{v_{j1}, v_{j2}, \cdots, v_{jk} \}$, which has a better total of weights.
 \end{itemize}
 
-Since the $v_j$'s form a basis,
-\[v_{i1} = \alpha_1 v_{j1} + \alpha_2 v_{j2} + \cdots + \alpha_k v_{jk}\]
-
-$v_{i1}$ is chosen by greedy algorithm so it is not a zero vector. Therefore, 
-there must be some $\alpha_l$ is non-zero.
-
-We can add $v_{i1}$ to the set $(v_{j1}, v_{j2}, \cdots, v_{jk})$ and kick out 
-$v_{jl}$.
-
-\begin{claim}{}
-	This is also a basis whose weight is at least as good as OPT.
+\begin{claim}
+	$G$ is at least as good as $ O $.
 \end{claim}
+\begin{claimproof}
+	
+	Let $ v_{il} $ be the first vector chosen by greedy algorithm that is not in $O$. Let $ A = \{v_{i1}, \cdots, v_{il}\} $, $ B = O$. 
+	
+	Hence,
+	\begin{itemize}
+		\item If $ l = k $, $ G $ is at least as good as $ O $.
+		\item If $ l < k $, $ |A| < |B| = k $. By exchange property, applied repeatedly, we can keep adding vectors from $ B $ to $ A $ while preserving linear independent to $ A $ until $ |A| = |B| $. In the end, after borrowing some elements from $B$, the only difference between $A$ and $B$ is that $ A $ has $ v_{il} $ instead of some vectors from $B$. Moreover, that vector has weight $ \le w_{il} $. So $ w(A) \ge w(O)$.
+		
+		Note that even if $ w(A) = w(O) $, $ A $ agrees still more with greedy algorithm than $ O $. Suppose in the ``worest case'', no matter how to choose $l$, the weight of expanded $A$ always equal to the weight of $B$. We are still able to prove that greedy algorithm is as good as $ O $ by induction. So the claim still holds.
+	\end{itemize}
+	
+%	Since the $v_j$'s form a basis,
+%	\[v_{i1} = \alpha_1 v_{j1} + \alpha_2 v_{j2} + \cdots + \alpha_k v_{jk}\]
+%	
+%	$v_{i1}$ is chosen by greedy algorithm so it is not a zero vector. Therefore, 
+%	there must be some $\alpha_l$ is non-zero.
+%	
+%	We can add $v_{i1}$ to the set $(v_{j1}, v_{j2}, \cdots, v_{jk})$ and kick out 
+%	$v_{jl}$.
+\end{claimproof}
+
+
+
+
+

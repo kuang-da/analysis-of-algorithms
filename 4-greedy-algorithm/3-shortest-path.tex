@@ -25,6 +25,9 @@ Note: there is no matroid in the graph to solve the problem by greedy algorithm.
 	\item Goal: Find the shortest path from $s$ to all the vertices.
 \end{itemize}
 
+A path from $s$ that stay eventually within $S$ will be called a \textbf{source-side path}.
+
+\paragraph{Main idea}
 Maintain a quantity called $d(v)$ for each vertex $v$ so that,
 \begin{itemize}
 	\item $d(v)$ is an upper bound on the length of the shortest path from $s$ to $v$.
@@ -32,15 +35,11 @@ Maintain a quantity called $d(v)$ for each vertex $v$ so that,
 \end{itemize}
 
 Based on the assumption, we know that the shortest path from $s$ on the graph is to $s$ itself. We maintain a source set $S$ initially as $\{s\}$ and we know the shortest path form $s$ to each $u \in S$. Grow $S$ until $S = V$. Then we know the shortest path from $s$ to all the vertices.
-
-A path from $s$ that stay eventually within $S$ will be called a source-side path.
-
-\paragraph{Main idea}
-At each state, find a vertex $v \in (V-S)$ for which there is a vertex $u$ in $S$ such that $d(s, u) + w(u, v)$ is minimum over all $x \in (V-S)$. Add $v$ to $S$. Update as appropriate.
+At each state, find a vertex $v \in (V-S)$ for which there is a vertex $u$ in $S$ such that $(d(s, u) + w(u, v))$ is the minimum over all $x \in (V-S)$. Add $v$ to $S$. Update as appropriate.
 
 \paragraph{Algorithm} 
 \begin{itemize}
-	\item For each vertex $v \in (V-S)$, maintain a quantity call $d(v)$. It is the length of the shortest path from $s$ to $v$ which consist of a source side path to a some vertex $u in (V-S)$ followed by edge $(u,v)$.
+	\item For each vertex $v \in (V-S)$, $d(v)$ is the length of the shortest path from $s$ to $v$ which consist of a source side path to a some vertex $u \in (V-S)$ followed by edge $(u,v)$.
 	\item In each iteration, bring the vertex $v$ with minimum $d(v)$ to $S$. To make sure $d$ is invariant, we have to update $d$ based on the new $S$ (with a new vertex $v$). For each neighbor vertex $x$ of $v$, update $d(x) = \min(d(x), d(v) + w(v, x))$. Note that if $v$ is used to update $x$, then we remember $v$ as the ancestor of $x$.
 \end{itemize}
 
