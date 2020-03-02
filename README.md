@@ -9,8 +9,8 @@ List of lectures and contents
 - [x]0206 L7-Graph Traversal: Directed Graph
 - [x]0211 L8-Graph Traversal: Strongly Connected Graph
 - [x]0213 L9-Greedy Algorithms: Activities Selection
-- [ ]0218 L10-Greedy Algorithms: Maximum Total Weight
-- [ ]0220 L11-Greedy Algorithms
-- [ ]0225 L12-Greedy Algorithms
+- [x]0218 L10-Greedy Algorithms: Maximum Total Weight
+- [x]0220 L11-Greedy Algorithms: Matroid
+- [x]0225 L12-Greedy Algorithms: Find Maximum Weight Spanning Tree
 - Midterm
 - [ ]0227 L13 Dynamic Programming
