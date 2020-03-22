@@ -1,0 +1,14 @@
+\babel@toc {nil}{}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Algorithm Case Examples }{3}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Runtime as Functions of Input Size}{4}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.3}Bounds }{4}{subsection.1.3}% 
+\contentsline {subsection}{\numberline {1.4}Best/Worst Case + Lower/Upper Bound }{5}{subsection.1.4}% 
+\contentsline {subsection}{\numberline {1.5}Examples of Case Bounds}{5}{subsection.1.5}% 
+\contentsline {subsection}{\numberline {1.6}Misconceptions and Terminology}{7}{subsection.1.6}% 
+\contentsline {subsection}{\numberline {1.7}Reference}{7}{subsection.1.7}% 
+\contentsline {section}{\numberline {2}The asymptotic efficiency of algorithms}{8}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Asymptotic notation }{8}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Lower Bounds}{9}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Proving Lower Bounds}{10}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Conclusions }{15}{subsection.2.4}% 

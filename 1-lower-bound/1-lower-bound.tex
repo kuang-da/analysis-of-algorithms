@@ -1,4 +1,5 @@
-\documentclass[en,hazy,blue,screen,14pt]{elegantnote}
+%\documentclass[en,hazy,blue,screen,12pt]{elegantnote}
+\documentclass[en,hazy,blue,normal,12pt]{elegantnote}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{babel}
@@ -12,6 +13,7 @@
 \usepackage{ulem}
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\renewcommand\qedsymbol{$\blacksquare$}
 
 \title{Class Notes\\CIS 502 Analysis of Algorithm\\1-Lower Bounds}
 \author{Da Kuang}
@@ -23,7 +25,8 @@
 
 \maketitle
 \newpage
-\part{Algorithm Basics}
+\tableofcontents
+\newpage
 
 \section{Introduction}
 
@@ -69,7 +72,7 @@ it might also be the last element of the list, in which case you have
 to walk the whole thing before you find it. So there you had a best
 case and a worst case.
 
-\subsection{Algorithms as Functions of Input Size}
+\subsection{Runtime as Functions of Input Size}
 
 When we want to analyze an algorithm, us algorists think about every
 possible case we could throw at the algorithm. Usually, the two most
@@ -83,7 +86,7 @@ steps\textquotedbl ) that draw a line.
 
 Because algorithms' run-time is a function of its input, we have a
 different best case (and worst case) for each possible input size.
-So sometimes we treat the best case as a single input, but it's really
+So sometimes we see the best case as a single input, but it's really
 a set of inputs (one for each input size). The best case and worst
 case are very concrete things with respect to a given algorithm.
 
@@ -529,7 +532,7 @@ strategy is the following:
 components in the graph formed by the edges the algorithm has discovered
 already. Now when the algorithm makes the probe $(i,j)$, the adversary
 answers \textquotedblright yes\textquotedblright{} if and only if
-$(i,j)$ is the last possible edge connecting the component of $i$with
+$(i,j)$ is the last possible edge connecting the component of $i$ with
 the component of $j$. }
 
 In other words, if A says ``Yes, there is an edge between i and j'',
@@ -543,7 +546,7 @@ the unprobed pairs are revealed to be edges. Thus the algorithm will
 be unable to stop and correctly determine if the graph is connected.
 How do we prove this? We do so by proving the following statements: 
 \begin{lemma}
-For any algorithm A, at any stage, let C be a connected component
+For any algorithm A, at any stage, let C be a connected component with $n$ vertices
 that has been revealed by the probes that A has made. Then A must
 have probed every pair of distinct vertices in C, which cost $\binom{n}{2}$
 steps.
@@ -603,183 +606,5 @@ that require an algorithm to probe all possible pairs are said to
 be \textbf{evasive}. It turns out that many interesting properties
 are evasive, and there are many beautiful results that show that a
 large class of properties are evasive. 
-
-\part{Algorithm Design and Analysis Paradigms}
-
-\section{Master Method}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{master-method.png}
-\end{figure}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{master-method-2.png}
-\end{figure}
-\section{Quick Sort}
-\begin{itemize}
-\item Input: Array of $n$integers.
-\item Outputs: These integers in certain order.
-\end{itemize}
-
-\subsection{Algorithm:}
-\begin{itemize}
-\item Pick an element $x$as the pivot element
-\item By comparing each of the elements with the pivot, place it in one
-of the two sets:
-\begin{align*}
- S=\{y:y<x\}\\
- L=\{y:y>x\}
-\end{align*}
-\item Recursively sort $S$ and $L$.
-\item Output $S\times L$.
-\end{itemize}
-
-\subsection{Performance:}
-\subsubsection{Worst Case}
-Each partition routine produces one sub-problem with n-1 elements and one with 
-0 elements.
-\begin{align*}
- T(n)&\ge\Theta(n)+T(n-1)
- &\intertext{Based on substitution method,}
- T(n)&=\Theta(n^{2})
-\end{align*}
-\subsubsection{Expected Running Time}
-Calculate the expected number of comparison made by QuickSort in the worst 
-case when the pivot is selected randomly.
-\begin{itemize}
-\item Algorithm: pick pivot uniformly of random from the elements to be
-sorted.
-\item Analysis:
-\begin{itemize}
-\item Let $x$ be the total amount of comparison are formed by QuickSort. 
-\item Let $x_{ij}$ be a random variable that is : 
-
-$$x_{ij}=
-\begin{cases}
-1 & \text{if i-th smallest element and j-th smallest element are compared.}\\
-0 & \text{otherwise.}
-\end{cases}
-$$
-\item $x=\sum_{i<j}x_{ij}$
-\item $E[x]=E[\sum_{i<j}x_{ij}]=\sum_{i<j}E[x_{ij}]$ (Linearity of Expectation)
-$=\sum_{i<j}Pr[x_{ij}=1]$
-\item $x_{i}$ and $x_{j}$ are compared if and only if the firs element
-to be chosen as a pivot from $x_{ij}$ is either $x_{i}$ or $x_{j}$.
-\item Pr\{$z_{i}$ is compared to $z_{j}$\} = $\frac{2}{j-i+1}$
-\end{itemize}
-\item 
-Expected 
-Running time
-\begin{align*}
- E[x]&=\sum_{i<j}Pr[x_{ij}=1]
- =\sum_{i<j}\frac{2}{j-1+1}\\
- &=\sum_{i<j} \frac { 2 } { k+1 }\\
- &<\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}\frac{2}{k}\\
- &=\sum_{i=1}^{n-1}O(\log n)=O(n\log n)
-\end{align*}
-\end{itemize}
-
-\section{Selection/ order}
-\begin{itemize}
-\item Input: A set of $A$ of n integers and a rank $i$, with $1\ge i\ge n$.
-\item output: The element $x\in A$ that is larger than exactly $i-1$ other
-elements of $A$.
-\end{itemize}
-We can solve the selection problem in $O(n\log n)$ time since we
-can sort the number using heapsort or mergesort and then simply index
-the $i$-th element in the output array. But we can do better than this.
-
-\subsection{Randomized-Select}
-\begin{algorithm}[H]
-    \SetKwProg{Fn}{Function}{:}{}
-    \SetKwFunction{FRandSelect}{RANDOMIZED-SELECT}
-    \SetKwFunction{FRandPartition}{RANDOMIZED-PARTITION}
-
-    \Fn{\FRandSelect ($A, p, r, i$)}{
-%         \KwData{Array $A[p, \cdots, r]$, rank $i$}
-        \uIf{p == r}{
-            return A[p]
-        }
-        q = \FRandPartition(A, p, r){}
-        
-        k = q - p + 1 
-        
-        \uIf {i == k}{\tcc{The pivot is the answer}
-            return A[q]
-        }
-        \uElseIf {i < k}{
-            return \FRandSelect ($A, p, q-1, i$)
-        }
-        \Else{
-            return \FRandSelect ($A, q+1, r, i-k$)
-        }
-
-    }
- \caption{Randomized-Select}
-\end{algorithm}
-The worst-case running time for RANDOMIZED-SELECT is $\Theta(n^2)$, because we 
-could be extremely unlucky and always partition around the largest remaining 
-element, and the partition takes $\Theta(n)$ times.
-
-But the algorithm has a linear expected running time $O(n)$, and because it is 
-randomized, no particular input elicits the worst-case behavior.
-\subsection{Deterministic Linear Time Selection}
-After quick selection, algorists looked for an algorithm which is able to solve 
-the problem in linear deterministic.
-
-\centerline{\includegraphics[width=0.5\textwidth]{deterministic-select.png}}
-
-SELECT Algorithm:
-\begin{itemize}
-\item Find the medium of each group by insertion-sorting. $T(n) = \frac{6n}{5} 
-= 1.2n$.
-\item Use SELECT to recursively find the medium of the mediums $m^*$.
-\item $m^*$ has a rank somewhere in the middle.
-We treat the median of the medians $m^*$ as a pivot element and compare it with all elements to get its rank $k$, which takes $n$ steps.
-    \begin{itemize}
-        \item The number of elements larger than $m^*$: $O(\frac{3n}{10}) 
-    =3(\ceil*{\frac{1}{2}\ceil*{\frac{n}{5}} - 2})$
-        \item Therefore, the number of element smaller than $m^*$: 
-    $O(\frac{7n}{10})$.
-    \end{itemize}
-\item Pivot using $m^*$:
-    \begin{itemize}
-     \item If $i = k$, then return $k$.
-     \item If $i < k$, use SELECT recursively to find the $i$-th smallest 
-element on the low side.
-     \item If $i > k$, use SELECT recursively to find the $(i-k)$-th smallest 
-element on the high side.
-    \end{itemize}
-\end{itemize}
-Therefore, the recursion of the algorithm is
-\[T(n) \le T(\frac{n}{5}) + T(\frac{7n}{10}) + 2.2n\]
-The expression does not fit into the master theorem frame work because of the 
-two different size of the sub-problems. Then we guess $T(n) \le 22n$ and it can 
-be proved by induction.
-\begin{itemize}
-\item Base case:
-
-    Base case it trivial and we skip it during the class because 22 is a 
-fairly large number. It should be easy find a number $n$ so that we could 
-calculate $T(n)$ easily and show that it is less than $22n$.
-
-\item Hypothesis: Suppose each of the cost satisfies $T(n) \le 22n$ for $(0, 
-n)$. 
-
-Therefore, 
-    \begin{align*}
-    T(\frac{n}{5}) &\le 22 \times \frac{n}{5}\\
-    T(\frac{7n}{10}) &\le 22 \times \frac{7n}{10}\\
-    \intertext{so that}
-    T(n) &\le 22 \times 0.2 n + 22 \times 0.7 n + 2.2n
-    \end{align*}
-\item Inductive step:
-    \begin{align*}
-    T(n) &\le 22 \times 0.2 n + 22 \times 0.7 n + 2.2n\\
-    T(n) &\le 22 \times (0.2 + 0.7 + 0.1)n\\
-    T(n) &\le 22n
-    \end{align*}
-
-\end{itemize}
 
 \end{document}

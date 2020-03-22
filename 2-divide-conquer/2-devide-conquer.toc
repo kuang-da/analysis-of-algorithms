@@ -1,0 +1,38 @@
+\babel@toc {nil}{}
+\contentsline {section}{\numberline {1}Master Method}{4}{section.1}% 
+\contentsline {section}{\numberline {2}Quick Sort}{4}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Algorithm:}{4}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Performance:}{5}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Worst Case}{5}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Expected Running Time}{5}{subsubsection.2.2.2}% 
+\contentsline {section}{\numberline {3}Selection/ order}{6}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Randomized-Select}{7}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Deterministic Linear Time Selection}{7}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Efficiently Find Median in a Small Gorup}{9}{subsection.3.3}% 
+\contentsline {subsubsection}{\numberline {3.3.1}Correctness}{9}{subsubsection.3.3.1}% 
+\contentsline {subsubsection}{\numberline {3.3.2}Time}{10}{subsubsection.3.3.2}% 
+\contentsline {section}{\numberline {4}Polynomial Multiplication}{10}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Introduction}{10}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Algorithm}{11}{subsection.4.2}% 
+\contentsline {subsubsection}{\numberline {4.2.1}Baseline Method}{11}{subsubsection.4.2.1}% 
+\contentsline {subsubsection}{\numberline {4.2.2}Divide and Conquer}{11}{subsubsection.4.2.2}% 
+\contentsline {section}{\numberline {5}Convex Hull on the Plane}{13}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Introduction}{13}{subsection.5.1}% 
+\contentsline {subsubsection}{\numberline {5.1.1}Convex set}{13}{subsubsection.5.1.1}% 
+\contentsline {subsubsection}{\numberline {5.1.2}Convex Combination}{14}{subsubsection.5.1.2}% 
+\contentsline {paragraph}{Example}{14}{subsubsection.5.1.2}% 
+\contentsline {subsubsection}{\numberline {5.1.3}Convex Hull}{14}{subsubsection.5.1.3}% 
+\contentsline {subsubsection}{\numberline {5.1.4}Convex polygon}{15}{subsubsection.5.1.4}% 
+\contentsline {subsection}{\numberline {5.2}Algorithm}{15}{subsection.5.2}% 
+\contentsline {subsubsection}{\numberline {5.2.1}Relative Location of Line and Points}{15}{subsubsection.5.2.1}% 
+\contentsline {subsubsection}{\numberline {5.2.2}Convex Hull Successive Points Lemma}{16}{subsubsection.5.2.2}% 
+\contentsline {subsubsection}{\numberline {5.2.3}Baseline}{16}{subsubsection.5.2.3}% 
+\contentsline {paragraph}{Runing Time Analysis}{16}{Item.7}% 
+\contentsline {subsubsection}{\numberline {5.2.4}Merge Hull}{16}{subsubsection.5.2.4}% 
+\contentsline {paragraph}{Remarks:}{17}{Item.11}% 
+\contentsline {paragraph}{Stab}{17}{Item.11}% 
+\contentsline {paragraph}{How to check stabbing}{17}{Item.11}% 
+\contentsline {paragraph}{How to find the upper tangent:}{17}{Item.11}% 
+\contentsline {paragraph}{Running Time Analysis}{18}{Item.11}% 
+\contentsline {subsubsection}{\numberline {5.2.5}Quick Hull}{18}{subsubsection.5.2.5}% 
+\contentsline {paragraph}{Remarks}{18}{subsubsection.5.2.5}% 

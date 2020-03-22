@@ -1,9 +1,8 @@
-\documentclass[en,hazy,blue,screen,14pt]{elegantnote}
+%\documentclass[en,hazy,blue,screen,14pt]{elegantnote}
+\documentclass[en,hazy,blue,normal,12pt]{elegantnote}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
-% \usepackage[USenglish]{babel}
 \usepackage{babel}
-% TODO: interesting bug about the font of proof env
 \usepackage{float}
 \usepackage{textcomp}
 \usepackage{amsmath,amsfonts,amssymb}
@@ -30,6 +29,8 @@
 \begin{document}
 
 \maketitle
+\newpage
+\tableofcontents
 \newpage
 \section{Graphics Basics}
 \begin{itemize}
@@ -395,6 +396,7 @@ within one component. In this way, DFS is able to cover all the vertices and
 all the components. Therefore, often you only need to give DFS a graph without 
 any source explicitly.
 
+Ideally, BFS and DFS are just different traversal strategies, so the total run time should be the same which is the number of nodes plus the number of edges. In practice, the running time depends on how to access the nodes and edges. By convention, assume $|V| = m$, $|E| = n$. If the graph is an adjacency matrix, the run time is $O(|m|^2)$. If the graph is an adjacency list, the run time is $O(|n| + |m|)$.
 \section{Equivalence Relation}
 \begin{itemize}
 \item A relation $R$ on a set $A$ is an equivalence relation if it is 
@@ -532,7 +534,7 @@ Assume $v$ is an internal node and has $k$ leaves. What are the conditions for $
 \subsection{DFS: Find Bi-connected Components.}
 \paragraph{Main idea:} Store visited edges in a stack while DFS on a graph and keep looking for Articulation Points. 
 \begin{itemize}
- \item As soon as an Articulation Point $u$ is found, all edges visited while DFS from node $u$ onwards will form one biconnected component. 
+ \item As soon as an Articulation Point $u$ is found, all edges visited while DFS from node $u$ onward will form one biconnected component. 
  \item When DFS completes for one connected component, all edges present in stack will form a biconnected component.
  \item If there is no Articulation Point in graph, then graph is biconnected and so there will be one biconnected component which is the graph itself.
 \end{itemize}

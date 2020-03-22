@@ -63,4 +63,14 @@ This statement proves the correctness of the algorithm, since when $S = V$, we h
 
 Why negative weight does not work here?
 
-Adding a negative edge into source set can change the length of shortest source-side path for some vertices. But we do not update $d(u)$ for $u \in S$ since we assume introducing more notes on the path only increase the length of path.
+Adding a negative edge into source set can change the length of shortest source-side path for some vertices. But we do not update $d(u)$ for $u \in S$ since we assume introducing more nodes on the path only increase the length of path.
+
+\subsection{Implementation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{dijkstra-code.png}
+\end{figure}
+In initialization, $d(s) = 0$ and the $d$ for the rest of nodes are $+\infty$. In relax function, if $d(v) > d(u) + w((u,v))$, set $d(v) = d(u) + w((u,v))$ and update the partent of $v$ if necessary.
+\subsection{Time}
+Line 5 will execute $|V|$ times and line 8 will execute $|E|$ times. Therefore
+\[T = |V|T_{\text{extract-min}} + |E| T_{\text{decrease-key}}\]

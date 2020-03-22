@@ -1,0 +1,64 @@
+\begin{itemize}
+	\item Input: Array of $n$ integers.
+	\item Outputs: These integers in certain order.
+\end{itemize}
+
+\subsection{Algorithm:}
+\begin{itemize}
+	\item Pick an element $x$ as the pivot element
+	\item By comparing each of the elements with the pivot, place it in one
+	of the two sets:
+	\begin{align*}
+	S=\{y:y<x\}\\
+	L=\{y:y>x\}
+	\end{align*}
+	\item Recursively sort $S$ and $L$.
+	\item Output $S\times L$.
+\end{itemize}
+
+\subsection{Performance:}
+\subsubsection{Worst Case}
+Each partition routine produces one sub-problem with n-1 elements and one with 
+0 elements.
+\begin{align*}
+T(n)&\ge\Theta(n)+T(n-1)
+&\intertext{Based on substitution method,}
+T(n)&=\Theta(n^{2})
+\end{align*}
+\subsubsection{Expected Running Time}
+Calculate the expected number of comparison made by QuickSort in the worst 
+case when the pivot is selected randomly.
+\begin{itemize}
+	\item Algorithm: pick pivot uniformly at random from the elements to be
+	sorted.
+	\item Analysis:
+	\begin{itemize}
+		\item Let $x$ be the total amount of comparison are formed by QuickSort. 
+		\item Let $x_{ij}$ be a random variable that is : 
+		
+		$$x_{ij}=
+		\begin{cases}
+		1 & \text{if i-th smallest element and j-th smallest element are compared.}\\
+		0 & \text{otherwise.}
+		\end{cases}
+		$$
+		\item $x=\sum_{i<j}x_{ij}$
+		\item $E[x]=E[\sum_{i<j}x_{ij}]=\sum_{i<j}E[x_{ij}]$ (Linearity of Expectation)
+		$=\sum_{i<j}Pr[x_{ij}=1]$
+		\item $x_{i}$ and $x_{j}$ are compared if and only if the first element
+		to be chosen as a pivot from $x_{ij}$ is either $x_{i}$ or $x_{j}$.
+		\item Pr\{$z_{i}$ is compared to $z_{j}$\} = $\frac{2}{j-i+1}$
+	\end{itemize}
+	\item 
+	Expected 
+	Running time
+	\begin{align*}
+	E[x]&=\sum_{i<j}Pr[x_{ij}=1]
+	=\sum_{i<j}\frac{2}{j-i+1}\\
+	&=2\sum_{i=1}^{n-1} \sum_{j=i+1}^n \frac{1}{j-i+1}\\
+	&=2\sum_{k=1}^{n-1} \frac{n-k}{k+1}\\
+	&= 2\sum_{k=1}^{n-1} \frac{n}{k+1} - 2\sum_{k=1}^{n-1}\frac{k}{k+1}\\
+	&< 2 \sum_{k=1}^{n-1} \frac{n}{k}\\
+	&= O(n\log n)
+	\end{align*}
+\end{itemize}

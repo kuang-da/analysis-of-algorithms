@@ -1,0 +1,41 @@
+\babel@toc {nil}{}
+\contentsline {section}{\numberline {1}Optimization Problem}{4}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Minimum Spanning Tree Problem}{4}{subsection.1.1}% 
+\contentsline {paragraph}{Input:}{4}{subsection.1.1}% 
+\contentsline {section}{\numberline {2}Activity Selection Problem}{5}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Some Attempts}{5}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Proposed Greedy Algorithm}{5}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Time}{7}{subsubsection.2.2.1}% 
+\contentsline {section}{\numberline {3}Linear Algebra}{7}{section.3}% 
+\contentsline {section}{\numberline {4}Maximum Total Weight Problem}{8}{section.4}% 
+\contentsline {paragraph}{Note.}{9}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Greedy Algorithm}{9}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Correctness}{9}{subsection.4.2}% 
+\contentsline {section}{\numberline {5}Matroid}{10}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Graphic Matroid}{11}{subsection.5.1}% 
+\contentsline {section}{\numberline {6}Find Maximum Weight Spanning Tree}{12}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}Maximum Weight Minimum Spanning Tree}{12}{subsection.6.1}% 
+\contentsline {subsection}{\numberline {6.2}Kruskal's Algorithm}{12}{subsection.6.2}% 
+\contentsline {subsubsection}{\numberline {6.2.1}Algorithm}{13}{subsubsection.6.2.1}% 
+\contentsline {paragraph}{Attempt 0.}{13}{subsubsection.6.2.1}% 
+\contentsline {paragraph}{Attemp 1.}{14}{subsubsection.6.2.1}% 
+\contentsline {subparagraph}{Amortized Analysis.}{14}{subsubsection.6.2.1}% 
+\contentsline {paragraph}{Attemp 2.}{15}{subsubsection.6.2.1}% 
+\contentsline {subparagraph}{\textsc {Find}.}{15}{figure.caption.3}% 
+\contentsline {subparagraph}{\textsc {Union}.}{15}{figure.caption.3}% 
+\contentsline {paragraph}{Path Compression.}{16}{figure.caption.3}% 
+\contentsline {subsection}{\numberline {6.3}Prim's Algorithm}{17}{subsection.6.3}% 
+\contentsline {subsection}{\numberline {6.4}Algorithm}{18}{subsection.6.4}% 
+\contentsline {subsection}{\numberline {6.5}Time Complexity}{18}{subsection.6.5}% 
+\contentsline {section}{\numberline {7}Shortest Path}{19}{section.7}% 
+\contentsline {subsection}{\numberline {7.1}Single Source Shorest Path}{19}{subsection.7.1}% 
+\contentsline {subsubsection}{\numberline {7.1.1}Dijkstra's Algorithm}{20}{subsubsection.7.1.1}% 
+\contentsline {paragraph}{Main idea}{20}{subsubsection.7.1.1}% 
+\contentsline {paragraph}{Algorithm}{20}{subsubsection.7.1.1}% 
+\contentsline {subsubsection}{\numberline {7.1.2}Correctness}{20}{subsubsection.7.1.2}% 
+\contentsline {subsection}{\numberline {7.2}Implementation}{21}{subsection.7.2}% 
+\contentsline {subsection}{\numberline {7.3}Time}{22}{subsection.7.3}% 
+\contentsline {section}{\numberline {8}Huffman Coding}{22}{section.8}% 
+\contentsline {subsection}{\numberline {8.1}Prefix-ambiguity}{22}{subsection.8.1}% 
+\contentsline {subsection}{\numberline {8.2}Algorithm}{22}{subsection.8.2}% 
+\contentsline {subsection}{\numberline {8.3}Algorithm}{24}{subsection.8.3}% 

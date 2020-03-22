@@ -1,0 +1,44 @@
+%\documentclass[en,hazy,blue,screen,14pt]{elegantnote}
+\documentclass[en,hazy,blue,normal,12pt]{elegantnote}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[ruled,vlined]{algorithm2e}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\title{Class Notes\\CIS 502 Analysis of Algorithm\\2-Divide and Conquer}
+\author{Da Kuang}
+\institute{University of Pennsylvania}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Master Method}
+\input{master-method.tex}
+	
+\section{Quick Sort}
+\input{quick-sort.tex}
+
+\section{Selection/ order}
+\input{selection.tex}
+
+\section{Polynomial Multiplication}
+\input{poly-multiply.tex}
+
+\section{Convex Hull on the Plane}
+\input{convex-hull.tex}
+
+\end{document}
