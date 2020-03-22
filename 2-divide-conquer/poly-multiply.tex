@@ -1,5 +1,5 @@
 \subsection{Introduction}
-A polynomial in the variable x over an algebraic field F represents a function 
+A polynomial in the variable x over an algebraic field $F$ represents a function 
 $A(x)$ as a formal sum:
 \[A(x) = \sum_{j = 0}^{n-1} a_j x^j\]
 We call the values $a_0, ~a_1, ~\cdots, ~a_{n-1}$ the \textbf{coefficients} of 
@@ -8,7 +8,7 @@ $\mathbb{C}$ of complex numbers. A polynomial can be represented as a list of
 coefficients in computer.
 
 A polynomial $A(x)$ has \textbf{degree $k$} if its highest nonzero coefficient 
-is $a_k$. we write that $\text{degree}(A) = k$. Any integer strictly greater 
+is $a_k$. We write that $\text{degree}(A) = k$. Any integer strictly greater 
 than the degree of a polynomial is a \textbf{degree-bound }of that polynomial. 
 Therefore, the degree of a polynomial of degree-bound $n$ may be any integer 
 between $0$ and $n-1$, inclusive.
@@ -98,7 +98,7 @@ multiplication as following:
 \begin{align*}
  &  (A_h + A_l) (B_h + B_l) - A_h B_h - A_l B_l\\
  =& A_hB_h + A_hB_l + A_lB_h + A_lB_l - A_h B_h - A_l B_l\\
- =& A_lB_h + A_lB_l
+ =& A_lB_h + A_hB_l
 \end{align*}
 
 Therefore, the recursive function becomes

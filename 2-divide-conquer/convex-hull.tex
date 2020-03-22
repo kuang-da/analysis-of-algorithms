@@ -1,6 +1,6 @@
 \subsection{Introduction}
 \subsubsection{Convex set}
-Convex set A set $S \subseteq \mathbb{R}^n$ is said to be convex if $\forall 
+Convex set $S \subseteq \mathbb{R}^n$ is said to be convex if $\forall 
 x,y \in S$, the line segment joining $x$ and $y$ is contained in $S$.
 
 \centerline{\includegraphics[width=0.5\textwidth]{convex-nonconvex-set.png}}
@@ -9,8 +9,7 @@ Given two points $x=(x_1, x_2)$ and $y = (y_1, y_2) \in \mathbb{R}^2$, a convex
 combination of $x$ and $y$ is defined by
 \[\lambda x + (1 - \lambda) y = \lambda x_1 + (1 - \lambda)y_1 + \lambda x_2 + 
 (1 - \lambda)y_2, \text{ for } \lambda \in [0,1]\]
-Changing the value of $\lambda$, we walk thought the segment. In general, 
- is the area confined by the edges formed by points.
+Changing the value of $\lambda$, we walk though the segment. 
  
  \paragraph{Example} Consider a practical example, suppose there are four wells 
 $(w_1, w_2, w_3, w_4)$ to generate petroleum and the composition $(A, B, C)$ of 
@@ -41,11 +40,14 @@ set that contains these points.
  
 More intuitively, convex hull is like a rubber band stretched from infinite and 
 struck on the nails on points.
-\centerline{\includegraphics[width=0.5\textwidth]{ConvexHull.png}}
+
+\centerline{\includegraphics[width=0.3\textwidth]{ConvexHull.png}}
+
 \subsubsection{Convex polygon}
 Convex polygon is a polygon which is a convex set. It always contains interior 
 angle which smaller than 180 degree.
 \subsection{Algorithm}
+Find the convex hull of a set of points.
 \begin{itemize}
  \item Input: $n$ points, $(x_1, y_1), (x_2, y_2), \cdots, (x_n, y_n)$.
  \item Output: The sequence of points on the boundary in counter clock order.
@@ -114,15 +116,15 @@ $O(n)$.
 \end{itemize}
 
 \paragraph{Stab}
-A line $pq$ stabs to $C_2$ if the continuation of the line goes to 
+A line $pq$ stabs to a convex hull $C_2$ if the continuation of the line goes to 
 the interior of $C_2$.
 
 \paragraph{How to check stabbing}
 \begin{itemize}
-\item If the segment $pq$ stabs $C_2$, then the clockwise predecessor of $q$ 
+\item If $pq$ stabs $C_2$, then the clockwise predecessor of $q$ 
 is on the one side of the segment and the clockwise successor of $q$ is one the 
 other side.
-\item If $pq$ stabs $C_2$ then $p$ must be able to see the clockwise 
+\item If $pq$ stabs $C_2$, then $p$ must be able to see the clockwise 
 predecessor and successor of $q$.
 \end{itemize}
 
@@ -150,7 +152,7 @@ Similarly for the lower tanget.
 \subsubsection{Quick Hull}
 Like QuickSort, Quick Hull does not have worst case analysis.
 \begin{itemize}
-\item Pick the left most point $p$ and right most point $q$ on the convex hull 
+\item Pick the left most point $p$ and right most point $q$ from the convex set 
 and draw a segment joining them.
 \item Recursively find the convex hull for each side of the points. Each hull 
 must contains the segment $pq$.
@@ -162,7 +164,7 @@ each iteration. But here are some remarks.
 
 \paragraph{Remarks}
 \begin{itemize}
- \item Always pick points on $x$ direction my casue the worst case, which is 
+ \item Always pick points on $x$ direction may casue the worst case, which is 
 all the points are aggregated to one side of line.
 \item Like quicksort, introducing randomness helps achieve the optimal average 
 running time. We randomly choose a direction and project all the points on it. 
