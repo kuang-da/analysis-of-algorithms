@@ -1,0 +1,38 @@
+
+Tree is a connected acyclic graph.
+\subsection{Rooted tree}
+\subsubsection{Inductive Definition}
+A nice thing about Inductive definition is it is useful for the proofs by 
+induction.
+\begin{itemize}
+ \item \textbf{Rule 1:} A graph consist of a single vertex v is a rooted tree 
+with v as the root.
+ \item \textbf{Rule 2:} If $(T_1, r_1)$, $(T_2, r_2), \cdot, (T_k, r_k)$ are 
+rooted trees, then the tree $(T, r)$ consisting of a new node $r$ as root and 
+edges $(r, r_1), \cdots, (r, r_k)$ is a rooted tree.
+\end{itemize}
+\subsection{Structural induction Proof}
+Statement: Any tree with $n$ nodes has $n-1$ edges.
+
+Since any tree can be transformed into a rooted tree, the induction can be as 
+following:
+\begin{itemize}
+ \item Statement: Any rooted tree on $n$ nodes has $n-1$ edges.
+ \item Base case: Single node tree with no edge. The statement is true.
+ \item Inductive hypothesis: For a rooted tree $T_r$, built up from $(T_1, 
+r_1), (T_2, r_2), \cdots, (T_n, r_n)$ using rule 2. Assume the statement is 
+true for all the trees $T_1, T_2, \cdots, T_k$ and prove it for $T$.
+\item Inductive step:
+    \begin{itemize}
+    \item Let tree $T_i$ have $n_i$ nodes, $i = 1, 2, \cdots, k$. Then $T$ has 
+    $\sum_{i=1}^k n_i + 1$ nodes.
+    \item By the inductive hypothesis, $T_i$ has $n_i - 1$ edges.
+    \item Total number of edges is $T = \sum_{i=1}^k (n_i - 1) + k = 
+\sum_{i=1}^k 
+    n_i$.
+    \item The number of edge is one less than the number of nodes. It proofs 
+the     inductive step.
+    \end{itemize}
+ \end{itemize}
+
+\paragraph{Remark:} Therefore, it takes $n-1$ comparisons to select the largest from $n$ numbers by tournament comparison.
