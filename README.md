@@ -14,3 +14,5 @@ List of lectures and contents
 - [x]0225 L12-Greedy Algorithms: Find Maximum Weight Spanning Tree
 - Midterm
 - [ ]0227 L13 Dynamic Programming
+- [ ]0303 L13 Dynamic Programming
+- [ ]0305 L13 Dynamic Programming
