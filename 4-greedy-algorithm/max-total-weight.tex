@@ -48,9 +48,11 @@ Greedy algorithm for finding a maximum of basis works because of vector has the 
 	Hence,
 	\begin{itemize}
 		\item If $ l = k $, $ G $ is at least as good as $ O $.
-		\item If $ l < k $, $ |A| < |B| = k $. By exchange property, applied repeatedly, we can keep adding vectors from $ B $ to $ A $ while preserving linear independent to $ A $ until $ |A| = |B| $. In the end, after borrowing some elements from $B$, the only difference between $A$ and $B$ is that $ A $ has $ v_{il} $ instead of some vectors from $B$. Moreover, that vector has weight $ \le w_{il} $. So $ w(A) \ge w(O)$.
+		\item If $ l < k $, $ |A| < |B| = k $. By exchange property, applied repeatedly, we can keep adding vectors from $ B $ to $ A $ while preserving linear independent to $ A $ until $ |A| = |B| $. In the end, after borrowing some elements from $B$, the only difference between $A$ and $B$ is that $ A $ has $ v_{il} $ instead of some vectors from $B$. Moreover, that vector has weight $ \le w_{il} $. So $ w(A) \ge w(O)$. The expanded list $A$ has a weight at least as good as $O$.
 		
-		Note that even if $ w(A) = w(O) $, $ A $ agrees still more with greedy algorithm than $ O $. Suppose in the ``worest case'', no matter how to choose $l$, the weight of expanded $A$ always equal to the weight of $B$. We are still able to prove that greedy algorithm is as good as $ O $ by induction. So the claim still holds.
+		What would be the relationship between $G$ and $A$.
+		
+		Note that even if $ w(A) = w(O) $, $ A $ still agrees more with greedy algorithm than $ O $. Suppose in the ``worest case'', no matter how to choose $l$, the weight of expanded $A$ always equal to the weight of $B$. We are still able to prove that greedy algorithm is as good as $ O $ by induction. So the claim still holds.
 	\end{itemize}
 	
 %	Since the $v_j$'s form a basis,

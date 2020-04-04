@@ -1,0 +1,71 @@
+Given a sequence of positive integers, $a_1, a_2, \cdots, a_n$. A sub sequence is a sequence $ a_{i1}, a_{i2}, \cdots, a_{ik}$, where $i1 < i2 < \cdots < ik$. We say a subsequence $a_{i1}, a_{i2}, \cdots, a_{ik}$ is increasing if $a_{i1} < a_{i2} < \cdots < a_{ik}$.
+
+For example, in the sequence
+\[\{9, 5, 27, 2, 6, 1, 9, 8, 3, 1\},\]
+$\{5, 6, 8, 11\}$ is an increasing subsequence.
+
+\begin{lemma}
+	In any sequence of length $n^2 + 1$, there is either an increasing sequence of length $n+1$ or decreasing sequence of length $n+1$.
+\end{lemma}
+
+\begin{proof}
+	Let $a_1, a_2, \cdots, a_{n^2 + 1}$ be a sequence of $(n^2 + 1)$ distinct real numbers. Associate an ordered pair with each term of the sequence, namely, associate ($i_k$, $d_k$) to the term ak, where $i_k$ is the length of the longest increasing subsequence starting at $a_k$, and $d_k$ is the length of the longest decreasing subsequence starting at $a_k$.
+	
+	Suppose that there are no increasing or decreasing sub sequences of length $n+1$ or longer. Then $i_k$ and $d_k$ are both positive integers less than or equal to $n$, for $k = 1, 2, \cdots, n^2 + 1$. Hence, by the product rule there are $n^2$ possible ordered pairs for $(i_k, d_k)$. By the pigeonhole principle, two of these $n^2 + 1$ ordered pairs are equal.
+
+	In other words, there exist terms $a_s$ and $a_t$, with $s < t$ such that $i_s = i_t$ and $d_s = d_t$. We will show that this is impossible. Because the terms of the sequence are distinct, either $a_s < a_t$ or $a_s > a_t$. 
+	
+	If $a_s < a_t$, then, because $i_s = i_t$, an increasing subsequence of length $i_t + 1$ can be built starting at as, by taking as followed
+	by an increasing subsequence of length it beginning at at. This is a contradiction. 
+	
+	Similarly, if $a_s > a_t$, the same reasoning shows that ds must be greater than $d_t$, which is a contradiction.
+\end{proof}
+
+Dynamic Programming: Find the length of the longest sub sequence.
+
+Top level question: Is $a_n$ in the longest increasing sequence? Unfortunately, this is not a good question, for example, for the sequence $100, 1, 2, 3, 4, 8$, suppose we answer "YES" to the top level quest "is 100 in the longest increasing sequence?". Then neither any follow-up number could be added into the longest sequence after 100. Therefore we need more information to carry over.
+
+Actually, this problem takes some extra work comparing with the stander DP strategy.
+
+$\text{Best}(i,l) = x$ if the increasing sequence of length $l$ in the prefix $a_1, \cdots, a_i$ with the smallest ending number ends in $x$.
+For example, in sequence $100, 1, 2, 3, 4, 8$,
+\begin{itemize}
+	\item $\text{Best}(1,1) = 100$
+	\item $\text{Best}(2,1) = 1$
+	\item $\text{Best}(2,2) = +\infty$
+\end{itemize}
+One more example, $$5, 10, 7, 3, 8, 4, 9, 6$$
+\begin{itemize}
+	\item $\text{Best}(1,1) = 5$
+	\item $\text{Best}(1,2) = +\infty$
+\end{itemize}
+
+Inductively assume that for some $i$, we have Best$(i, l)$ for all $l$.
+When we see $a_{i+1}$, what would we do?
+
+If $i = 4$,
+\begin{itemize}
+	\item $\text{Best}(4,1) = 3$
+	\item $\text{Best}(4,2) = 7$
+	\item otherwise, $+\infty$
+\end{itemize}
+
+If $i = 5$,
+\begin{itemize}
+	\item $\text{Best}(5,1) = 3$
+	\item $\text{Best}(5,2) = 7$
+	\item $\text{Best}(5,3) = 8$
+	\item otherwise, $+\infty$
+\end{itemize}
+
+Here is the array of ends of best sequence of variants length update $a_i$. What you do with the new element is actually find the place where it will go. It can be done by binary search to find the place where the new element will go and make the new element replace the one after it. 
+
+First of all, the array is sorted. The end of the best increasing sequence of length 1 is going to be less than the end of the best increasing sequence of length 2. It can be proved by contradiction. If some sequence of length 3 has a better ending than the sequence of length 2, you can take the first two elements from the sequence to have a better result than the current sequence of length 2.
+
+So when a new element comes along, you binary search for it and wherever it want to go, we replace the next element by the new element.
+
+The algorithm take one binary search for each new element so the total time is $T(n) = O(n\log n)$
+
+This is a dynamic programming problem since we remember the result from what we have solved to get the best sequence for the a new element.
+
+

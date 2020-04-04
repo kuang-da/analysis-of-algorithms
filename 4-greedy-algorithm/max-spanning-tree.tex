@@ -1,4 +1,4 @@
-\subsection{Maximum Weight Minimum Spanning Tree}
+\subsection{Maximum Weight Spanning Tree}
 \textbf{Input}: a connected, weighted, undirected graph $ G = (V , E) $ with weight function $ w : E \to R $. 
 
 \textbf{Goal}: Find a maximum weight spanning tree in $G$. 
@@ -23,7 +23,7 @@ Kruskal's algorithm finds a minimum weight spanning tree in a connected, weighte
 	\item Maintain a graph G with the same vertices as the original graph to track the edges chosen already.
 	\item When considering $ e_i = (u, v) $, add $e_i$ to the graph if and only if $u$ and $v$ lie in different components. To do this, we need two routines.
 	\begin{itemize}
-		\item Find operation: return the component for a vertex u.
+		\item Find operation: return the component for a vertex $u$.
 		\item Union operation: merge two components together.
 	\end{itemize}
 \end{itemize}
@@ -39,13 +39,13 @@ For this structure, find operation is $\mathcal{O}(1)$. Union(u, v) = $\mathcal{
 
 When Union-ing two sets, change the name for the elements in the \textbf{smaller} sets. But in the worst case, the union still takes $n$ steps. Moreover, even in a good case, there is only one element in a set but we still need to scan the whole list to know the size of set. Therefore, we introduce a new array to maintain a linked list for each set containing the elements in that set.
 
-Remark: The array is used to from vertex to set and set is used to find the vertices of each set.
+Remark: The array is used to from vertex to set and the linked list is used to find the vertices of each set.
 
 Even with the help of new linked list, an individual union operation could still take $\Theta(n)$ steps. However, we can use \textbf{amortized analysis} to make the our analysis more tight by looking at the whole sequence instead of single operation. In fact, any \textbf{sequence} of $k$ union operations performed by Kruskal's algorithm take only $\mathcal{O}(k\log n)$ steps.
 
 \subparagraph{Amortized Analysis.} In computer science, amortized analysis is a method for analyzing a given algorithm's complexity, or how much of a resource, especially time or memory, it takes to execute. The motivation for amortized analysis is that looking at the worst-case run time per operation, rather than per algorithm, can be too pessimistic. The target of amortized analysis is rather special since it is neither average nor worst case.
 
-For example, suppose given two sets A and B, the goal is to calculate the union of the sets. It is known that the cost of operation is $|B| = n$.
+For example, suppose given two sets of vertices $A$ and $B$, the goal is to calculate the union of the sets. Also $|A| > |B|$, so the cost of operation is $|B| = n$.
  
 Accounting method is used for analysis:
 \begin{itemize}
@@ -110,12 +110,12 @@ Prim's algorithm is another greedy algorithm for finding a maximum weight spanni
 	For $e \in \text{cut}(S, V-S)$, if $e$ is the heaviest edge in the set. Then it will not cause a cycle with other edges have been connected by greedy algorithm. Therefore $e$ will be included in the maximum weighted independent set.
 \end{claim}
 \begin{claimproof}
-	By the canonical algorithm of greedy algorithm, we consider edges in decreasing order of weights. By the time we consider the edge $e$, we have not consider any other edge cross the two sets of the cut yet since $e$ has the largest weight. Therefore, $e$ will not cause any cycle with the edges that the greedy algorithm has chosen. Because you need two edges cross the two components to get a cycle.
+	By the canonical greedy algorithm, we consider edges in decreasing order of weights. By the time we consider the edge $e$, we have not consider any other edge cross the two sets of the cut yet since $e$ has the largest weight. Therefore, $e$ will not cause any cycle with the edges that the greedy algorithm has chosen. Because you need two edges cross the two components to get a cycle.
 \end{claimproof}
 
 Prim's algorithm is one specialization of this idea that if you can find the heaviest edge in each cut then you can build a minimum spanning tree. Prim's algorithm consider a particular set of cuts.
 
-\textbf{Main Idea}: Split the graph into two sets $S$ and $V-S$. Some vertex $s$ is arbitrarily chosen as the initialization of $S$. First consider the cuts consisting $s$. Find the heaviest edge $(s, v)$. Bring $v$ into set $S$. Repeat the steps for the next heaviest cutting edge.
+\textbf{Main Idea}: Split the graph into two sets $S$ and $V-S$. Some vertex $s$ is arbitrarily chosen as the initialization of $S$. First consider the cuts consisting $s$. Find the cheapest edge $(s, v)$. Bring $v$ into set $S$. Repeat the steps for the next heaviest cutting edge.
 
 \subsection{Algorithm}
 Initially, 
@@ -126,7 +126,7 @@ w(s, v) \text{, if $(s,v) \in E$}\\
 \infty \text{, otherwise}
 \end{cases}
 \]
-For each $ v \in V-S $, maintain $ d(v) $, weight $ \mathfrak{I} $ and the lightest edge $(x, y)$ from $V-S$ to any source vertex $x$ in $S$.
+For each $ y \in V-S $, maintain $ d(y) $, which is the weight of the lightest edge $(x, y)$ from $V-S$ to any source vertex $x$ in $S$.
 
 At each iteration, when we move the vertex $y$ that has the cheapest
 edge to a vertex in $S$, we need to update every neighbor $v$ of $y$ so that $ d(v) = \min(d(v), w(v, y)) $.

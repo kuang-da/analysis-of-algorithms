@@ -9,7 +9,7 @@ If one coded word is a prefix of another, then that could lead to ambiguity. The
 
 Ideally, we could like to assign shorter code to the words with higher frequency.
 \subsection{Algorithm}
-Input: $\Sigma = \{\sigma_1, \sigma_2, \cdots, \sigma_n\}$. $f_i$ is the frequency of $\sigma_i$. Assume that $\sum f_i = 1$, $f_i \ge 0 \forall i$.
+Input: $\Sigma = \{\sigma_1, \sigma_2, \cdots, \sigma_n\}$. $f_i$ is the frequency of $\sigma_i$. Assume that $\sum f_i = 1$, $f_i \ge 0 ~\forall ~i$.
 
 Goal: Find a prefix code that makes $\sigma_i$ to $c(\sigma_i)$ to minimize $\sum f_i(\sigma_i)$, which is the average code length.
 
@@ -48,7 +48,7 @@ Make a new symbol $ xy $ in place of $ x $ and $ y $ so that $ f(xy) = f(x) + f(
 =& (f(x) + f(y))(d+1)\\
 =& f(xy)(d+1)
 \end{align*}
-So the same tree with $xy$ made a symbol has cost that of $ f(xy) $ lower.
+So the same tree with $xy$ as a symbol has cost that of $ f(xy) $ lower.
 
 \subsection{Algorithm}
 Combine two least frequent symbol $ x $ and $ y $ with one symbol $ xy $ with $ f(xy) = f(x) + f(y) $. 

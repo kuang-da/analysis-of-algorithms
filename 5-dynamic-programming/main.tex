@@ -7,17 +7,21 @@
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{amsthm}
 \usepackage{graphicx}
-\usepackage[ruled,vlined]{algorithm2e}
+%\usepackage[ruled,vlined]{algorithm2e}
 \PassOptionsToPackage{normalem}{ulem}
 \usepackage{ulem}
 \usepackage{mathtools}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{algorithm, algpseudocode}
 
+\renewcommand\qedsymbol{$\blacksquare$}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 \newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
 \newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
 
 \title{Class Notes\\CIS 502 Analysis of Algorithm\\5-Dynamics Programming}
 \author{Da Kuang}
@@ -36,4 +40,17 @@ Dynamic programming is on the halfway of the continuum between brute-force algor
 Interestingly, dynamic programming is a bit directed but is not that sure. Therefore, it breaks down the optimization problem into a series of decisions. For each decision, unlike greedy knowing the right thing to do, dynamic programming tries out every possible way within this decision. It is brute force locally but in a controlled so the algorithm not inefficient.
 
 The performance of algorithm goes from greedy to dynamic programming then to brute force getting worse and worse. But the proofs is getting easier and easier. In brute force, you do not have to prove anything since it just simply tries everything and get the best answer. There is nothing clever that needs justification. Greedy algorithm, on the extreme, make a commitment to make a decision and we need to prove the decision is correct and we do not miss anything while only solving the local optimal.
+
+\section{Learn Through Examples}
+\subsection{Station Placement Problem}
+\input{tex/station-placement.tex}
+
+\subsection{Check Binary Pattern}
+\input{tex/check-bin-pattern.tex}
+
+\subsection{Find Longest Acending Subsequence}
+\input{tex/find-subseq.tex}
+
+\subsection{All Pair Shortest Path}
+\input{tex/all-pair-shortest-path.tex}
 \end{document}

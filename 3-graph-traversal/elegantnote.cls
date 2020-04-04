@@ -242,7 +242,8 @@
 \ifdefstring{\ELEGANT@device}{normal}{%
   \geometry{
     margin=1in,
-    a4paper}}{%
+    letterpaper}}{%
+    % a4paper}}{%
   \relax}
 
 \ifdefstring{\ELEGANT@device}{screen}{%  

@@ -1,0 +1,29 @@
+\begin{itemize}
+	\item Input: Weighted directed graph
+	\item Goal: Compute a matrix of shortest path distances between every pair of vertices
+\end{itemize}
+
+The entry $D_{ij}$ of matrix $D$ is the distance of the shortest path from vertex $i$ to vertex $j$.
+
+\subsubsection{Adjacency Matrix}
+Adjacency Matrix is a representation of a weighted directed graph,
+
+\[
+	A[i, j]= 
+		\begin{cases}
+			w(i,j),& \text{if } (i, j)\in E\\
+			\infty,              & \text{otherwise}
+		\end{cases}
+\]
+
+What is the diagonal entries of $A$? They are all 0s.
+
+What does $A^2$ mean?
+\[
+	A^2[i, j] = \sum_k A[i,k] \times A[k, j]
+\]
+Let's define a new matrix product for graph,
+
+\[
+	A^2[i, j] = \operatorname*{argmin}_k A[i,k] + A[k, j]
+\]

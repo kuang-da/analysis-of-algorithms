@@ -1,4 +1,4 @@
- Directed, weighted graph $G = (V, E)$with weight function $w: E \rightarrow \mathbb{R}$.
+ Directed, weighted graph $G = (V, E)$ with weight function $w: E \rightarrow \mathbb{R}$.
  
  Note that the algorithm can work on undirected graph as well since undirected graph can be seen as a special directed graph. So a undirected graph problem can be reduced to a directed graph problem but not necessarily vice versa. Moreover, the world is full of directed graph (download/upload speed, railway direction). The directed graph is a more general problem. 
 
@@ -39,7 +39,7 @@ At each state, find a vertex $v \in (V-S)$ for which there is a vertex $u$ in $S
 
 \paragraph{Algorithm} 
 \begin{itemize}
-	\item For each vertex $v \in (V-S)$, $d(v)$ is the length of the shortest path from $s$ to $v$ which consist of a source side path to a some vertex $u \in (V-S)$ followed by edge $(u,v)$.
+	\item For each vertex $v \in (V-S)$, $d(v)$ is the length of the shortest path from $s$ to $v$ which consist of a source side path to a some vertex $u \in S$ followed by edge $(u,v)$.
 	\item In each iteration, bring the vertex $v$ with minimum $d(v)$ to $S$. To make sure $d$ is invariant, we have to update $d$ based on the new $S$ (with a new vertex $v$). For each neighbor vertex $x$ of $v$, update $d(x) = \min(d(x), d(v) + w(v, x))$. Note that if $v$ is used to update $x$, then we remember $v$ as the ancestor of $x$.
 \end{itemize}
 

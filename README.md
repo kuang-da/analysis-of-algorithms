@@ -12,7 +12,6 @@ List of lectures and contents
 - [x]0218 L10-Greedy Algorithms: Maximum Total Weight
 - [x]0220 L11-Greedy Algorithms: Matroid
 - [x]0225 L12-Greedy Algorithms: Find Maximum Weight Spanning Tree
-- Midterm
-- [ ]0227 L13 Dynamic Programming
-- [ ]0303 L13 Dynamic Programming
+- [x]0227 L13 Dynamic Programming
+- [x]0303 L14 Midterm
 - [ ]0305 L13 Dynamic Programming
