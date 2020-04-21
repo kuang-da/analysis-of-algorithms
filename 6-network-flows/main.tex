@@ -1,0 +1,51 @@
+\documentclass[en,hazy,blue,screen,14pt]{elegantnote}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+%\usepackage[ruled,vlined]{algorithm2e}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{algorithm, algpseudocode}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\title{Class Notes\\CIS 502 Analysis of Algorithm\\6-Network Flows}
+\author{Da Kuang}
+\institute{University of Pennsylvania}
+% \version{1.00}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage
+% \input{}
+\section{Network Flow}
+\input{network-flow.tex}
+\section{Finding Max Flow: Ford-Fulkerson Algorithm}
+\input{ford-fulker.tex}
+\section{Correctness}
+\input{correctness.tex}
+\section{Max-FLow-Min-Cut-Theorem}
+\input{theorem.tex}
+\section{Efficient Max Flow Algorithm: Capacity Scaling}
+\input{capacity-scaling.tex}
+\section{Appliction: Bipartite Matchings}
+\input{bipartite-matching.tex}
+\section{Application: Max Number of Edge-disjoint Paths in Directed Graph}
+\input{max-edge-disjoint-path.tex}
+\end{document}
