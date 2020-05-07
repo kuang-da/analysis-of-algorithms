@@ -15,12 +15,13 @@ List of lectures and contents
 - [x]0227 L13 Dynamic Programming
 - [x]0303 L14 Midterm
 - [-]0305 L15 Dynamic Programming
-- [-]0324
-- [-]0326
-- [-]0331 Network Flows
-- [ ]0402
-- [ ]0407
-- [ ]0409
-- [ ]0414
-- [ ]0416
-- [ ]0421
+- [-]0324 L16
+- [-]0326 L17
+- [-]0331 L18 Network Flows
+- [-]0402 L19 
+- [x]0407 L20 Computation Theory: P vs. NP, Reductions
+- [x]0409 L21 NP completeness, CSAT, SAT, 3-SAT
+- [x]0414 L22
+- [x]0416 L23 Vertex Cover, Cliques, Subset Sum; Approximation Algorithm: VC-OPT
+- [x]0421 L24 Approximation algorithm: TSP and SC
+- [ ]0423 L25 Linear Programming

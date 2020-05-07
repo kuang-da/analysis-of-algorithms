@@ -1,0 +1,33 @@
+Settling the P versus. NP question will have huge ramifications. If P=NP, tens of thousands of real world problems will have efficient solutions. This will have enormous implications for business, medicine, science, etc. Automation could replace human ingenuity in many more spheres. While on the down side, cryptography will no longer be possible.
+
+Most researchers in the field do not believe that P=NP. But how do we go about finding the answer?
+
+\subsection{One Approach}
+Identify the ``hardest'' problems in NP, such that solving any one of them in polynomial would show that $\text{P} = \text{NP}$. Try your best to find a polynomial time algorithm for one such problem. 
+
+But how do we identify the hardest problems in NP?
+
+Attempted definition: a problem $\pi$ is ``a hardest problem'' in NP if, given an efficient algorithm to solve $\pi$, you can use it (as a subroutine) to solve every other problem in NP.
+
+We can formalize this idea by the concept of reduction.
+
+\subsection{Reductions}
+Decision problem $A$ reduces in polynomial time to decision $B$ (written as $A \preccurlyeq_P  B$) if:
+\begin{itemize}
+	\item There exists a poly-time computable function $f$ mapping inputs to $A$ to  inputs to $B$.
+	\item $x$ is a YES instance of $A \Rightarrow f(x)$ is a YES instance of B.
+	\item $x$ is a NO instance of $A \Rightarrow f(x)$ is a NO instance of B.
+\end{itemize}
+
+To construct and prove a reduction correct, we have to find the function $f$ and prove the 3 properties above.
+
+\subsection{Implications}
+What does it mean if there is a poly-time reduction from A to B?
+\begin{itemize}
+	\item If B is solvable in poly-time, then so is A. Just map the input to A to an input to B, and use the algorithm for solving B.
+	
+	\item If A is not solvable in polynomial time, then neither is $B$. This is an interesting use of reductions!
+\end{itemize}
+
+The last bullet shows that B is ``hard'' if A is hard. This is the direction we will use in this portion of the course.
+

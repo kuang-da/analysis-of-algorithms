@@ -1,0 +1,62 @@
+A clique in $G=(V,E)$ is a subset $S$ of vertices such that $\forall x,y \in S, (x,y) \in E$.
+
+Clique decision problem:
+\begin{itemize}
+	\item Instance: graph $G=(V, E)$ and a number $k$
+	\item Question: does $G$ contain a clique of size at least $k$?
+\end{itemize}
+
+CLIQUE is NP-complete: reduction from IS.
+
+Main idea: the complement $G^c=(V,E^c)$ of a graph $G=(V,E)$ is a graph on the same vertex set, where $(u,v) \in E^c \iff (u,v) \notin E$. Non-edges of G become edges of $G^c$ and vice versa. Note that any set of vertices that forms an IS in $G$ forms a clique in $G^C$ and vice verse.
+
+\subsubsection{Reduction and Proof}
+Reduction from IS: Given instance $\langle G,k \rangle$ of IS, transform it into instance $\langle G^c,k \rangle$ of CLIQUE.
+
+Easy proof of correctness:
+
+If $\langle G, k\rangle$ is a YES-instance of IS, then it has an independent set $S$ of size $k$. $S$ is a clique of size $k$ in $G^C$. Thus $\langle G^C, k \rangle$ is a YES-instance of CLIQUE. 
+
+Conversely, if the instance $\langle G, k\rangle$ is created by the reduction is a YES instance of CLIQUE, then the instance we started from $\langle G, k \rangle$, must be a YES-instance of IS.
+
+Running Time: Complementing a graph requires $O(n^2)$ times.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

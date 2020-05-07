@@ -1,0 +1,83 @@
+\documentclass[en,hazy,blue,screen,14pt]{elegantnote}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+%\usepackage[ruled,vlined]{algorithm2e}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{algorithm, algpseudocode}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\title{Class Notes\\CIS 502 Analysis of Algorithm\\7-NP Completeness}
+\author{Da Kuang}
+\institute{University of Pennsylvania}
+% \version{1.00}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage
+% \input{}
+\section{Polynomial Time}
+\input{tex/poly-time.tex}
+\section{Non-Deterministic Polynomial Time (NP)}
+\input{tex/np-time.tex}
+\section{Reduction}
+\input{tex/reduction.tex}
+\section{NP completness}
+\input{tex/np-comp.tex}
+\section{Boolean Circuit Problem}
+\input{tex/bool-logic.tex}
+\section{Circuit Satisfiability is NP-Complete}
+\input{tex/circuit-sat.tex}
+\section{SAT is NP-complete}
+\input{tex/sat.tex}
+\section{Independent Set is NP-complete}
+\input{tex/indepent-set.tex}
+\section{3-Coloring is NP-Complete}
+\input{tex/3-color.tex}
+\section{Vertex Cover is NP-Complete}
+\input{tex/vertex-cover.tex}
+\section{Clique is NP-complete}
+\input{tex/clique.tex}
+\section{Subset-sum is NP-complete}
+\input{tex/subset-sum.tex}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

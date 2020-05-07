@@ -1,0 +1,81 @@
+A holistic view of efficiency
+
+We have been seeking to design efficient algorithms but have not defined ``efficiency''!
+
+Algorithms have running times that grow with the size of the input. If algorithm are to be scalable, this growth rate should not be too fast. \textbf{A growth rate that is polynomial in the input size is considered efficient}, and anything faster than a polynomial is considered inefficient (for several good reasons)
+
+What do we mean by polynomial time?
+\begin{itemize}
+	\item The running time is $O(n^c)$ for some constant $c$.
+	\item Examples: $O(n^3)$ and $O(n \log n)$ are poly-time. $O(2^n)$, $O(n^{\log n})$ and $O(n!)$ are not.
+\end{itemize}
+
+Most problems of interest have exponentially more possibilities to be considered. For example, for the activity selection problem, we need to implicitly consider all $2^n$ subsets of activities. If we really calculate all of them, then we could have an exponential time algorithm. Coming up with a polynomial time algorithm means that we have developed some insight into the problem that allows us to avoid this brute force search.
+
+Polynomial time is also an incredibly \textbf{robust} class; if we consider any other reasonable model of computation, and any other reasonable way of encoding the input, an algorithm that was polynomial time will stay polynomial time. 
+
+If you design a function that runs in polynomial time, then polynomially more invocations of this function also take polynomial time. This is because polynomials are \textbf{closed under composition}.
+
+\subsection{Further Discussion: Objection}
+There is a possible objection: an algorithm that runs in time $n^{100}$ is poly-time but hardly scalable; it is already in feasible on inputs of size $2$.
+
+It is true. But We do not know any natural problem for which the poly-time algorithm runs in time $n^{100}$. Even if the first poly-time algorithm for the problem is impractical, it already brings some insights into the problem and the running time can be quickly improved.
+
+\subsection{Toss a Coin}
+We actually go a little further than polynomial time in what we consider efficient: we allow algorithms to toss coins, and even a randomized algorithm that runs in polynomial time is considered efficient.
+
+\subsection{Decision Problems}
+When we study polynomial time algorithms and beyond, we will restrict ourselves to \textbf{decision problems}, meaning problems where the answer on each instance is YES or NO (also 1 or 0).
+
+Many problems we have studied are ``search problems'', not decision problems. For example, find the minimum spanning tree, find the optimal Huffman encoding, etc.
+
+However, for each of these problems, there is a closely related decision problem. If we can solve this related decision problem in polynomial time, then we can solve the search problem in polynomial time.
+
+For example, given a weighted, undirected graph and a number $K$, is there an MST whose weight is $\le K$? This is the decision problem closely related to MST search.
+
+Another example, given input to Huffman, and a real number $\alpha$, is there a code with average length at most $\alpha$.
+
+\subsection{Decision vs. Search}
+How does solving the decision version of MST help find MST?
+
+Suppose we are given a black box $B$ that takes as input $(G, K)$, and outputs YES if $G$ has an MST of weight at most $K$ and NO otherwise.
+
+Assume the graph weights and $K$ are integers.
+
+We check $B(G, K)$ for $K = \frac{\sum_{e \in G} w(e)}{2}$:
+\begin{itemize}
+	\item If YES, we binary search downwards
+	\item If NO, we binary search upwards to arrive at $K = $  weight of MST.
+\end{itemize}
+
+We fix this $K$,
+\begin{itemize}
+	\item We successively remove edges from $G$ and see if new graph still has MST of weight $K$.
+	\item If it does not, we put back the edge we remove; it is needed in the MST.
+\end{itemize}
+
+At the end, we will have found the MST in polynomial many calls to $B$.
+
+\subsection{P}
+P (read as ``polynomial time'') is the class of decision problems for which there is a polynomial time algorithm.
+
+A class of problem defined by a resource constraint (such as a constraint on running time or space) is called a complexity class. P is one of the most important complexity class.
+
+When encountering a new computational problem, one of the first question you should ask yourself is: 
+
+"\textbf{is this problem in $P$?}"
+
+For this section of the course, we will be less concerned with getting the best possible running time. We will be happy as long as we can tell it is in $P$ or not.
+
+
+
+
+
+
+
+
+
+
+
+
+

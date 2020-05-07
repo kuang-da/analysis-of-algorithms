@@ -1,0 +1,97 @@
+\documentclass[en,hazy,blue,screen,14pt]{elegantnote}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+%\usepackage[ruled,vlined]{algorithm2e}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage{cancel}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{algorithm, algpseudocode}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\title{Class Notes\\CIS 502 Analysis of Algorithm\\8-Approximation and Optimization}
+\author{Da Kuang}
+\institute{University of Pennsylvania}
+% \version{1.00}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage
+% \input{}
+\section{Vertex Cover Approximation}
+\input{tex/vc.tex}
+\section{Metric Traveling Salesman Approximation}
+\input{tex/tsp.tex}
+\section{Set Cover Approximation}
+\input{tex/set-cover.tex}
+\section{Wrap Up}
+Many of the optimization problems associated with NP complete problem follow into one of several bucket regard to approximality.
+\begin{itemize}
+	\item The negative extreme: problems where we don't know anything but a trivial approximation, e.g. independent set, Clique etc. If we can approximate IS to a factor significantly better than $n$. Note that an approximation with $n$ factor to IS, is just a single vector, which is such a trivial approximation. Then P = NP.
+	\item Problems for which there are approximation algorithm that achieve an approximation factor by $n^\alpha$ for some $\alpha < 1$. For example, 3-COL. Given a graph that is 3-colorable, there is an efficient algorithm to color it in $\sqrt{n}$ order. These are problems we can approx to ``polynomial'' factors. (This is an abuse usage of ``polynomial'' since the power here is not integer.)
+	\item Problem like set cover that we can approximate to $\log n$ factor. For set cover, it is also known that unless P = NP, we cannot get much better approximation.
+	\item Problems like vertex cover and metric TSP, we can achieve a constant factor approximation.
+	\item Problem with approximation schemes. Approximation schemes specify the quality of approximation desire by providing an input parameter $\epsilon$. There is an algorithm that produces a $(1+\epsilon)$ approximation. That runs in time polynomial in $n$(input size) and $\frac{1}{\epsilon}$ (quality of approximation). But the running time could have exponential dependent on $\frac{1}{\epsilon}$.
+	\item Problem with polynomial approximation schemes are the same as above but the running time is poly($n$, $\frac{1}{\epsilon}$).
+\end{itemize}
+
+Interestingly, all NP complete problems have equivalent difficulty when it comes to solving them exactly since we can reduce one to the other. But when we start to talk about approximation, they actually fall into many categories. 
+
+In fact the picture of how well approximable different NP-hard problems is more complex than above.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

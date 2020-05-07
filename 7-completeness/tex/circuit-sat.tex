@@ -1,0 +1,84 @@
+\subsection{Cook-Levin Theorem}
+The theorem is often stated as:
+\begin{theorem}
+	Satisfiability is NP-complete.
+\end{theorem}
+\subsection{Circuit Satisfiability (CSAT)}
+We will sketch the proof of a similar statement first:
+\begin{theorem}
+	Circuit satisfiability is NP-complete.
+\end{theorem}
+
+\begin{proof}
+	Circuit satisfiability (CSAT) is easily seen to be in NP. A YES-instance of CSAT is a circuit whose input variables can be set to make the circuit evaluate to a 1. Given a YES-instance $c$ with $n$ input variables, a good certificate is an assignment of truth values to these input variables that cause $c$ to compute 1. A verifier only has to solve the circuit value problem that can be done in polynomial time.
+	
+	How do we reduce every problem in NP to CSAT? Let $B$ be any problem in NP. We will come up with a poly-time computable function $f$ mapping instances of $B$ to instances of CSAT, so that YES-instances map to YES-instances and NO-instances map to NO-instances.
+	
+	The key is that if we do it for any problem in NP without making assumptions about the problem, we would have shown reductions for all problems.
+	
+	So what do we know about any problem $B$ in NP? It has a poly-time verifier $V_B$. Remember that $V_B$ takes two inputs: an instance $x$ and a certificate $y$. The reduction $f$ that we construct will closely depend on $V_B$. $f$ must take as input an instance of $B$, say $x$, and convert it to an instance of CSAT, $f(x)$, with the answer-preserving of a reduction.
+	
+	Let us now examine the working of $V_B$ when dealing with instance $x$. $V_B$ takes $x$ and some certificate $y$ as inputs, and works as follows
+	\begin{itemize}
+		\item If $x$ is a YES-instance and $y$ is the right certificate, it accepts, i.e. it outputs 1.
+		\item If $x$ is a NO-instance, for any certificate $y$, it rejects, i.e. it outputs 0.
+	\end{itemize}
+
+	Since $V_B$ runs in polynomial time, it can be converted to a poly-sized circuit with a number of inputs $= |x| + |y|$, which is polynomial in $|x|$. (Believable statement, but not fully proven here.) 
+	
+	Since we know the input $x$, the values for these inputs are set to match $x$. Since we do not know the input $y$, we leave the values for these inputs as Boolean variables. This is the circuit $f(x)$ which is the instance of CSAT created by our reduction. Note that the only inputs to $f(x)$ are the Boolean variables corresponding to the bits of $y$.
+	
+	There is a setting of the $y$ inputs that causes $f(x)$ to compute 1 if and only if $x$ is a YES-instance of B. So we have given a polynomial time reduction $f$ with the properties that 
+	\begin{itemize}
+		\item If $x$ is a YES-instance of B, then $f(x)$ is satisfiable.
+		\item If $x$ in a NO-instance of B, then $f(x)$ is not satisfiable.
+	\end{itemize}
+
+	The reduction works from any problem $B$ in NP to CSAT. This proves that CSAT is NP-complete, and we have our first NP-complete problem.
+\end{proof}
+
+\subsection{Gates To Formulas}
+\subsubsection{First Steps}
+How do we write a formula (in CNF) to express that this gate is working correctly? Want to say $z = x \wedge y$ but ``='' is not a logical operator.
+
+We can replace with $z \Leftrightarrow (x \wedge y)$, which is the same as $(z \Rightarrow (x \wedge y) \wedge ((x \wedge y) \Rightarrow z))$. Recall that $A \Rightarrow B$ is $\bar{A} \wedge B$. Using substitution, we can again rewrite as $(\bar{z} \vee (x \wedge y)) \vee (~\overline{(x \wedge y)} ~\vee z)$.
+
+Using two rules of Boolean algebra: Distribution law for OR over AND, and De Morgan's law, we simplify to $(\bar{z} \vee x) \wedge (\bar{z} \vee y) \wedge (\bar{x} \vee \bar{y} \vee z)$.
+
+\begin{itemize}
+	\item Distribution law for OR over AND: $x \times (y + z) = (x \times y) + (x \times z)$
+	\item De Morgan's law: $\overline{x \wedge y} = \bar{x} \vee \bar{y}$, $\overline{x \vee y} = \bar{x} \wedge \bar{y}$.
+\end{itemize}
+
+Check that the satisfying assignments of the last formula are all valid setting for the inputs and outputs of an AND gate. For example, if $x=0$ or $y=0$, then $z$ must be 0 to satisfy the first two clauses. But if both are 1, then $z$ must be 1 to satisfy the last clause.
+\subsubsection{Using This Idea}
+A similar derivation shows how to express that an OR gate is functioning correctly.
+
+To convert a circuit into a formula, we introduce new variables on each of the internal wires of the circuit and tie the value of the output variable of a gate to the input variables using clauses as in the previous slide.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

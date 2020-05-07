@@ -1,0 +1,40 @@
+\subsection{Satisfiability Decision Problem (SAT)}
+Given a CNF furmula $\varphi(x_1, x_2, \cdots, x_n)$, is it satisfiable? The $x_i'$s are Boolean variables. Both the $x_i'$s and $\bar{x_i}'$s are literals, and both can occur in the formula $\varphi$.
+
+YES-instance of SAT are formulas $\varphi$ that are satisfiable, and NO-instances are formulas that are not. If $\varphi$ is a YES-instance, it has a satisfying assignment. Given this assignment as certificate, a poly-time verifier can simply evaluate the formula and confirm that the result is 1. Thus SAT $\in$ NP.
+
+\subsection{Proving SAT NP-complete}
+We need to show a poly-time reduction from any problem in NP to SAT. Note that we already proved that CSAT NP-complete. So there are poly-time reductions from each problem in NP to CSAT. We also know (by transitivity of reductions) that if we can reduce CSAT to SAT, we would have shown that all problems in NP reduce to SAT.
+
+When implement a reduction, we need to think about the input and the output of the reduction first. The input is an instance of the problem you are reducing from. In this case, the problem is CSAT. Therefore the input reduction is a circuit. The output reduction is an instance of SAT, which is a formula of a CNF. Given an instance (a circuit) $c$ of CSAT, we introduce a Boolean variable for the output wires of each gate and a Boolean variable for each input to C. 
+
+In $\varphi = f(C)$, we write clauses expression that each gate is functioning correctly. It means $\varphi$ is satisfiable if and only if $C$ is satisfiable. If the overall output of $C$ is a wire labeled by variable $z$, in $\varphi$ we also add a clause consisting of just one literal: $z$. Note that in order to satisfy this last clause, $z$ must be 1.
+
+In order to satisfy all the other clauses, the value of a variable at the output of any gate must follow logically from the values of the variables at the input to that gate. Thus, $\varphi$ can be satisfied if we can set the inputs to $C$, so that computes a 1.
+
+The reduction is poly-time. We produce $O(1)$ clauses for each wire in the circuit, and since the circuit description must list all wires, the number of wires is linear in the input length. Thus the length of the formula produced is linear in the length of the circuit description.
+
+As sketched, if $C$ is satisfiable, then $\varphi$ is satisfiable too. A satisfying assignment to $\varphi$ sets the variables corresponding to inputs of $C$ to the values in the satisfying assignment for $C$. It then sets the values for the variables at the wires of $C$ in a manner that is logically implied by the input setting. This will result in the output variable $z$ being set to 1, satisfying $\varphi$.
+
+Conversely, if $C$ is not satisfiable, every setting of its input variable will cause $z$ to be 0. The only way to produce $z = 1$ is by making one of the gates behave erroneously. But the formula $\varphi$ is constructed in such a way that the erroneous operations of any gate will cause $\varphi$ to be false. Thus there will also be no satisfying assignment for $\varphi$. This complete the proof that SAT is NP-complete.
+
+\subsection{3-SAT}
+We can go a step further, say a formula $\varphi$ is a 3-CNF formula if it is a CNF formula with exactly 3 literals in each clause. By a reduction from SAT, we can show $3-SAT$ is NP-complete. $3-SAT$ turns out to be the fountainhead from which proofs of NP-completeness of many diverse problems flow.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

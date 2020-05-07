@@ -1,0 +1,105 @@
+\subsection{Boolean Logic}
+Since the first NP-completeness problem is proved in the context of boolean circuit, let's refresh some of the important concepts in this field.
+
+Boolean variables: $x, y$ $\in$ $\{x| x \in \{0, 1\}\}$ or $\{x| x \in \{\text{T}, \text{F}\}\}$. Variables like $x$, $\bar{x}$ are called \textbf{literals}.
+
+Operators: AND, OR, NOT. An operation of literals such as $(\bar{x} + y + z)$ is called a \textbf{clause}.
+
+A formula in \textbf{conjunctive normal form (CNF)} is an AND of clauses. A CNF formula evaluates to 1 if and only if at least one literal in each clause is true.
+
+Satisfiability is the problem of deciding whether a CNF formula is satisfiable. If a formula is satisfiable, the assignment of values to variables that makes formula true is a satisfying assignment.
+
+Truth Table considers every possible value for each of the variables involving in the boolean expression and then describes what the value fo the boolean expression is for each set of the value.  
+
+There are many properties that the boolean operations and variables satisfy.
+Commutative, associative, distributive law.
+\subsubsection{Imply}
+\textbf{Implies} ($x \Rightarrow y$) is an important but confusing boolean operator. It means whenever $x$ is true, $y$ is true. The following is an example:
+Suppose we have $P$, $Q$, $R$, $S$ four cases,
+\begin{itemize}
+	\item $P:$ Paris is the capital of France. (T)
+	\item $Q:$ Most ants have 6 legs.  (T)
+	\item $R:$ Rome is the capital of France. (F)
+	\item $S:$ Most ants have 5 legs. (F)
+\end{itemize}
+The true/false is annotated after each statement based on the facts in our world.
+
+It is safe to say $P \Rightarrow Q$ is true because $P$ is true and $Q$ is true. The imply can be explained as "If this is a world where Paris is the capital of France, then most of the ants have 6 legs". This implication works since both $P$ and $Q$ are true.
+
+Hence, $P \Rightarrow S$ is not true because in this world where Paris is the capital of France, ants do not have 5 legs. This implication dose not work.
+
+However, $R \Rightarrow Q$ and $R \Rightarrow S$ are both true. It is because $R$ is false in our world so you would say "in the world where Rome is the capital of France, most ants have 6 legs" or "most of ants have 5 legs". Either way is fine since the implication are not promising anything to our world.
+
+So the true table of imply operation is as follows. Note that imply has the same true value as $\bar{x} \vee y$.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		x & y & $x \Rightarrow y$ & $\bar{x}$ & $\bar{x} \vee y$ \\ \hline
+		0 & 0 & 1                 & 1         & 1                \\ \hline
+		0 & 1 & 1                 & 1         & 1                \\ \hline
+		1 & 0 & 0                 & 0         & 0                \\ \hline
+		1 & 1 & 1                 & 0         & 1                \\ \hline
+	\end{tabular}
+\end{table}
+
+If we have implies at both direction, we get an equivalent.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		x & y & $x \Rightarrow y$ & $y \Rightarrow x$ & $x \iff y$ \\ \hline
+		0 & 0 & 1                 & 1                 & 1          \\ \hline
+		0 & 1 & 1                 & 0                 & 0          \\ \hline
+		1 & 0 & 0                 & 1                 & 0          \\ \hline
+		1 & 1 & 1                 & 1                 & 1          \\ \hline
+	\end{tabular}
+\end{table}
+\subsubsection{Converse}
+The converse of $P \Rightarrow Q$ is $Q \Rightarrow P$. The converse does not have to be true even if the original statement is true. For example,
+\begin{itemize}
+	\item $P:$ It will rain this afternoon.
+	\item $Q:$ The flower bed will get wet.
+\end{itemize} 
+Therefore, $P \Rightarrow Q$ means if it rains then the flowerbed will be wet. It is a true statement. However, the converse can be descried as if the flower bed is wet then it must because of the rain. So the converse statement is not necessarily true.
+
+
+\subsubsection{Contrapositive}
+Another course related example,
+\begin{itemize}
+	\item $P:$ In a given connected weighted graph, all the weights are distinct.
+	\item $Q:$ The minimum spanning tree is unique.
+\end{itemize}
+It is possible to prove that $P \Rightarrow Q$ is true while $Q \Rightarrow P$ is actually false.
+
+The contra-positive of $P \Rightarrow Q$ is $\neg Q \Rightarrow \neg P$. Contra positive statement is logically identical to the original statement.
+\subsection{Boolean Circuit}
+Boolean Circuit is a directed acyclic graph. There are types of nodes: input nodes, AND nodes, OR nodes, NOT nodes.
+\begin{itemize}
+	\item Input nodes have 0 in-degree
+	\item AND nodes as well as OR nodes have in-degree 2.
+	\item NOT nodes have in-degree 1.
+\end{itemize}
+No restriction on the out-degree for the nodes mentioned above. However, there is one special node designed as output node with out-degree 1. The value of the circuit is the value on the out-edge of the output node.
+\subsubsection{Circuits as Computers}
+Everything a computer does can be done by circuits, with a big caveat. Computers can compute on inputs of any length. Circuits are hardwired to handle only one length. So to simulate a computer, we need a family of circuits: one for each length of input. It is easy to see that a polynomial time algorithm on a computer can be simulated by a family of circuits, where the $n^{\text{th}}$ circuit has size (number of gates) polynomial in $n$.
+\subsubsection{Circuit Value Problem}
+In the circuit value problem, we are given a circuit and Boolean values for the input nodes. We need to compute the value of the circuit. This problem can be easily solved in polynomial time. Simply find the value of each node in topological sort order until we get the value of the output node. (Recall that circuit is a DAG.)
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/bool-logic.png}
+\end{figure}
+\subsubsection{Circuit Satisfiability Problem}
+Circuit Satisfiability Problem is a famous NP-complete problem, where
+\begin{itemize}
+	\item Here the inputs are Boolean variables
+	\begin{itemize}
+		\item The inputs are not not specific boolean values, i.e. True, False
+		\item The inputs are Boolean variables, i.e. $x_1$, $x_2$ etc.
+	\end{itemize}
+	\item We want to know if there exist values for the variables so that the circuit value evaluates to 1.
+\end{itemize}
+
+For example, for the above circuit plot, we would like to know if there is a set of $(A, B, C)$ so that the output of the circuit $Q$ equal to 1.
