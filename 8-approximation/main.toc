@@ -1,0 +1,17 @@
+\babel@toc {nil}{}
+\contentsline {section}{\numberline {1}Vertex Cover Approximation}{3}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Approximation Algorithm}{3}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Proof}{4}{subsection.1.2}% 
+\contentsline {section}{\numberline {2}Metric Traveling Salesman Approximation}{5}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Approximation Algorithm TSP OPT}{6}{subsection.2.1}% 
+\contentsline {subsubsection}{\numberline {2.1.1}Appro Algorithm}{7}{subsubsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.2}Improvments}{8}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Christofides}{8}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Approximation Scheme}{8}{subsubsection.2.2.2}% 
+\contentsline {section}{\numberline {3}Set Cover Approximation}{8}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Set Cover Problem}{8}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Set Cover Optimization}{9}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Greedy Algorithm}{9}{subsubsection.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.2.2}Matching Upper Bound of Approximation Factor}{10}{subsubsection.3.2.2}% 
+\contentsline {subsubsection}{\numberline {3.2.3}Improvement}{10}{subsubsection.3.2.3}% 
+\contentsline {section}{\numberline {4}Wrap Up}{11}{section.4}% 

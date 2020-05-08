@@ -1,0 +1,34 @@
+\babel@toc {nil}{}
+\contentsline {section}{\numberline {1}Network Flow}{4}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Problem Formulation}{4}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Residual Graph}{4}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.3}Adding Two Flow}{5}{subsection.1.3}% 
+\contentsline {section}{\numberline {2}Finding Max Flow: Ford-Fulkerson Algorithm}{5}{section.2}% 
+\contentsline {section}{\numberline {3}Correctness}{6}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}s-t cuts in flow networks}{6}{subsection.3.1}% 
+\contentsline {subsubsection}{\numberline {3.1.1}Notes}{6}{subsubsection.3.1.1}% 
+\contentsline {subsubsection}{\numberline {3.1.2}Example}{7}{subsubsection.3.1.2}% 
+\contentsline {subsubsection}{\numberline {3.1.3}Capacity of a Cut}{7}{subsubsection.3.1.3}% 
+\contentsline {subsubsection}{\numberline {3.1.4}Cut capacities and flow values}{7}{subsubsection.3.1.4}% 
+\contentsline {subsubsection}{\numberline {3.1.5}Correctness of Ford-Fulkerson}{7}{subsubsection.3.1.5}% 
+\contentsline {paragraph}{Main idea:}{7}{subsubsection.3.1.5}% 
+\contentsline {subsection}{\numberline {3.2}Run Time Analysis}{8}{subsection.3.2}% 
+\contentsline {section}{\numberline {4}Max-FLow-Min-Cut-Theorem}{9}{section.4}% 
+\contentsline {section}{\numberline {5}Efficient Max Flow Algorithm: Capacity Scaling}{9}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}The Range of Delta}{9}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Algorithm}{9}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}Correctness}{10}{subsection.5.3}% 
+\contentsline {paragraph}{Main Idea}{10}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {5.4}Run Time Analysis}{12}{subsection.5.4}% 
+\contentsline {section}{\numberline {6}Appliction: Bipartite Matchings}{12}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}Matching}{12}{subsection.6.1}% 
+\contentsline {subsection}{\numberline {6.2}Bipartite Graph}{12}{subsection.6.2}% 
+\contentsline {subsection}{\numberline {6.3}Solving Bipartite Matching via Flows}{12}{subsection.6.3}% 
+\contentsline {subsection}{\numberline {6.4}Correctness}{13}{subsection.6.4}% 
+\contentsline {paragraph}{Main Idea:}{13}{subsection.6.4}% 
+\contentsline {subsubsection}{\numberline {6.4.1}Hall's theorem}{13}{subsubsection.6.4.1}% 
+\contentsline {section}{\numberline {7}Application: Max Number of Edge-disjoint Paths in Directed Graph}{15}{section.7}% 
+\contentsline {subsection}{\numberline {7.1}Duality Theorem}{16}{subsection.7.1}% 
+\contentsline {subsection}{\numberline {7.2}Further Extension: Undirected Graphs}{17}{subsection.7.2}% 
+\contentsline {subsection}{\numberline {7.3}Further Extension: Multiple Sources and Sinks}{17}{subsection.7.3}% 
+\contentsline {subsubsection}{\numberline {7.3.1}Further Extension: Capacities and Lower Bound Constrains}{18}{subsubsection.7.3.1}% 

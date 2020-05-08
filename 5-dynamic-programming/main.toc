@@ -1,0 +1,11 @@
+\babel@toc {nil}{}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}% 
+\contentsline {section}{\numberline {2}Learn Through Examples}{3}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Station Placement Problem}{3}{subsection.2.1}% 
+\contentsline {subsubsection}{\numberline {2.1.1}First algorithm}{4}{subsubsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.2}Check Binary Pattern}{5}{subsection.2.2}% 
+\contentsline {paragraph}{Remark: why input is unary}{5}{figure.caption.2}% 
+\contentsline {paragraph}{Top Level Question:}{5}{figure.caption.2}% 
+\contentsline {subsection}{\numberline {2.3}Find Longest Ascending Subsequence}{6}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}All Pair Shortest Path}{8}{subsection.2.4}% 
+\contentsline {subsubsection}{\numberline {2.4.1}Adjacency Matrix}{8}{subsubsection.2.4.1}% 

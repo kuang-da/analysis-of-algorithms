@@ -1,0 +1,67 @@
+\babel@toc {nil}{}
+\contentsline {section}{\numberline {1}Polynomial Time}{5}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Further Discussion: Objection}{5}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Toss a Coin}{6}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.3}Decision Problems}{6}{subsection.1.3}% 
+\contentsline {subsection}{\numberline {1.4}Decision vs. Search}{6}{subsection.1.4}% 
+\contentsline {subsection}{\numberline {1.5}P}{7}{subsection.1.5}% 
+\contentsline {section}{\numberline {2}Non-Deterministic Polynomial Time (NP)}{7}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Beyond P}{7}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}``NP''}{8}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Examples}{8}{subsection.2.3}% 
+\contentsline {subsubsection}{\numberline {2.3.1}Maximum Clique Problem}{8}{subsubsection.2.3.1}% 
+\contentsline {subsubsection}{\numberline {2.3.2}3-Coloring Problem}{9}{subsubsection.2.3.2}% 
+\contentsline {subsubsection}{\numberline {2.3.3}Partition Problem}{9}{subsubsection.2.3.3}% 
+\contentsline {subsection}{\numberline {2.4}Asymetry In Definitions of P and NP}{10}{subsection.2.4}% 
+\contentsline {subsection}{\numberline {2.5}``Co-NP''}{10}{subsection.2.5}% 
+\contentsline {subsection}{\numberline {2.6}Turing Machine Definition of NP}{10}{subsection.2.6}% 
+\contentsline {section}{\numberline {3}Reduction}{10}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}One Approach}{11}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Reductions}{11}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Implications}{11}{subsection.3.3}% 
+\contentsline {section}{\numberline {4}NP completness}{12}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}NP-completeness}{12}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Proving NP-Completeness}{12}{subsection.4.2}% 
+\contentsline {subsubsection}{\numberline {4.2.1}Transitivity of Reductions}{12}{subsubsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.3}Recipe For Proving a Problem NP-Complete}{13}{subsection.4.3}% 
+\contentsline {section}{\numberline {5}Boolean Circuit Problem}{13}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Boolean Logic}{14}{subsection.5.1}% 
+\contentsline {subsubsection}{\numberline {5.1.1}Imply}{14}{subsubsection.5.1.1}% 
+\contentsline {subsubsection}{\numberline {5.1.2}Converse}{15}{subsubsection.5.1.2}% 
+\contentsline {subsubsection}{\numberline {5.1.3}Contrapositive}{15}{subsubsection.5.1.3}% 
+\contentsline {subsection}{\numberline {5.2}Boolean Circuit}{16}{subsection.5.2}% 
+\contentsline {subsubsection}{\numberline {5.2.1}Circuits as Computers}{16}{subsubsection.5.2.1}% 
+\contentsline {subsubsection}{\numberline {5.2.2}Circuit Value Problem}{16}{subsubsection.5.2.2}% 
+\contentsline {subsubsection}{\numberline {5.2.3}Circuit Satisfiability Problem}{17}{subsubsection.5.2.3}% 
+\contentsline {section}{\numberline {6}Circuit Satisfiability is NP-Complete}{17}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}Cook-Levin Theorem}{17}{subsection.6.1}% 
+\contentsline {subsection}{\numberline {6.2}Circuit Satisfiability (CSAT)}{17}{subsection.6.2}% 
+\contentsline {subsection}{\numberline {6.3}Gates To Formulas}{18}{subsection.6.3}% 
+\contentsline {subsubsection}{\numberline {6.3.1}First Steps}{19}{subsubsection.6.3.1}% 
+\contentsline {subsubsection}{\numberline {6.3.2}Using This Idea}{19}{subsubsection.6.3.2}% 
+\contentsline {section}{\numberline {7}SAT is NP-complete}{19}{section.7}% 
+\contentsline {subsection}{\numberline {7.1}Satisfiability Decision Problem (SAT)}{19}{subsection.7.1}% 
+\contentsline {subsection}{\numberline {7.2}Proving SAT NP-complete}{20}{subsection.7.2}% 
+\contentsline {subsection}{\numberline {7.3}3-SAT}{21}{subsection.7.3}% 
+\contentsline {section}{\numberline {8}Independent Set is NP-complete}{21}{section.8}% 
+\contentsline {subsection}{\numberline {8.1}Independent Set (IS)}{21}{subsection.8.1}% 
+\contentsline {subsection}{\numberline {8.2}Independent Set is NP-Compelete}{21}{subsection.8.2}% 
+\contentsline {subsubsection}{\numberline {8.2.1}Main Idea}{21}{subsubsection.8.2.1}% 
+\contentsline {subsubsection}{\numberline {8.2.2}Proof of Correctness}{22}{subsubsection.8.2.2}% 
+\contentsline {subsection}{\numberline {8.3}Points to Note}{23}{subsection.8.3}% 
+\contentsline {section}{\numberline {9}3-Coloring is NP-Complete}{23}{section.9}% 
+\contentsline {subsection}{\numberline {9.1}Graph Coloring}{23}{subsection.9.1}% 
+\contentsline {subsection}{\numberline {9.2}3-COL is NP-complete}{23}{subsection.9.2}% 
+\contentsline {subsubsection}{\numberline {9.2.1}Relating Truth Values To Colors}{24}{subsubsection.9.2.1}% 
+\contentsline {subsubsection}{\numberline {9.2.2}Proving Correctness}{25}{subsubsection.9.2.2}% 
+\contentsline {subsubsection}{\numberline {9.2.3}Wrapping Up}{25}{subsubsection.9.2.3}% 
+\contentsline {subsubsection}{\numberline {9.2.4}Motivation}{26}{subsubsection.9.2.4}% 
+\contentsline {section}{\numberline {10}Vertex Cover is NP-Complete}{26}{section.10}% 
+\contentsline {subsection}{\numberline {10.1}Vertex Cover (VC)}{26}{subsection.10.1}% 
+\contentsline {subsection}{\numberline {10.2}IS and VC}{26}{subsection.10.2}% 
+\contentsline {subsubsection}{\numberline {10.2.1}Reduction}{27}{subsubsection.10.2.1}% 
+\contentsline {section}{\numberline {11}Clique is NP-complete}{27}{section.11}% 
+\contentsline {subsubsection}{\numberline {11.0.1}Reduction and Proof}{27}{subsubsection.11.0.1}% 
+\contentsline {section}{\numberline {12}Subset-sum is NP-complete}{28}{section.12}% 
+\contentsline {subsection}{\numberline {12.1}Subset-sum}{28}{subsection.12.1}% 
+\contentsline {subsubsection}{\numberline {12.1.1}Proof of Correcness}{29}{subsubsection.12.1.1}% 
