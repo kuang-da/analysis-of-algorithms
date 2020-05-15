@@ -1,3 +1,7 @@
+# TODO
+Organzie content in Dynamic programming
+Organize content in Linear Programming
+
 # Analysis of Algorithm
 List of lectures and contents
 - [x]0116 L1-Intro to Algorithm Analysis
@@ -12,13 +16,13 @@ List of lectures and contents
 - [x]0218 L10-Greedy Algorithms: Maximum Total Weight
 - [x]0220 L11-Greedy Algorithms: Matroid
 - [x]0225 L12-Greedy Algorithms: Find Maximum Weight Spanning Tree
-- [x]0227 L13 Dynamic Programming
+- [x]0227 L13 Dynamic Programming: Learn Through Examples 1
 - [x]0303 L14 Midterm
-- [-]0305 L15 Dynamic Programming
+- [x]0305 L15 Dynamic Programming: Learn Through Examples 2
 - [-]0324 L16
 - [-]0326 L17
-- [-]0331 L18 Network Flows
-- [-]0402 L19 
+- [x]0331 L18 Network Flows: Basics and Ford-Fulkerson Algorithm
+- [x]0402 L19 Network Flows: Efficient Max Flow Algorithm and Applications
 - [x]0407 L20 Computation Theory: P vs. NP, Reductions
 - [x]0409 L21 NP completeness: CSAT, SAT
 - [x]0414 L22 NP completeness: 3-SAT, IS, 3-COL

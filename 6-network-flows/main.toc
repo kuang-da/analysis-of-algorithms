@@ -13,17 +13,17 @@
 \contentsline {subsubsection}{\numberline {3.1.5}Correctness of Ford-Fulkerson}{7}{subsubsection.3.1.5}% 
 \contentsline {paragraph}{Main idea:}{7}{subsubsection.3.1.5}% 
 \contentsline {subsection}{\numberline {3.2}Run Time Analysis}{8}{subsection.3.2}% 
-\contentsline {section}{\numberline {4}Max-FLow-Min-Cut-Theorem}{9}{section.4}% 
+\contentsline {section}{\numberline {4}Max-Flow-Min-Cut-Theorem}{9}{section.4}% 
 \contentsline {section}{\numberline {5}Efficient Max Flow Algorithm: Capacity Scaling}{9}{section.5}% 
 \contentsline {subsection}{\numberline {5.1}The Range of Delta}{9}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Algorithm}{9}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.2}Algorithm}{10}{subsection.5.2}% 
 \contentsline {subsection}{\numberline {5.3}Correctness}{10}{subsection.5.3}% 
 \contentsline {paragraph}{Main Idea}{10}{subsection.5.3}% 
 \contentsline {subsection}{\numberline {5.4}Run Time Analysis}{12}{subsection.5.4}% 
 \contentsline {section}{\numberline {6}Appliction: Bipartite Matchings}{12}{section.6}% 
 \contentsline {subsection}{\numberline {6.1}Matching}{12}{subsection.6.1}% 
 \contentsline {subsection}{\numberline {6.2}Bipartite Graph}{12}{subsection.6.2}% 
-\contentsline {subsection}{\numberline {6.3}Solving Bipartite Matching via Flows}{12}{subsection.6.3}% 
+\contentsline {subsection}{\numberline {6.3}Solving Bipartite Matching via Flows}{13}{subsection.6.3}% 
 \contentsline {subsection}{\numberline {6.4}Correctness}{13}{subsection.6.4}% 
 \contentsline {paragraph}{Main Idea:}{13}{subsection.6.4}% 
 \contentsline {subsubsection}{\numberline {6.4.1}Hall's theorem}{13}{subsubsection.6.4.1}% 

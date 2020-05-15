@@ -41,20 +41,18 @@ Capacity of any $s-t$ cut is an \textbf{upper bound} on flow value of any flow. 
 When Ford-Fulkerson terminates, we have an $s-t$ cut $(S-T)$ because $t$ is not
 reachable from $s$ in $G_f$.
 
-In the following example is a graph of net flow, there are two kinds of edge $(u,v)$ and $(x,y)$. The former is from $S$ to $T$ and the latter is from $T$ to $S$.
+In the following example is a graph of net flow $G$, there are two kinds of edge $(u,v)$ and $(x,y)$. The former is from $S$ to $T$ and the latter is from $T$ to $S$. Recall one more time that $S$ and $T$ are chosen based on the residual graph $G_f$ but now we are looking at the original network graph $G$.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{fig/cut-2.png}
 \end{figure}
+
+Given such $S$ and $T$ sets, we can infer some nice properties for the forward edge and back edge.
+
 \begin{itemize}
-	\item Why did the forward edge $(u,v)$ not exist in $G_f$?
-	\begin{itemize}
-		\item Naively, if $(u, v)$ is a forward edge, then $v$ is reachable from $s$ and it should be in set $S$. In fact, it is because that the cutting edges carries as much flow as their capacity.
-	\end{itemize}
-	\item Why did backward edge $(y, x)$ not exist in $G_f$?
-	\begin{itemize}
-		\item If the back edge exist, $x$ would have been in $S$. Therefore, edge $(x, y)$ carries $0$ flow.
-	\end{itemize}
+	\item Since, $u$ and $v$ are in different sets, there is no edge from $u$ to $v$ in $G_f$. It means $f(u, v)$ saturate its capacity in the network $G$.
+	\item Since, $y$ and $x$ are in different sets, there is no edge from $y$ to $x$ in $G_f$. It means $f(x, y)$ must 0 in the network $G$ so that there is no residual in $G_f$.
 \end{itemize}
 
 So when Ford-Fulkerson stops, we have a cut (where $S$ contains vertices reachable from $S$) such that:
