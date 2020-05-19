@@ -1,6 +1,6 @@
 # TODO
-Organzie content in Dynamic programming
-Organize content in Linear Programming
+- Update Dynamic programming
+- Update Linear Programming
 
 # Analysis of Algorithm
 List of lectures and contents
